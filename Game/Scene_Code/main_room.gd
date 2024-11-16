@@ -3,9 +3,7 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer = $static
-
-# voices in TTS
-var voices: Array[Dictionary] = DisplayServer.tts_get_voices()
+@onready var voice: AudioStreamPlayer3D = $voice
 
 var static_playing = false
 var questions: Array
@@ -47,17 +45,16 @@ var question_num = 0
 
 # function to use TTS
 func speek(text: String):
-
+	print("44565465")
 	# start playing static
 	static_player.play()
 	static_playing = true
-	
-	# grab and play text with voice
-	var selected_voice = voices[0]["id"]
-	DisplayServer.tts_speak(text, selected_voice,50,0,0.9)
-	
+	voice.stream = File_Pros.get_voice_audio("What is your name?")
+	await get_tree().physics_frame
+	voice.play()
+
 	# prevent moving on while talking
-	while DisplayServer.tts_is_speaking():
+	while voice.playing:
 		await get_tree().create_timer(0.25).timeout
 
 
@@ -183,6 +180,6 @@ func answered_question(data: String):
 func _process(delta: float) -> void:
 	
 	# used to stop static when not speeking
-	if !DisplayServer.tts_is_speaking() && static_playing:
+	if !voice.playing && static_playing:
 		static_player.stop()
 		static_playing = false

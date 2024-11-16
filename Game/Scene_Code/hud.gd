@@ -67,7 +67,6 @@ func _ready() -> void:
 	# start
 	reset_grid()
 
-
 func pressed(data: String) -> void:
 	
 	# when pressed hide buttons
