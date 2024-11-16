@@ -1,0 +1,362 @@
+{
+  "lies": [
+	{
+	  "question": "What is your favorite Russian city?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Moscow",
+		"Saint Petersburg",
+		"Sochi",
+		"Yekaterinburg",
+		"Kazan",
+		"Novosibirsk",
+		"Vladivostok"
+	  ]
+	},
+	{
+	  "question": "What is the code name of your mission?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Operation Bear Claw",
+		"Midnight Snow",
+		"Iron Curtain",
+		"Cold Tide",
+		"Black Ice",
+		"Crimson Shadow",
+		"Ghost Echo"
+	  ]
+	},
+	{
+	  "question": "What language do you speak fluently besides Russian and English?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Hindi ",
+		"German",
+		"French",
+		"Spanish",
+		"Mandarin",
+		"Italian",
+		"Arabic"
+	  ]
+	},
+	{
+	  "question": "What was the target's code name?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Silver Fox",
+		"Red Hammer",
+		"Night Owl",
+		"White Rabbit",
+		"Black Eagle",
+		"Blue Wolf",
+		"Golden Sparrow"
+	  ]
+	},
+	{
+	  "question": "What is your specialty?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Demolition",
+		"Infiltration",
+		"Interrogation",
+		"Espionage",
+		"Disguise",
+		"Surveillance",
+		"Hand-to-hand combat"
+	  ]
+	},
+	{
+	  "question": "What is your blood type?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"A",
+		"B",
+		"AB",
+		"O",
+		"O-",
+		"A-",
+		"B-"
+	  ]
+	},
+	{
+	  "question": "What color was the target’s briefcase?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Black",
+		"Brown",
+		"Red",
+		"Gray",
+		"Blue",
+		"Green",
+		"Tan"
+	  ]
+	},
+	{
+	  "question": "Where was the last dead drop?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Under a park bench",
+		"Inside a hollow brick",
+		"In a newspaper stand",
+		"In a subway tunnel",
+		"Behind a vending machine",
+		"Inside a phone booth",
+		"At a café restroom"
+	  ]
+	},
+	{
+	  "question": "What is the name of the hotel you stayed at?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Hotel Metropol",
+		"Grand Plaza",
+		"Northern Lights Inn",
+		"Red Square Hotel",
+		"Eastern Star",
+		"Victoria Palace",
+		"Imperial Hotel"
+	  ]
+	},
+	{
+	  "question": "How did you gain access to the facility?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Climbed over the fence",
+		"Through the front gate with a pass",
+		"Via a ventilation shaft",
+		"Posing as maintenance",
+		"Through an underground tunnel",
+		"With a forged ID",
+		"By bribing the guard"
+	  ]
+	},
+	{
+	  "question": "What is your favorite weapon brand?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Kalashnikov",
+		"Glock",
+		"Sig Sauer",
+		"Beretta",
+		"Walther",
+		"Heckler & Koch",
+		"Tula"
+	  ]
+	},
+	{
+	  "question": "What do you keep in your wallet?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Fake ID",
+		"Old receipts",
+		"Photograph",
+		"Foreign currency",
+		"Business cards",
+		"A lucky charm",
+		"Nothing"
+	  ]
+	},
+	{
+	  "question": "What did you order at the restaurant?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Borscht",
+		"Pelmeni",
+		"Chicken Kiev",
+		"Beef Stroganoff",
+		"Pirozhki",
+		"Blini",
+		"Caviar"
+	  ]
+	},
+	{
+	  "question": "How did you communicate with your informant?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Through a secure phone line",
+		"By exchanging coded messages",
+		"Through a third party",
+		"At secret meetings",
+		"Via an encrypted email",
+		"Using hand signals",
+		"By sending a postcard"
+	  ]
+	},
+	{
+	  "question": "What was the signal to abort the mission?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"A red scarf in the window",
+		"A flickering street light",
+		"A whistle tune",
+		"A change of radio frequency",
+		"Three knocks on a door",
+		"A car honking twice",
+		"A sudden power outage"
+	  ]
+	},
+	{
+	  "question": "What did you say to the border guard?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"\"I’m here for business.\"",
+		"\"I’m on vacation.\"",
+		"\"I’m visiting family.\"",
+		"\"I’m here for a medical conference.\"",
+		"\"I’m attending a festival.\"",
+		"\"I’m relocating for work.\"",
+		"\"I’m just passing through.\""
+	  ]
+	},
+	{
+	  "question": "What did you write in your mission report?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"\"The objective was successful.\"",
+		"\"The mission was compromised.\"",
+		"\"Further investigation is required.\"",
+		"\"All targets have been neutralized.\"",
+		"\"Awaiting further instructions.\"",
+		"\"Unable to retrieve the package.\"",
+		"\"Assets have been secured.\""
+	  ]
+	},
+	{
+	  "question": "What was the primary objective of your mission?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"To gather intelligence",
+		"To disrupt operations",
+		"To acquire valuable assets",
+		"To create a diversion",
+		"To eliminate a target",
+		"To establish a safe house",
+		"To meet with a high-profile contact"
+	  ]
+	},
+	{
+	  "question": "Where did you conceal your weapon?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"In my trunk",
+		"Strapped to my back",
+		"Inside a coat pocket",
+		"In a hidden compartment in my bag",
+		"In a false bottom suitcase",
+		"Inside the lining of my jacket",
+		"In a holster at my ankle"
+	  ]
+	},
+	{
+	  "question": "What was the passphrase for the mission?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"\"The night is long and full of whispers.\"",
+		"\"The eagle flies at dawn.\"",
+		"\"A storm is brewing in the east.\"",
+		"\"The clock strikes midnight.\"",
+		"\"The river runs deep.\"",
+		"\"The wolves are howling tonight.\"",
+		"\"Winter is coming.\""
+	  ]
+	},
+	{
+	  "question": "What was the weather like during your operation?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Snowy",
+		"Rainy",
+		"Clear and sunny",
+		"Foggy",
+		"Windy",
+		"Overcast",
+		"Stormy"
+	  ]
+	},
+	{
+	  "question": "What did you leave as evidence to fool us?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"A broken pen",
+		"A cigarette butt",
+		"A matchbook",
+		"A business card",
+		"A fake ID",
+		"A handwritten note",
+		"An empty glass"
+	  ]
+	},
+	{
+	  "question": "Where were you planning to rendezvous with your contact?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"At the old clock tower",
+		"In a small café",
+		"Near the bridge",
+		"In the central park",
+		"At the docks",
+		"In the alley behind the theater",
+		"At a bus station"
+	  ]
+	},
+	{
+	  "question": "What is your name?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Dmitri",
+		"Nikolai",
+		"Ivan",
+		"Boris",
+		"Victor",
+		"Sergey",
+		"Anatoly"
+	  ]
+	},
+	{
+	  "question": "Were you allowed to kill on this mission?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Yes",
+		"No",
+		"Only if absolutely necessary",
+		"Only if attacked"
+	  ]
+	},
+		{
+	  "question": "Does your team know you are here?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"Yes",
+		"No",
+		"They will never know",
+		"They will know in under an hour"
+	  ]
+	}
+  ]
+}
