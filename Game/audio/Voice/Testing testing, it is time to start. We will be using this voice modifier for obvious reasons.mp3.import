@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p53cn3v7xivo"
+path="res://.godot/imported/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3-d88d3e55b30d7abc2a483dac740dc806.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3"
+dest_files=["res://.godot/imported/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3-d88d3e55b30d7abc2a483dac740dc806.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

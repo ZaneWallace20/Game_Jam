@@ -15,11 +15,11 @@ var rng = RandomNumberGenerator.new()
 
 # list of correct voice lines
 var correct = [
-	"Very well",
+	"Very well.",
 	"Ok, moving on.", 
-	"Noted",
-	"I see",
-	"Unexpected result",
+	"Noted.",
+	"I see.",
+	"Unexpected result.",
 	"This cooperation will help you."
 	
 	]
@@ -29,7 +29,8 @@ var correct_num = 0
 
 # list of incorrect voice lines
 var incorrect = [
-	"Lying gets you nowhere.","I fail to understand.", 
+	"Lying gets you nowhere.",
+	"I fail to understand.", 
 	"Lying will only make me want to kill you more.", 
 	"Do you want to die here?",
 	"Do you think you are helping your country with this lie?",
@@ -45,14 +46,14 @@ var question_num = 0
 
 # function to use TTS
 func speek(text: String):
-	print("44565465")
+
 	# start playing static
 	static_player.play()
-	static_playing = true
-	voice.stream = File_Pros.get_voice_audio("What is your name?")
+	
+	voice.stream = File_Pros.get_voice_audio(text)
 	await get_tree().physics_frame
 	voice.play()
-
+	static_playing = true
 	# prevent moving on while talking
 	while voice.playing:
 		await get_tree().create_timer(0.25).timeout
@@ -143,7 +144,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "zoom_out":
 		hud.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		await speek("Testing testing, it is time to start. We will be using this voice modifier for, obvious reasons.")
+		await speek("Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.")
 		
 		# start question
 		ask_question()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs02825s8yoyf"
+path="res://.godot/imported/Why did you travel to the United States.mp3-055e28db981b1eb05ffab6ec33d664e5.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/Why did you travel to the United States.mp3"
+dest_files=["res://.godot/imported/Why did you travel to the United States.mp3-055e28db981b1eb05ffab6ec33d664e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

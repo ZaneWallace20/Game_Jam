@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjej8g77b1vr5"
+path="res://.godot/imported/What did you order at the restaurant.mp3-dd1f223aa53d8fc6a8f4d7a3adb20370.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/What did you order at the restaurant.mp3"
+dest_files=["res://.godot/imported/What did you order at the restaurant.mp3-dd1f223aa53d8fc6a8f4d7a3adb20370.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

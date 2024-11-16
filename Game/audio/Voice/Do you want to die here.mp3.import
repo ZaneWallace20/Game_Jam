@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3yby26ra3gge"
+path="res://.godot/imported/Do you want to die here.mp3-5f67806ef6db576d8f11c54aba03763b.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/Do you want to die here.mp3"
+dest_files=["res://.godot/imported/Do you want to die here.mp3-5f67806ef6db576d8f11c54aba03763b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
