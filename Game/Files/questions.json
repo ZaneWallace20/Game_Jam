@@ -279,7 +279,7 @@
 	  ]
 	},
 	{
-	  "question": "What was the weather like during your operation?",
+	  "question": "What was the weather like during your stay?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
