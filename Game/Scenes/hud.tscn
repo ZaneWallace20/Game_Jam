@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://mwp1yp21x23k"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_cytu0"]
+[ext_resource type="Script" path="res://Scene_Code/hud.gd" id="1_a7ow0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6d1l5"]
 font_size = 100
@@ -9,21 +9,14 @@ font_color = Color(0.803922, 0.431373, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_sqhi8"]
 font_size = 20
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_cytu0")
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_a7ow0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 460.0
-offset_top = 40.0
-offset_right = 1460.0
-offset_bottom = 1040.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 520.0
+offset_bottom = 520.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
