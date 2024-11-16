@@ -1,7 +1,7 @@
 {
   "lies": [
 	{
-	  "question": "What is your favorite Russian city?",
+	  "question": "Where were you born?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
@@ -15,21 +15,21 @@
 	  ]
 	},
 	{
-	  "question": "What is the code name of your mission?",
+	  "question": "What’s your most recent occupation?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Operation Bear Claw",
-		"Midnight Snow",
-		"Iron Curtain",
-		"Cold Tide",
-		"Black Ice",
-		"Crimson Shadow",
-		"Ghost Echo"
+		"Translator",
+		"Engineer",
+		"Journalist",
+		"Game developer",
+		"Pilot",
+		"Artist",
+		"Manager"
 	  ]
 	},
 	{
-	  "question": "What language do you speak fluently besides Russian and English?",
+	  "question": "Do you speak any other languages fluently besides Russian and English?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
@@ -43,31 +43,31 @@
 	  ]
 	},
 	{
-	  "question": "What was the target's code name?",
+	  "question": "Who is your employer?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Silver Fox",
-		"Red Hammer",
-		"Night Owl",
-		"White Rabbit",
-		"Black Eagle",
-		"Blue Wolf",
-		"Golden Sparrow"
+		"Private tech company",
+		"Freelance contractor",
+		"Government",
+		"Airline",
+		"I work for myself",
+		"Manufacturing plant",
+		"I am in between jobs"
 	  ]
 	},
 	{
-	  "question": "What is your specialty?",
+	  "question": "Where do you live?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Demolition",
-		"Infiltration",
-		"Interrogation",
-		"Espionage",
-		"Disguise",
-		"Surveillance",
-		"Hand-to-hand combat"
+		"New York",
+		"Washington D.C",
+		"Moscow",
+		"Dallas",
+		"I move a lot for work",
+		"Near the area",
+		"10 minutes away from I-95"
 	  ]
 	},
 	{
@@ -85,31 +85,31 @@
 	  ]
 	},
 	{
-	  "question": "What color was the target’s briefcase?",
+	  "question": "What were you doing on October 21st at around 7pm?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Black",
-		"Brown",
-		"Red",
-		"Gray",
-		"Blue",
-		"Green",
-		"Tan"
+		"Working on a project",
+		"At my hotel",
+		"Sightseeing",
+		"Visiting a friend",
+		"Taking a walk",
+		"Eating dinner",
+		"Meeting a friend"
 	  ]
 	},
 	{
-	  "question": "Where was the last dead drop?",
+	  "question": "Why were you near The Office of the Secretary of Defense?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Under a park bench",
-		"Inside a hollow brick",
-		"In a newspaper stand",
-		"In a subway tunnel",
-		"Behind a vending machine",
-		"Inside a phone booth",
-		"At a café restroom"
+		"I got lost",
+		"I had a meeting near by",
+		"I was passing through",
+		"I was touring the city",
+		"I was visiting a near by cemetary",
+		"I was passing the garden",
+		"I was headed to the airport"
 	  ]
 	},
 	{
@@ -127,31 +127,29 @@
 	  ]
 	},
 	{
-	  "question": "How did you gain access to the facility?",
+	  "question": "Do you know Igor Tolstoy?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Climbed over the fence",
-		"Through the front gate with a pass",
-		"Via a ventilation shaft",
-		"Posing as maintenance",
-		"Through an underground tunnel",
-		"With a forged ID",
-		"By bribing the guard"
+		"No, never met them",
+		"Only casually",
+		"They work in the same industry",
+		"I've seen him around",
+		"I've met him once",
+		"I don't think so"
 	  ]
 	},
 	{
-	  "question": "What is your favorite weapon brand?",
+	  "question": "Why did you travel to the United States?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Kalashnikov",
-		"Glock",
-		"Sig Sauer",
-		"Beretta",
-		"Walther",
-		"Heckler & Koch",
-		"Tula"
+		"For a business conference",
+		"Tourism",
+		"Visiting family",
+		"To live the american dream",
+		"For fun",
+		"To escape the torment of the russian government"
 	  ]
 	},
 	{
@@ -183,105 +181,105 @@
 	  ]
 	},
 	{
-	  "question": "How did you communicate with your informant?",
+	  "question": "Why were you carrying a briefcase?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Through a secure phone line",
-		"By exchanging coded messages",
-		"Through a third party",
+		"It was a gift",
+		"Part of my equipment for work",
+		"I found it",
 		"At secret meetings",
-		"Via an encrypted email",
-		"Using hand signals",
-		"By sending a postcard"
+		"To keep my documents safe",
+		"For the style",
+		"To bring it to a friend"
 	  ]
 	},
 	{
-	  "question": "What was the signal to abort the mission?",
+	  "question": "Why did you hesitate to answer?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"A red scarf in the window",
-		"A flickering street light",
-		"A whistle tune",
-		"A change of radio frequency",
-		"Three knocks on a door",
-		"A car honking twice",
-		"A sudden power outage"
+		"I was confused",
+		"I didn’t want to say anything incriminating",
+		"I needed a moment to think",
+		"Just had to process",
+		"I was translating in my head",
+		"I’m nervous; this is a lot of pressure",
+		"I don’t think it’s relevant to your investigation"
 	  ]
 	},
 	{
-	  "question": "What did you say to the border guard?",
+	  "question": "What do you think of the Secretary of Defense?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"I’m here for business.\"",
-		"\"I’m on vacation.\"",
-		"\"I’m visiting family.\"",
-		"\"I’m here for a medical conference.\"",
-		"\"I’m attending a festival.\"",
-		"\"I’m relocating for work.\"",
-		"\"I’m just passing through.\""
+		"\"I don’t know much about them.\"",
+		"\"They seem competent.\"",
+		"\"I have no opinion.\"",
+		"\"They seem incompetent.\"",
+		"\"They are unfit for the job.\"",
+		"\"They are fit for the job.\"",
+		"\"Who?\""
 	  ]
 	},
 	{
-	  "question": "What did you write in your mission report?",
+	  "question": "Why should we believe you?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"The objective was successful.\"",
-		"\"The mission was compromised.\"",
-		"\"Further investigation is required.\"",
-		"\"All targets have been neutralized.\"",
-		"\"Awaiting further instructions.\"",
-		"\"Unable to retrieve the package.\"",
-		"\"Assets have been secured.\""
+		"\"I have nothing to hide.\"",
+		"\"I’ve told you everything.\"",
+		"\"I’m innocent.\"",
+		"\"I am just a bystander.\"",
+		"\"I swear on my children.\"",
+		"\"I have complied with you.\"",
+		"\"Because you have no proof.\""
 	  ]
 	},
 	{
-	  "question": "What was the primary objective of your mission?",
+	  "question": "Why did you travel alone?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"To gather intelligence",
-		"To disrupt operations",
-		"To acquire valuable assets",
-		"To create a diversion",
-		"To eliminate a target",
-		"To establish a safe house",
-		"To meet with a high-profile contact"
+		"I prefer solitude",
+		"Easier to focus on work",
+		"I can not afford to bring anyone",
+		"I didn’t want to draw attention to myself",
+		"My work requires independence",
+		"I needed time to clear my head and focus",
+		"It was a last-minute trip, and I couldn’t coordinate with anyone"
 	  ]
 	},
 	{
-	  "question": "Where did you conceal your weapon?",
+	  "question": "Do you own any weapons?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"In my trunk",
-		"Strapped to my back",
-		"Inside a coat pocket",
-		"In a hidden compartment in my bag",
-		"In a false bottom suitcase",
-		"Inside the lining of my jacket",
-		"In a holster at my ankle"
+		"Yes back in my country",
+		"Yes but they stay at my house",
+		"Yes a shotgun",
+		"Yes a handgun",
+		"No",
+		"Only a knife",
+		"Violence isn't in my nature"
 	  ]
 	},
 	{
-	  "question": "What was the passphrase for the mission?",
+	  "question": "What’s in your bag?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"The night is long and full of whispers.\"",
-		"\"The eagle flies at dawn.\"",
-		"\"A storm is brewing in the east.\"",
-		"\"The clock strikes midnight.\"",
-		"\"The river runs deep.\"",
-		"\"The wolves are howling tonight.\"",
-		"\"Winter is coming.\""
+		"\"Just my laptop and some chargers.\"",
+		"\"A few personal items and toiletries.\"",
+		"\"Documents for work.\"",
+		"\"A change of clothes and my passport.\"",
+		"\"Some snacks for the day.\"",
+		"\"A book I’m reading.\"",
+		"\"Just the usual stuff.\""
 	  ]
 	},
 	{
-	  "question": "What was the weather like during your operation?",
+	  "question": "What was the weather like during your stay?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
@@ -295,31 +293,31 @@
 	  ]
 	},
 	{
-	  "question": "What did you leave as evidence to fool us?",
+	  "question": "What’s the last thing you purchased?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"A broken pen",
-		"A cigarette butt",
+		"A bottle of water",
+		"A cigarette",
 		"A matchbook",
-		"A business card",
-		"A fake ID",
-		"A handwritten note",
-		"An empty glass"
+		"A ticket for the subway",
+		"Lunch",
+		"A newspaper",
+		"Some souvenirs for my family"
 	  ]
 	},
 	{
-	  "question": "Where were you planning to rendezvous with your contact?",
+	  "question": "Who have you been in contact with recently?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"At the old clock tower",
-		"In a small café",
-		"Near the bridge",
-		"In the central park",
-		"At the docks",
-		"In the alley behind the theater",
-		"At a bus station"
+		"Just my boss and a couple of colleagues",
+		"Family members checking in on me",
+		"A friend I was planning to meet here",
+		"Nobody; I’ve kept to myself",
+		"A hotel concierge about local attractions",
+		"A taxi driver who dropped me off",
+		"Someone I met briefly at the airport"
 	  ]
 	},
 	{
@@ -337,25 +335,45 @@
 	  ]
 	},
 	{
-	  "question": "Were you allowed to kill on this mission?",
+	  "question": "Why were you carrying so much cash?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Yes",
-		"No",
-		"Only if absolutely necessary",
-		"Only if attacked"
+		"I prefer not to rely on cards when I travel",
+		"It's common where I come from",
+		"I was planning to exchange it for local currency",
+		"I carry cash for emergencies",
+		"I wasn’t sure if my card would work here",
+		"It was given to me for a business transaction",
+		"I was going to use it for tips and small purchases"
 	  ]
 	},
 		{
-	  "question": "Does your team know you are here?",
+	  "question": "Why are there gaps in your travel itinerary?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Yes",
-		"No",
-		"They will never know",
-		"They will know in under an hour"
+		"I forgot to record some details",
+		"I wasn’t aware I needed to provide a full itinerary",
+		"I made some last-minute changes",
+		"I lost some of my travel documents",
+		"I wanted to keep my plans flexible",
+		"I didn’t think the gaps were significant",
+		"I didn’t have anything planned during that time"
+	  ]
+	},
+		{
+	  "question": "Why didn’t you report the incident?",
+	  "is_mcq": true,
+	  "user_data": "",
+	  "options": [
+		"I didn’t realize it was important.",
+		"I was scared and didn’t know what to do.",
+		"I wasn’t sure who to trust.",
+		"I thought someone else would report it.",
+		"I needed time to process what happened.",
+		"I didn’t want to get involved.",
+		"I wasn’t aware there was an incident until later."
 	  ]
 	}
   ]
