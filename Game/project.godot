@@ -22,7 +22,6 @@ general/text_to_speech=true
 [autoload]
 
 Global="*res://Imports/Global.gd"
-TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 
 [display]
 

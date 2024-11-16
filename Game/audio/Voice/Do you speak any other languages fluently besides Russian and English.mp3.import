@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://doryc8w0yl3l8"
-path="res://.godot/imported/Do you speak any other languages fluently besides Russian and English.mp3-a9a1cc2e7b0e061fa302435b7fc90905.mp3str"
+path="res://.godot/imported/do you speak any other languages fluently besides russian and english.mp3-9eaf33b3ca8b17d1d7c9c49842ca77ba.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/Do you speak any other languages fluently besides Russian and English.mp3"
-dest_files=["res://.godot/imported/Do you speak any other languages fluently besides Russian and English.mp3-a9a1cc2e7b0e061fa302435b7fc90905.mp3str"]
+source_file="res://audio/Voice/do you speak any other languages fluently besides russian and english.mp3"
+dest_files=["res://.godot/imported/do you speak any other languages fluently besides russian and english.mp3-9eaf33b3ca8b17d1d7c9c49842ca77ba.mp3str"]
 
 [params]
 

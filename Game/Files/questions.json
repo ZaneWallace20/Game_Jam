@@ -39,7 +39,8 @@
 		"Spanish",
 		"Mandarin",
 		"Italian",
-		"Arabic"
+		"Arabic",
+		"No"
 	  ]
 	},
 	{
@@ -51,9 +52,9 @@
 		"Freelance contractor",
 		"Government",
 		"Airline",
-		"I work for myself",
+		"I work for myself.",
 		"Manufacturing plant",
-		"I am in between jobs"
+		"I am in between jobs."
 	  ]
 	},
 	{
@@ -65,9 +66,9 @@
 		"Washington D.C",
 		"Moscow",
 		"Dallas",
-		"I move a lot for work",
-		"Near the area",
-		"10 minutes away from I-95"
+		"I move a lot for work.",
+		"Near the area.",
+		"10 minutes away from I-95."
 	  ]
 	},
 	{
@@ -89,13 +90,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Working on a project",
-		"At my hotel",
+		"Working on a project.",
+		"At my hotel.",
 		"Sightseeing",
-		"Visiting a friend",
-		"Taking a walk",
-		"Eating dinner",
-		"Meeting a friend"
+		"Visiting a friend.",
+		"Taking a walk.",
+		"Eating dinner.",
+		"Meeting a friend."
 	  ]
 	},
 	{
@@ -213,13 +214,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"I don’t know much about them.\"",
-		"\"They seem competent.\"",
-		"\"I have no opinion.\"",
-		"\"They seem incompetent.\"",
-		"\"They are unfit for the job.\"",
-		"\"They are fit for the job.\"",
-		"\"Who?\""
+		"I don’t know much about them.",
+		"They seem competent.",
+		"I have no opinion.",
+		"They seem incompetent.",
+		"They are unfit for the job.",
+		"They are fit for the job.",
+		"Who?"
 	  ]
 	},
 	{
@@ -227,13 +228,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"I have nothing to hide.\"",
-		"\"I’ve told you everything.\"",
-		"\"I’m innocent.\"",
-		"\"I am just a bystander.\"",
-		"\"I swear on my children.\"",
-		"\"I have complied with you.\"",
-		"\"Because you have no proof.\""
+		"I have nothing to hide.",
+		"I’ve told you everything.",
+		"I’m innocent.",
+		"I am just a bystander.",
+		"I swear on my children.",
+		"I have complied with you.",
+		"Because you have no proof."
 	  ]
 	},
 	{
@@ -241,13 +242,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"I prefer solitude",
-		"Easier to focus on work",
-		"I can not afford to bring anyone",
-		"I didn’t want to draw attention to myself",
-		"My work requires independence",
-		"I needed time to clear my head and focus",
-		"It was a last-minute trip, and I couldn’t coordinate with anyone"
+		"I prefer solitude.",
+		"Easier to focus on work.",
+		"I can not afford to bring anyone.",
+		"I didn’t want to draw attention to myself.",
+		"My work requires independence.",
+		"I needed time to clear my head and focus.",
+		"It was a last-minute trip, and I couldn’t coordinate with anyone."
 	  ]
 	},
 	{
@@ -255,13 +256,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Yes back in my country",
-		"Yes but they stay at my house",
-		"Yes a shotgun",
-		"Yes a handgun",
-		"No",
-		"Only a knife",
-		"Violence isn't in my nature"
+		"Yes back in my country.",
+		"Yes but they stay at my house.",
+		"Yes a shotgun.",
+		"Yes a handgun.",
+		"No.",
+		"Only a knife.",
+		"Violence isn't in my nature."
 	  ]
 	},
 	{
@@ -269,13 +270,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"\"Just my laptop and some chargers.\"",
-		"\"A few personal items and toiletries.\"",
-		"\"Documents for work.\"",
-		"\"A change of clothes and my passport.\"",
-		"\"Some snacks for the day.\"",
-		"\"A book I’m reading.\"",
-		"\"Just the usual stuff.\""
+		"Just my laptop and some chargers.",
+		"A few personal items and toiletries.",
+		"Documents for work.",
+		"A change of clothes and my passport.",
+		"Some snacks for the day.",
+		"A book I’m reading.",
+		"Just the usual stuff."
 	  ]
 	},
 	{
@@ -297,13 +298,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"A bottle of water",
-		"A cigarette",
-		"A matchbook",
-		"A ticket for the subway",
-		"Lunch",
-		"A newspaper",
-		"Some souvenirs for my family"
+		"A bottle of water.",
+		"A cigarette.",
+		"A matchbook.",
+		"A ticket for the subway.",
+		"Lunch.",
+		"A newspaper.",
+		"Some souvenirs for my family."
 	  ]
 	},
 	{
@@ -311,13 +312,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"Just my boss and a couple of colleagues",
-		"Family members checking in on me",
-		"A friend I was planning to meet here",
-		"Nobody; I’ve kept to myself",
-		"A hotel concierge about local attractions",
-		"A taxi driver who dropped me off",
-		"Someone I met briefly at the airport"
+		"Just my boss and a couple of colleagues.",
+		"Family members checking in on me.",
+		"A friend I was planning to meet here.",
+		"Nobody; I’ve kept to myself.",
+		"A hotel concierge about local attractions.",
+		"A taxi driver who dropped me off.",
+		"Someone I met briefly at the airport."
 	  ]
 	},
 	{
@@ -339,13 +340,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"I prefer not to rely on cards when I travel",
-		"It's common where I come from",
-		"I was planning to exchange it for local currency",
-		"I carry cash for emergencies",
-		"I wasn’t sure if my card would work here",
-		"It was given to me for a business transaction",
-		"I was going to use it for tips and small purchases"
+		"I prefer not to rely on cards when I travel.",
+		"It's common where I come from.",
+		"I was planning to exchange it for local currency.",
+		"I carry cash for emergencies.",
+		"I wasn’t sure if my card would work here.",
+		"It was given to me for a business transaction.",
+		"I was going to use it for tips and small purchases."
 	  ]
 	},
 		{
@@ -353,13 +354,13 @@
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
-		"I forgot to record some details",
-		"I wasn’t aware I needed to provide a full itinerary",
-		"I made some last-minute changes",
-		"I lost some of my travel documents",
-		"I wanted to keep my plans flexible",
-		"I didn’t think the gaps were significant",
-		"I didn’t have anything planned during that time"
+		"I forgot to record some details.",
+		"I wasn’t aware I needed to provide a full itinerary.",
+		"I made some last-minute changes.",
+		"I lost some of my travel documents.",
+		"I wanted to keep my plans flexible.",
+		"I didn’t think the gaps were significant.",
+		"I didn’t have anything planned during that time."
 	  ]
 	},
 		{

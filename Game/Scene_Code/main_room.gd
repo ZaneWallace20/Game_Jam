@@ -19,7 +19,6 @@ var correct = [
 	"Ok, moving on.", 
 	"Noted.",
 	"I see.",
-	"Unexpected result.",
 	"This cooperation will help you."
 	
 	]
@@ -46,6 +45,11 @@ var question_num = 0
 
 # function to use TTS
 func speek(text: String):
+	
+	await get_tree().create_timer(0.1).timeout 
+
+	# random pitch up and down, less robotic
+	voice.pitch_scale = rng.randf_range(0.95,1.05)
 
 	# start playing static
 	static_player.play()
@@ -54,18 +58,16 @@ func speek(text: String):
 	await get_tree().physics_frame
 	voice.play()
 	static_playing = true
+	
 	# prevent moving on while talking
 	while voice.playing:
-		await get_tree().create_timer(0.25).timeout
+		await get_tree().create_timer(0.33).timeout
 
 
 # speek correct voice line
 func speek_correct():
 	
-	#minor pause
-	await get_tree().create_timer(0.5).timeout
-
-	speek(correct[correct_num])
+	await speek(correct[correct_num])
 	
 	# itterate through correct, then suffle when done
 	correct_num += 1
@@ -75,11 +77,9 @@ func speek_correct():
 
 func speek_incorrect():
 
-	#minor pause
-	await get_tree().create_timer(0.5).timeout
-	speek(incorrect[incorrect_num])
-	incorrect_num += 1
+	await speek(incorrect[incorrect_num])
 	
+	incorrect_num += 1
 	# itterate through incorrect, then suffle when done
 	if incorrect_num == len(incorrect):
 		incorrect_num = 0
@@ -152,10 +152,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 # called from hud when question answered
 func answered_question(data: String):
 	
+	await get_tree().process_frame
+	
 	# if empty assume correct
 	if questions[question_num]["user_data"] == "":
 		await speek_correct()
 		questions[question_num]["user_data"] = data
+		print("CORRECT")
 		
 	# if correct
 	elif questions[question_num]["user_data"] == data:
@@ -174,13 +177,14 @@ func answered_question(data: String):
 		# prevents pattern
 		questions.shuffle()
 		question_num = 0
-	
+	print("ASK QUESTON")
 	ask_question()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# used to stop static when not speeking
 	if !voice.playing && static_playing:
 		static_player.stop()
 		static_playing = false
+		
