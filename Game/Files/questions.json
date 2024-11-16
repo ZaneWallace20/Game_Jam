@@ -344,18 +344,18 @@
 		"Yes",
 		"No",
 		"Only if absolutely necessary",
-		"Only if attacked",
+		"Only if attacked"
 	  ]
 	},
 		{
-	  "question": "Does your team know you are hear",
+	  "question": "Does your team know you are here?",
 	  "is_mcq": true,
 	  "user_data": "",
 	  "options": [
 		"Yes",
 		"No",
 		"They will never know",
-		"They will know in under an hour",
+		"They will know in under an hour"
 	  ]
 	}
   ]

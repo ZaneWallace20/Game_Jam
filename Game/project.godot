@@ -15,9 +15,14 @@ run/main_scene="res://Scenes/home.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
 Global="*res://Imports/Global.gd"
+TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 
 [display]
 
@@ -26,6 +31,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/texttospeech/plugin.cfg")
 
 [rendering]
 
