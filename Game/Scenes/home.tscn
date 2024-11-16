@@ -1,6 +1,250 @@
-[gd_scene format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=23 format=3 uid="uid://c1vc4k3qdc3ty"]
+
+[ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
+[ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/label.tres" id="2_4tp24"]
+[ext_resource type="StyleBox" uid="uid://0ltcnlsnma7i" path="res://Imports/menu_button_hover.tres" id="2_5dbl6"]
+[ext_resource type="StyleBox" uid="uid://cq127r5h2pe31" path="res://Imports/menu_button_pressed.tres" id="3_m6taf"]
+[ext_resource type="StyleBox" uid="uid://do3hm5ksprg07" path="res://Imports/menu_button.tres" id="4_25usv"]
+[ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="6_o4xix"]
+
+[sub_resource type="Animation" id="Animation_8tsno"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Start:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Start:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Start:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Start:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_kdrxo"]
+resource_name = "clear"
+length = 0.25
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Start:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Start:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Start:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Start:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+
+[sub_resource type="Animation" id="Animation_4rgwi"]
+resource_name = "zoom"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(75, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn14n"]
+_data = {
+"RESET": SubResource("Animation_8tsno"),
+"clear": SubResource("Animation_kdrxo"),
+"zoom": SubResource("Animation_4rgwi")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokc6"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_vy2op"]
+sky_material = SubResource("ProceduralSkyMaterial_sokc6")
+
+[sub_resource type="Environment" id="Environment_vt2mp"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_vy2op")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgcym"]
+albedo_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sk15j"]
+material = SubResource("StandardMaterial3D_wgcym")
+size = Vector2(50, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gwo8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3c0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65iri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t806v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyht0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge3ye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q4u2"]
 
 [node name="Home" type="Node3D"]
+script = ExtResource("1_5ekg3")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.992546, -0.0127388, 0.121202, 0, 0.994522, 0.104528, -0.121869, -0.103749, 0.987109, 0, 0.25, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cam")
+libraries = {
+"": SubResource("AnimationLibrary_pn14n")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cam")
+libraries = {
+"": SubResource("AnimationLibrary_pn14n")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vt2mp")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.373)
+mesh = SubResource("PlaneMesh_sk15j")
+skeleton = NodePath("../Cam")
+
+[node name="Cam" type="Camera3D" parent="."]
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -32.0
+offset_right = 75.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1gwo8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_p3c0b")
+theme_override_styles/disabled = ExtResource("3_m6taf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_65iri")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t806v")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cyht0")
+theme_override_styles/hover = ExtResource("2_5dbl6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ge3ye")
+theme_override_styles/pressed = ExtResource("3_m6taf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2q4u2")
+theme_override_styles/normal = ExtResource("4_25usv")
+
+[node name="Label" type="Label" parent="Start"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -33.5
+offset_right = 57.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = ExtResource("2_4tp24")
+horizontal_alignment = 1
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="tv" parent="." instance=ExtResource("6_o4xix")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

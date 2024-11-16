@@ -1,5 +1,6 @@
 extends Node2D
 @onready var seconds: Label = $ColorRect/Label/Seconds
+@onready var hud: Node2D = $"."
 
 var total_seconds = 0
 
