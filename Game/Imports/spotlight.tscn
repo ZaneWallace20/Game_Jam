@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd0277cenuuyp"]
+[gd_scene load_steps=5 format=3 uid="uid://d0fmrbgyi1bqx"]
 
 [ext_resource type="PackedScene" uid="uid://y2sfqjox7ynk" path="res://Models/Spotlight/SpotlightTexture.gltf" id="1_6lvtg"]
 [ext_resource type="Script" path="res://Imports/flickeringLight.gd" id="2_umgql"]
