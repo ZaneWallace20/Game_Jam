@@ -21,6 +21,9 @@ var tv_words = []
 var current_voice_line = []
 var MAX_LENGTH = 80
 
+var total_failed_lies = 0
+var total_truthes = 0
+
 # list of correct voice lines
 var correct = [
 	"Very well.",
@@ -70,7 +73,6 @@ func update_words(clear = false):
 
 # function to use TTS
 func speak(text: String):
-	
 	update_words(true)
 	current_voice_line = text.split(" ")
 	await get_tree().create_timer(0.1).timeout 
@@ -115,6 +117,7 @@ func speak_incorrect():
 	if incorrect_num == len(incorrect):
 		incorrect_num = 0
 		incorrect.shuffle()
+	total_failed_lies += 1
 
 func start_question():
 	
@@ -196,7 +199,18 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 	
 func answerd_truth():
-	await speak_correct()
+	
+	
+	
+	
+	if questions[question_num]["user_data"] == "" || questions[question_num]["user_data"] == "TRUTH":
+		await speak_correct()
+		
+		if questions[question_num]["user_data"] != "TRUTH":
+			total_truthes += 1
+			questions[question_num]["user_data"] = "TRUTH"
+	else:
+		await speak_incorrect()
 	
 	
 	start_question()
