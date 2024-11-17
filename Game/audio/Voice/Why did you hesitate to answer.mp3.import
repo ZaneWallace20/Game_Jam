@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciingx1ic3v4y"
+path="res://.godot/imported/why did you hesitate to answer.mp3-80e03f540049752982de9620d1226ce7.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/why did you hesitate to answer.mp3"
+dest_files=["res://.godot/imported/why did you hesitate to answer.mp3-80e03f540049752982de9620d1226ce7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

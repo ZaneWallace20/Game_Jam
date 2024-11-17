@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dalwvw24nrtj8"
+path="res://.godot/imported/where do you live.mp3-07da9cbec29e6ee017d9b4137af33c18.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/where do you live.mp3"
+dest_files=["res://.godot/imported/where do you live.mp3-07da9cbec29e6ee017d9b4137af33c18.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

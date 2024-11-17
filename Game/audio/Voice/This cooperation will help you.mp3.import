@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://geatgxgs2alr"
+path="res://.godot/imported/this cooperation will help you.mp3-4a65d66c6a989751ef4d661e7f4d1ff2.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/this cooperation will help you.mp3"
+dest_files=["res://.godot/imported/this cooperation will help you.mp3-4a65d66c6a989751ef4d661e7f4d1ff2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

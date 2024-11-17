@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cf5mhai6u1u7p"
+path="res://.godot/imported/where were you born.mp3-ea0c21085a46647b4e48e3fe01886cdf.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/where were you born.mp3"
+dest_files=["res://.godot/imported/where were you born.mp3-ea0c21085a46647b4e48e3fe01886cdf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
