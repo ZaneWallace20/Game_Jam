@@ -50,9 +50,6 @@ func set_up_questions(data: Array):
 		# dup default button
 		var temp_button = button.duplicate()
 		
-		# disconnect to prevent bugs
-		temp_button.disconnect("pressed",self.pressed)
-		
 		# connect the button to the pressed func with the i peramater
 		temp_button.connect("pressed",self.pressed.bind(i))
 		temp_button.get_child(0).text = i
@@ -66,7 +63,6 @@ func _ready() -> void:
 	
 	# start
 	reset_grid()
-
 
 func pressed(data: String) -> void:
 	

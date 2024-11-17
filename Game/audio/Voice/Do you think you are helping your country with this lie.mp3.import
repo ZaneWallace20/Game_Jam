@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk4ghqim5kg5o"
+path="res://.godot/imported/do you think you are helping your country with this lie.mp3-39f517697ac9e6df3082e1bc77415e53.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/do you think you are helping your country with this lie.mp3"
+dest_files=["res://.godot/imported/do you think you are helping your country with this lie.mp3-39f517697ac9e6df3082e1bc77415e53.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byljotqxpludv"
+path="res://.godot/imported/who have you been in contact with recently.mp3-f49dcf8bd65f0043349caa768016fb58.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/who have you been in contact with recently.mp3"
+dest_files=["res://.godot/imported/who have you been in contact with recently.mp3-f49dcf8bd65f0043349caa768016fb58.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

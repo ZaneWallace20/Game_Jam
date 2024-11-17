@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfmvggogiacqp"
+path="res://.godot/imported/who is your employer.mp3-63877a274c1b8c6b7ce898d8d02700c8.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/who is your employer.mp3"
+dest_files=["res://.godot/imported/who is your employer.mp3-63877a274c1b8c6b7ce898d8d02700c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
