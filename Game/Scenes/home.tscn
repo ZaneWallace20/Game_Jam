@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=24 format=3 uid="uid://c1vc4k3qdc3ty"]
 
 [ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
 [ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/label.tres" id="2_4tp24"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="5_8ik76"]
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="6_o4xix"]
 [ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/header.tres" id="8_0mcc2"]
+[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="10_4fm15"]
 [ext_resource type="LabelSettings" uid="uid://d16dm4kn37tqk" path="res://Imports/sub_title.tres" id="10_xylnq"]
 
 [sub_resource type="Animation" id="Animation_8tsno"]
@@ -232,28 +233,34 @@ vertical_alignment = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -190.5
-offset_top = 50.0
-offset_right = 190.5
-offset_bottom = 180.0
+offset_left = -947.0
+offset_top = 75.0
+offset_right = -566.0
+offset_bottom = 205.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("10_4fm15")
 text = "REDACTED"
 label_settings = ExtResource("8_0mcc2")
+horizontal_alignment = 1
 
-[node name="title2" type="Label" parent="title"]
-layout_mode = 1
+[node name="title2" type="Label" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -154.0
-offset_top = -28.0
-offset_right = 154.0
+offset_left = -470.0
+offset_top = -71.9999
+offset_right = -162.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("10_4fm15")
 text = "Aiden Kimball and Zane Wallace"
 label_settings = ExtResource("10_xylnq")
+horizontal_alignment = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

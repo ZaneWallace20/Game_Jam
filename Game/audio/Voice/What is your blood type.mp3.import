@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dxbqp0rdysda7"
-path="res://.godot/imported/what is your blood type.mp3-94ed205f190de38d3047e5d1522d1eb9.mp3str"
+path="res://.godot/imported/What is your blood type.mp3-2b727d1150be07a67f3647352089166b.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/what is your blood type.mp3"
-dest_files=["res://.godot/imported/what is your blood type.mp3-94ed205f190de38d3047e5d1522d1eb9.mp3str"]
+source_file="res://audio/Voice/What is your blood type.mp3"
+dest_files=["res://.godot/imported/What is your blood type.mp3-2b727d1150be07a67f3647352089166b.mp3str"]
 
 [params]
 
