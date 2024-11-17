@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://berfh5x01lwck"
-path="res://.godot/imported/Why should we believe you.mp3-48358600b6279dc93a4db54c760937e8.mp3str"
+path="res://.godot/imported/why should we believe you.mp3-ae8c567e840a9baf119da58ca11a5a99.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/Why should we believe you.mp3"
-dest_files=["res://.godot/imported/Why should we believe you.mp3-48358600b6279dc93a4db54c760937e8.mp3str"]
+source_file="res://audio/Voice/why should we believe you.mp3"
+dest_files=["res://.godot/imported/why should we believe you.mp3-ae8c567e840a9baf119da58ca11a5a99.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ciingx1ic3v4y"
-path="res://.godot/imported/Why did you hesitate to answer.mp3-45243ce5d4ade481c33a17be370ed26d.mp3str"
+path="res://.godot/imported/why did you hesitate to answer.mp3-80e03f540049752982de9620d1226ce7.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/Why did you hesitate to answer.mp3"
-dest_files=["res://.godot/imported/Why did you hesitate to answer.mp3-45243ce5d4ade481c33a17be370ed26d.mp3str"]
+source_file="res://audio/Voice/why did you hesitate to answer.mp3"
+dest_files=["res://.godot/imported/why did you hesitate to answer.mp3-80e03f540049752982de9620d1226ce7.mp3str"]
 
 [params]
 

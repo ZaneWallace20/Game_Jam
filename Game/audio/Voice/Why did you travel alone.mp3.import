@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bb1yds52coxya"
-path="res://.godot/imported/Why did you travel alone.mp3-61085e637cb369f7aa3b530028625fb3.mp3str"
+path="res://.godot/imported/why did you travel alone.mp3-c9f8bcd019b8713c6a094de124145ea7.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/Why did you travel alone.mp3"
-dest_files=["res://.godot/imported/Why did you travel alone.mp3-61085e637cb369f7aa3b530028625fb3.mp3str"]
+source_file="res://audio/Voice/why did you travel alone.mp3"
+dest_files=["res://.godot/imported/why did you travel alone.mp3-c9f8bcd019b8713c6a094de124145ea7.mp3str"]
 
 [params]
 
