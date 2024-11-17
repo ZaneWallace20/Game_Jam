@@ -26,7 +26,6 @@ func get_voice_audio(text: String):
 	text = text.substr(0,text.length()-1) + ".mp3"
 	
 	var dir = "res://audio/Voice/"
-	
 	var stream: AudioStream = ResourceLoader.load(dir + text) 
 	return stream
 	
