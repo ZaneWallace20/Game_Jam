@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dri86y3xmjwod"]
+
+[ext_resource type="AudioStream" uid="uid://drhgstajtx21" path="res://audio/gunshot.mp3" id="1_ffu3r"]
+
+[node name="Audio" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_ffu3r")
