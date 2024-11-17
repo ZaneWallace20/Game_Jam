@@ -25,11 +25,11 @@ func reset_grid():
 	# make the default button clickable
 	button.disabled = false
 	
-	button.get_child(0).text = "Lie"
+	button.get_child(0).text = "Try and Tell a Lie"
 	button.connect("pressed",self.pressed.bind("LIE"))
 	var temp_button = button.duplicate()
 	
-	temp_button.get_child(0).text = "Truth"
+	temp_button.get_child(0).text = "Tell the Truth"
 	temp_button.connect("pressed",self.pressed.bind("TRUTH"))
 	button_grid.add_child(temp_button)
 	

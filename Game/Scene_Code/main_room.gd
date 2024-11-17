@@ -117,6 +117,18 @@ func speak_incorrect():
 		incorrect.shuffle()
 
 func start_question():
+	
+	# inc to get a new question
+	question_num += 1
+	
+	# if halfway done start asking same questions
+	if question_num >= len(questions)/ 2:
+		
+		# prevents pattern
+		questions.shuffle()
+		question_num = 0
+	print("ASK QUESTON")
+	
 	# ask the question
 	await speak(questions[question_num]["question"])
 	
@@ -185,6 +197,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 func answerd_truth():
 	await speak_correct()
+	
+	
 	start_question()
 # called from hud when question answered
 func answered_question(data: String):
@@ -205,16 +219,7 @@ func answered_question(data: String):
 	else:
 		await speak_incorrect()
 	
-	# inc to get a new question
-	question_num += 1
-	
-	# if halfway done start asking same questions
-	if question_num >= len(questions)/ 2:
-		
-		# prevents pattern
-		questions.shuffle()
-		question_num = 0
-	print("ASK QUESTON")
+
 	start_question()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
