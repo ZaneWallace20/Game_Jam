@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: Control = $Hud
-@onready var static_player: AudioStreamPlayer = $static
+@onready var static_player: AudioStreamPlayer3D = $static
 @onready var voice: AudioStreamPlayer3D = $voice
 
 var static_playing = false
@@ -148,6 +148,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		
 		# start question
 		ask_question()
+
+
+func answerd_truth():
+	await speek_correct()
 
 # called from hud when question answered
 func answered_question(data: String):
