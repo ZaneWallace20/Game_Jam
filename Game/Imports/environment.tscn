@@ -12,10 +12,13 @@ sky_material = SubResource("ProceduralSkyMaterial_sokc6")
 
 [sub_resource type="Environment" id="Environment_vt2mp"]
 background_mode = 2
-background_energy_multiplier = 0.25
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_vy2op")
+ambient_light_source = 1
+ambient_light_sky_contribution = 0.01
+reflected_light_source = 2
 tonemap_mode = 2
-glow_enabled = true
+tonemap_exposure = 0.2
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
@@ -24,5 +27,7 @@ environment = SubResource("Environment_vt2mp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.2
+light_volumetric_fog_energy = 3.0
 
 [node name="fog" parent="." instance=ExtResource("1_idvwb")]
