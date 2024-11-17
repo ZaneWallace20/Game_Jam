@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dane34c5ixkkf"]
+[gd_scene load_steps=13 format=3 uid="uid://dane34c5ixkkf"]
 
 [ext_resource type="Script" path="res://Imports/rifle.gd" id="1_n01qq"]
 [ext_resource type="AudioStream" uid="uid://7kjltyxqy2cb" path="res://audio/lever.mp3" id="1_vlprc"]
@@ -37,9 +37,6 @@ material = SubResource("StandardMaterial3D_6gktj")
 size = Vector2(0.25, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l54no"]
-size = Vector3(0.2, 0.2, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_nefih"]
 size = Vector3(0.2, 0.2, 1)
 
 [sub_resource type="Animation" id="Animation_6wwsr"]
@@ -204,7 +201,6 @@ shape = SubResource("BoxShape3D_l54no")
 
 [node name="Gun" type="MeshInstance3D" parent="RigidBody3D"]
 layers = 524288
-mesh = SubResource("PrismMesh_nefih")
 skeleton = NodePath("../..")
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="RigidBody3D/Gun"]
