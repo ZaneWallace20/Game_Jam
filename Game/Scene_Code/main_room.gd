@@ -10,7 +10,7 @@ extends Node3D
 
 @export var MAX_TRUTHS_ALLOWED = 5
 @export var MAX_FAILED_LIES_ALLOWED = 5
-@export var QUESTIONS_RIGHT_TO_WIN = 25
+@export var QUESTIONS_RIGHT_TO_WIN = 35
 
 var talk_delay = 0.0
 var set_talk_delay = 0.0
@@ -85,7 +85,7 @@ func update_words(clear = false):
 			if len(current_voice_line[0]) > 5:
 				set_talk_delay = 0.3
 			else:
-				set_talk_delay = 0.25
+				set_talk_delay = 0.23
 
 		if len(current_voice_line) > 15:
 			set_talk_delay -= 0.1
@@ -168,10 +168,10 @@ func start_question():
 	if total_correct >= QUESTIONS_RIGHT_TO_WIN:
 		await speak("It seems to me that you are not telling us the whole story, but alas we have laws in our civilized nation; you may go.")
 		await get_tree().create_timer(0.2).timeout
-		
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
 		return
+		
 	# inc to get a new question
 	question_num += 1
 	# if halfway done start asking same questions
@@ -259,11 +259,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func answerd_truth():
 
 	if questions[question_num]["user_data"] == "" || questions[question_num]["user_data"] == "TRUTH":
-		await speak_correct()
+		
 		
 		if questions[question_num]["user_data"] != "TRUTH":
 			total_truthes += 1
 			questions[question_num]["user_data"] = "TRUTH"
+		await speak_correct()
 	else:
 		await speak_incorrect()
 	
@@ -277,10 +278,11 @@ func answered_question(data: String):
 	
 	# if empty assume correct
 	if questions[question_num]["user_data"] == "":
-		await speak_correct()
 		questions[question_num]["user_data"] = data
 		print("CORRECT")
 		
+		await speak_correct()
+
 	# if correct
 	elif questions[question_num]["user_data"] == data:
 		await speak_correct()
