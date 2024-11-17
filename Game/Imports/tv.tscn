@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjcty7p4rm4e"]
-
-[ext_resource type="BoxMesh" uid="uid://c2hj5fpwusy21" path="res://Models/TVModel/TVTexture.glb" id="1_t6av6"]
+[gd_scene format=3 uid="uid://cjcty7p4rm4e"]
 
 [node name="tv" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -3)
-mesh = ExtResource("1_t6av6")
