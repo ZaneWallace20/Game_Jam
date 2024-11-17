@@ -7,6 +7,9 @@ extends Node3D
 @onready var start: Button = $Start
 
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func _on_start_pressed() -> void:
 	
 	# when starting play the zoom animation
@@ -18,6 +21,8 @@ func _on_start_pressed() -> void:
 	
 	# tell the loading file what to load
 	Global.next_scene = "res://Scenes/main_room.tscn"
+	Global.min_time = 0.5
+	
 	
 	# disable start button to prevent bugs
 	start.disabled = true

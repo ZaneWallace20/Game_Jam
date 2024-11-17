@@ -5,6 +5,9 @@ extends Node3D
 @onready var static_player: AudioStreamPlayer3D = $static
 @onready var voice: AudioStreamPlayer3D = $voice
 @onready var tv_text: Label = $Cam/tv/tv_text
+@onready var rifle: Node3D = $Rifle
+@onready var white_rect: ColorRect = $white
+
 var talk_delay = 0.0
 var set_talk_delay = 0.0
 
@@ -118,8 +121,19 @@ func speak_incorrect():
 		incorrect_num = 0
 		incorrect.shuffle()
 	total_failed_lies += 1
+	
+	
 
 func start_question():
+	
+	
+	if total_truthes >= 1:
+		await speak("We have enough information, you and I are done here.")
+		rifle.fire()
+
+		return
+		
+	
 	
 	# inc to get a new question
 	question_num += 1
@@ -199,10 +213,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 	
 func answerd_truth():
-	
-	
-	
-	
+
 	if questions[question_num]["user_data"] == "" || questions[question_num]["user_data"] == "TRUTH":
 		await speak_correct()
 		
@@ -250,4 +261,12 @@ func _process(delta: float) -> void:
 			update_words()
 			talk_delay = set_talk_delay
 		
-		
+
+func white_out():
+	white_rect.visible = true
+	
+
+func quit():
+	Global.min_time = 0
+	Global.next_scene = "res://Scenes/home.tscn"
+	get_tree().change_scene_to_file("res://Scenes/loading.tscn")

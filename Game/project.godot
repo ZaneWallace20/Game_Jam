@@ -22,6 +22,7 @@ general/text_to_speech=true
 [autoload]
 
 Global="*res://Imports/Global.gd"
+Audio="*res://Imports/gun_shot.tscn"
 
 [display]
 
