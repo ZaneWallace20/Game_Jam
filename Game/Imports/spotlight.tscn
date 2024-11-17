@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd0277cenuuyp"]
+[gd_scene load_steps=6 format=3 uid="uid://bd0277cenuuyp"]
 
 [ext_resource type="PackedScene" uid="uid://y2sfqjox7ynk" path="res://Models/Spotlight/SpotlightTexture.gltf" id="1_6lvtg"]
 [ext_resource type="Script" path="res://Imports/flickeringLight.gd" id="2_umgql"]
+[ext_resource type="Script" path="res://Imports/omni_light_3d.gd" id="3_c3nst"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwmy1"]
 noise_type = 0
@@ -31,5 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15857, 0)
 light_color = Color(1, 1, 0.917647, 1)
 light_energy = 2.5
 omni_range = 0.222328
+script = ExtResource("3_c3nst")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SpotlightTexture"]

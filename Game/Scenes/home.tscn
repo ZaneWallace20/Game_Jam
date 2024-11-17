@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="6_o4xix"]
 [ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/header.tres" id="8_0mcc2"]
 [ext_resource type="LabelSettings" uid="uid://d16dm4kn37tqk" path="res://Imports/sub_title.tres" id="10_xylnq"]
-[ext_resource type="PackedScene" path="res://Imports/spotlight.tscn" id="13_ajft3"]
+[ext_resource type="PackedScene" uid="uid://bd0277cenuuyp" path="res://Imports/spotlight.tscn" id="13_ajft3"]
 
 [sub_resource type="Animation" id="Animation_8tsno"]
 length = 0.001
