@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://des02qgtg2wkk"
-path="res://.godot/imported/why were you carrying a briefcase.mp3-7d3b6e2e48f58ba4ba4c9904558dc141.mp3str"
+path="res://.godot/imported/Why were you carrying a briefcase.mp3-ecb9fab119cd953cc1d10584c8d72443.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/why were you carrying a briefcase.mp3"
-dest_files=["res://.godot/imported/why were you carrying a briefcase.mp3-7d3b6e2e48f58ba4ba4c9904558dc141.mp3str"]
+source_file="res://audio/Voice/Why were you carrying a briefcase.mp3"
+dest_files=["res://.godot/imported/Why were you carrying a briefcase.mp3-ecb9fab119cd953cc1d10584c8d72443.mp3str"]
 
 [params]
 

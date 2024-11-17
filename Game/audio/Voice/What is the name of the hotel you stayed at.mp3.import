@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cghn2ytwsslf2"
-path="res://.godot/imported/what is the name of the hotel you stayed at.mp3-02faf376178cdfa45022df641ff35ac7.mp3str"
+path="res://.godot/imported/What is the name of the hotel you stayed at.mp3-3d6c62620d0cfb8bfd50dc22b6d581de.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/what is the name of the hotel you stayed at.mp3"
-dest_files=["res://.godot/imported/what is the name of the hotel you stayed at.mp3-02faf376178cdfa45022df641ff35ac7.mp3str"]
+source_file="res://audio/Voice/What is the name of the hotel you stayed at.mp3"
+dest_files=["res://.godot/imported/What is the name of the hotel you stayed at.mp3-3d6c62620d0cfb8bfd50dc22b6d581de.mp3str"]
 
 [params]
 

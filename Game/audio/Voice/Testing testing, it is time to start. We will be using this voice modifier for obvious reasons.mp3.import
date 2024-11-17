@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://p53cn3v7xivo"
-path="res://.godot/imported/testing testing, it is time to start. we will be using this voice modifier for obvious reasons.mp3-78ef773bb32b7a321bf2737fed106137.mp3str"
+path="res://.godot/imported/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3-d88d3e55b30d7abc2a483dac740dc806.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/testing testing, it is time to start. we will be using this voice modifier for obvious reasons.mp3"
-dest_files=["res://.godot/imported/testing testing, it is time to start. we will be using this voice modifier for obvious reasons.mp3-78ef773bb32b7a321bf2737fed106137.mp3str"]
+source_file="res://audio/Voice/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3"
+dest_files=["res://.godot/imported/Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.mp3-d88d3e55b30d7abc2a483dac740dc806.mp3str"]
 
 [params]
 
