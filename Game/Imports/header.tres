@@ -1,5 +1,8 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://ctvpxogltaffy"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ctvpxogltaffy"]
+
+[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="1_dkvf6"]
 
 [resource]
-font_size = 75
+font = ExtResource("1_dkvf6")
+font_size = 200
 font_color = Color(0.54902, 0, 0, 1)
