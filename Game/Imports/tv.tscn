@@ -1,4 +1,19 @@
-[gd_scene format=3 uid="uid://cjcty7p4rm4e"]
+[gd_scene load_steps=2 format=3 uid="uid://cjcty7p4rm4e"]
+
+[ext_resource type="PackedScene" uid="uid://c2hj5fpwusy21" path="res://Models/TVModel/TVTexture.glb" id="1_rb33d"]
 
 [node name="tv" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="TVTexture" parent="." instance=ExtResource("1_rb33d")]
+
+[node name="TVLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0458395, 0.8, 0.383928)
+light_color = Color(1, 1, 0.862745, 1)
+omni_range = 1.0
+omni_attenuation = 1.75
+
+[node name="TVCastLight" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0.750792, 0)
+light_energy = 0.5
+spot_angle = 40.0

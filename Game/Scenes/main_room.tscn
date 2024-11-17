@@ -73,7 +73,7 @@ libraries = {
 visible = false
 
 [node name="tv" parent="." instance=ExtResource("3_1t4bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.756759, -3)
 
 [node name="Cam" type="Camera3D" parent="."]
 current = true

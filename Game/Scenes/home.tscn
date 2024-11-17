@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=26 format=3 uid="uid://c1vc4k3qdc3ty"]
 
 [ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
 [ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/label.tres" id="2_4tp24"]
@@ -7,7 +7,28 @@
 [ext_resource type="StyleBox" uid="uid://do3hm5ksprg07" path="res://Imports/menu_button.tres" id="4_25usv"]
 [ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="5_8ik76"]
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="6_o4xix"]
-[ext_resource type="PackedScene" uid="uid://c2hj5fpwusy21" path="res://Models/TVModel/TVTexture.glb" id="7_qwqev"]
+[ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/header.tres" id="8_0mcc2"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_qwvmg"]
+albedo = Color(0.154876, 0.154876, 0.154876, 1)
+edge_fade = 3.605
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokc6"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_vy2op"]
+sky_material = SubResource("ProceduralSkyMaterial_sokc6")
+
+[sub_resource type="Environment" id="Environment_vt2mp"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_vy2op")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 
 [sub_resource type="Animation" id="Animation_8tsno"]
 length = 0.001
@@ -138,23 +159,8 @@ _data = {
 "zoom": SubResource("Animation_4rgwi")
 }
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokc6"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_vy2op"]
-sky_material = SubResource("ProceduralSkyMaterial_sokc6")
-
-[sub_resource type="Environment" id="Environment_vt2mp"]
-background_mode = 2
-background_energy_multiplier = 0.25
-sky = SubResource("Sky_vy2op")
-tonemap_mode = 2
-glow_enabled = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgcym"]
-albedo_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+albedo_color = Color(0.133196, 0.133196, 0.133196, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sk15j"]
 material = SubResource("StandardMaterial3D_wgcym")
@@ -180,6 +186,24 @@ script = ExtResource("1_5ekg3")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 
+[node name="fog" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8346)
+size = Vector3(70, 50, 20)
+material = SubResource("FogMaterial_qwvmg")
+
+[node name="fog2" type="FogVolume" parent="fog"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+size = Vector3(70, 50, 20)
+material = SubResource("FogMaterial_qwvmg")
+
+[node name="fog3" type="FogVolume" parent="fog"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+size = Vector3(70, 50, 20)
+material = SubResource("FogMaterial_qwvmg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vt2mp")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Cam")
 libraries = {
@@ -192,16 +216,17 @@ libraries = {
 "": SubResource("AnimationLibrary_pn14n")
 }
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_vt2mp")
-
 [node name="floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.373)
 mesh = SubResource("PlaneMesh_sk15j")
 skeleton = NodePath("../Cam")
 
 [node name="Cam" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.5, 0)
+
+[node name="tv" parent="Cam" instance=ExtResource("6_o4xix")]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, -0.834347, -3.08446)
+skeleton = NodePath("../..")
 
 [node name="Start" type="Button" parent="."]
 self_modulate = Color(2, 2, 2, 1)
@@ -211,9 +236,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -95.0
-offset_top = -17.0
+offset_top = -33.0
 offset_right = 55.0
-offset_bottom = 47.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1gwo8")
@@ -232,15 +257,15 @@ theme_override_styles/normal = ExtResource("4_25usv")
 modulate = Color(2, 2, 2, 1)
 self_modulate = Color(2, 2, 2, 1)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.632813
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.632813
+anchor_bottom = 0.5
 offset_left = -57.0
-offset_top = -33.5
+offset_top = -28.0
 offset_right = 57.0
-offset_bottom = 33.5
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_8ik76")
@@ -248,18 +273,18 @@ text = "Start"
 label_settings = ExtResource("2_4tp24")
 horizontal_alignment = 1
 vertical_alignment = 3
-metadata/_edit_use_anchors_ = true
 
-[node name="tv" parent="." instance=ExtResource("6_o4xix")]
-
-[node name="TVTexture" parent="." instance=ExtResource("7_qwqev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.095, -3)
-
-[node name="TVLight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071529, -0.28416, -2.55237)
-light_color = Color(1, 1, 0.862745, 1)
-omni_range = 1.0
-omni_attenuation = 1.75
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_top = 50.0
+offset_right = 152.5
+offset_bottom = 133.0
+grow_horizontal = 2
+text = "REDACTED"
+label_settings = ExtResource("8_0mcc2")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

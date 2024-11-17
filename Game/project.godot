@@ -22,6 +22,7 @@ general/text_to_speech=true
 [autoload]
 
 Global="*res://Imports/Global.gd"
+TextToSpeechEngine="*res://addons/texttospeech/TextToSpeechEngine.gd"
 
 [display]
 
@@ -37,5 +38,4 @@ enabled=PackedStringArray()
 
 [rendering]
 
-renderer/rendering_method="mobile"
 viewport/hdr_2d=true
