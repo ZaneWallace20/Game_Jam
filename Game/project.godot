@@ -13,7 +13,11 @@ config_version=5
 config/name="Game"
 run/main_scene="res://Scenes/home.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+config/icon="res://icon.png"
+boot_splash/minimum_display_time=700
 
 [audio]
 
