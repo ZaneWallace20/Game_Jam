@@ -4,6 +4,10 @@ extends Node3D
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer3D = $static
 @onready var voice: AudioStreamPlayer3D = $voice
+@onready var tv_text: Label = $Cam/tv/tv_text
+var talk_delay = 0.0
+var set_talk_delay = 0.0
+
 
 var static_playing = false
 var questions: Array
@@ -12,6 +16,10 @@ var File_Pros = preload("res://Imports/file_pross.gd").new()
 
 # used for getting random nums
 var rng = RandomNumberGenerator.new()
+
+var tv_words = []
+var current_voice_line = []
+var MAX_LENGTH = 80
 
 # list of correct voice lines
 var correct = [
@@ -23,7 +31,7 @@ var correct = [
 	
 	]
 
-# used to prevent repeting voice lines
+# used to help prevent repeting voice lines
 var correct_num = 0
 
 # list of incorrect voice lines
@@ -37,17 +45,36 @@ var incorrect = [
 	"Don't test our patience."
 	]
 
-# used to prevent repeting voice lines
+# used to help prevent repeting voice lines
 var incorrect_num = 0
 
 # current queston
 var question_num = 0
 
-# function to use TTS
-func speek(text: String):
-	
-	await get_tree().create_timer(0.1).timeout 
+func update_words(clear = false):
+	if clear:
+		tv_text.text = ""
+		tv_words = []
+		return
+	if len(tv_text.text) > MAX_LENGTH:
+		tv_words.pop_front()
+	if len(current_voice_line) > 0:
+		tv_words.append(current_voice_line[0])
+		current_voice_line.remove_at(0)
+		var temp_string = "\n"
+		for i in tv_words:
+			temp_string += i + " "
+		temp_string.trim_suffix(" ")
+		tv_text.text = temp_string
 
+
+# function to use TTS
+func speak(text: String):
+	
+	update_words(true)
+	current_voice_line = text.split(" ")
+	await get_tree().create_timer(0.1).timeout 
+	
 	# random pitch up and down, less robotic
 	voice.pitch_scale = rng.randf_range(0.95,1.05)
 
@@ -55,6 +82,10 @@ func speek(text: String):
 	static_player.play()
 	
 	voice.stream = File_Pros.get_voice_audio(text)
+	
+	talk_delay = ((voice.stream.get_length() - 0.9) * (1/voice.pitch_scale)) / len(current_voice_line)
+	set_talk_delay = talk_delay
+	
 	await get_tree().physics_frame
 	voice.play()
 	static_playing = true
@@ -64,10 +95,10 @@ func speek(text: String):
 		await get_tree().create_timer(0.33).timeout
 
 
-# speek correct voice line
-func speek_correct():
+# speak correct voice line
+func speak_correct():
 	
-	await speek(correct[correct_num])
+	await speak(correct[correct_num])
 	
 	# itterate through correct, then suffle when done
 	correct_num += 1
@@ -75,9 +106,9 @@ func speek_correct():
 		correct_num = 0
 		correct.shuffle()
 
-func speek_incorrect():
+func speak_incorrect():
 
-	await speek(incorrect[incorrect_num])
+	await speak(incorrect[incorrect_num])
 	
 	incorrect_num += 1
 	# itterate through incorrect, then suffle when done
@@ -85,17 +116,19 @@ func speek_incorrect():
 		incorrect_num = 0
 		incorrect.shuffle()
 
-func ask_question():
-	
+func start_question():
 	# ask the question
-	await speek(questions[question_num]["question"])
+	await speak(questions[question_num]["question"])
+	
+	hud.reset_grid()
+
+func ask_question():
 
 	# default amount of data to add
 	var loop_amount = 4
 	
 	# all the options avalible in this question (min 4)
 	var temp_ask = questions[question_num]["options"].duplicate(true)
-	
 	
 	var send_data = []
 	
@@ -144,15 +177,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "zoom_out":
 		hud.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		await speek("Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.")
+		await speak("Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.")
 		
 		# start question
-		ask_question()
+		start_question()
 
-
+	
 func answerd_truth():
-	await speek_correct()
-
+	await speak_correct()
+	start_question()
 # called from hud when question answered
 func answered_question(data: String):
 	
@@ -160,17 +193,17 @@ func answered_question(data: String):
 	
 	# if empty assume correct
 	if questions[question_num]["user_data"] == "":
-		await speek_correct()
+		await speak_correct()
 		questions[question_num]["user_data"] = data
 		print("CORRECT")
 		
 	# if correct
 	elif questions[question_num]["user_data"] == data:
-		await speek_correct()
+		await speak_correct()
 		
 	# if not corrrect
 	else:
-		await speek_incorrect()
+		await speak_incorrect()
 	
 	# inc to get a new question
 	question_num += 1
@@ -182,13 +215,20 @@ func answered_question(data: String):
 		questions.shuffle()
 		question_num = 0
 	print("ASK QUESTON")
-	ask_question()
+	start_question()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	
-	# used to stop static when not speeking
+	# used to stop static when not speaking
 	if !voice.playing && static_playing:
 		static_player.stop()
 		static_playing = false
+	elif voice.playing:
+		if talk_delay >= 0:
+			talk_delay -= delta
+		else:
+			update_words()
+			talk_delay = set_talk_delay
+		
 		

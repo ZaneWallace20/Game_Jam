@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://diln3sfcevjsm"]
+
+[ext_resource type="PackedScene" uid="uid://morlwvo7atv4" path="res://Imports/fog.tscn" id="1_idvwb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokc6"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_vy2op"]
+sky_material = SubResource("ProceduralSkyMaterial_sokc6")
+
+[sub_resource type="Environment" id="Environment_vt2mp"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_vy2op")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_vt2mp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="fog" parent="." instance=ExtResource("1_idvwb")]

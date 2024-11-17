@@ -11,14 +11,30 @@ var total_seconds = 0
 
 # will be used to give lie/truth option
 func reset_grid():
-	button.get_child(0).text = "Lie"
 	
+	button.disconnect("pressed",self.pressed)
+	
+	# show the buttons
+	animation_player.play("show_buttons")
+	
+	# remove old buttons
+	for i in button_grid.get_children():
+		if i.name != "temp_button":
+			i.free()
+	
+	# make the default button clickable
+	button.disabled = false
+	
+	button.get_child(0).text = "Lie"
+	button.connect("pressed",self.pressed.bind("LIE"))
 	var temp_button = button.duplicate()
 	
 	temp_button.get_child(0).text = "Truth"
-	
+	temp_button.connect("pressed",self.pressed.bind("TRUTH"))
 	button_grid.add_child(temp_button)
+	
 	button_grid.set_anchors_preset(Control.PRESET_CENTER)
+
 
 # grab data from main_room and set it to the buttons
 func set_up_questions(data: Array):
@@ -61,17 +77,23 @@ func _ready() -> void:
 	# on start set button to pressed to prevent bugs
 	button.connect("pressed",self.pressed.bind(""))
 	
-	# start
-	reset_grid()
 
 func pressed(data: String) -> void:
 	
+	
+	if data == "LIE":
+		main_room.ask_question()
+		return
+	elif data == "TRUTH":
+		main_room.answerd_truth()
+		
+	else:
+		# send data back to the room
+		main_room.answered_question(data)
+		
 	# when pressed hide buttons
 	animation_player.play_backwards("show_buttons")
 	
-	# send data back to the room
-	main_room.answered_question(data)
-
 	#disable all buttons to prevent bugs
 	for i in button_grid.get_children():
 		i.disabled = true
