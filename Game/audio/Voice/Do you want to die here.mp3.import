@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d3yby26ra3gge"
-path="res://.godot/imported/do you want to die here.mp3-c2290d3c2d4b42edce8d4b624f4e0c5e.mp3str"
+path="res://.godot/imported/Do you want to die here.mp3-5f67806ef6db576d8f11c54aba03763b.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/do you want to die here.mp3"
-dest_files=["res://.godot/imported/do you want to die here.mp3-c2290d3c2d4b42edce8d4b624f4e0c5e.mp3str"]
+source_file="res://audio/Voice/Do you want to die here.mp3"
+dest_files=["res://.godot/imported/Do you want to die here.mp3-5f67806ef6db576d8f11c54aba03763b.mp3str"]
 
 [params]
 

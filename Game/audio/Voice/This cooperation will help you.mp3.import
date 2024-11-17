@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://geatgxgs2alr"
-path="res://.godot/imported/this cooperation will help you.mp3-4a65d66c6a989751ef4d661e7f4d1ff2.mp3str"
+path="res://.godot/imported/This cooperation will help you.mp3-f823efe152b612b0556c107d8d457d5d.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/this cooperation will help you.mp3"
-dest_files=["res://.godot/imported/this cooperation will help you.mp3-4a65d66c6a989751ef4d661e7f4d1ff2.mp3str"]
+source_file="res://audio/Voice/This cooperation will help you.mp3"
+dest_files=["res://.godot/imported/This cooperation will help you.mp3-f823efe152b612b0556c107d8d457d5d.mp3str"]
 
 [params]
 

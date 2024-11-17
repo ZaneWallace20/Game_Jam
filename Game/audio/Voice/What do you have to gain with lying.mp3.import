@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8ec6ih3q8tlk"
-path="res://.godot/imported/what do you have to gain with lying.mp3-a1044d3348ce97e02087a3d5a2bc10c1.mp3str"
+path="res://.godot/imported/What do you have to gain with lying.mp3-8ddff509ae7600c218b91bb78fc58b5b.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/what do you have to gain with lying.mp3"
-dest_files=["res://.godot/imported/what do you have to gain with lying.mp3-a1044d3348ce97e02087a3d5a2bc10c1.mp3str"]
+source_file="res://audio/Voice/What do you have to gain with lying.mp3"
+dest_files=["res://.godot/imported/What do you have to gain with lying.mp3-8ddff509ae7600c218b91bb78fc58b5b.mp3str"]
 
 [params]
 
