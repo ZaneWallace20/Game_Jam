@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://curoh3a2hh0ig"
-path="res://.godot/imported/Do you know Igor Tolstoy.mp3-f4e7d7a327f47c3d7363c1978fb2fd09.mp3str"
+path="res://.godot/imported/do you know igor tolstoy.mp3-1ce6c45f1e0d0139e8696a622a02814b.mp3str"
 
 [deps]
 
-source_file="res://audio/Voice/Do you know Igor Tolstoy.mp3"
-dest_files=["res://.godot/imported/Do you know Igor Tolstoy.mp3-f4e7d7a327f47c3d7363c1978fb2fd09.mp3str"]
+source_file="res://audio/Voice/do you know igor tolstoy.mp3"
+dest_files=["res://.godot/imported/do you know igor tolstoy.mp3-1ce6c45f1e0d0139e8696a622a02814b.mp3str"]
 
 [params]
 
