@@ -25,6 +25,10 @@ var should_time = false
 var should_time_quick = false
 
 func quick_time_event():
+		
+		if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 		should_time_quick = true
 		progress_bar.value = 100
 		quick_progress_timer = set_quick_timer
@@ -56,6 +60,10 @@ func quick_time_event():
 
 # will be used to give lie/truth option
 func reset_grid():
+	
+	if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	should_time = true
 	progress_bar.value = 100
 	progress_timer = set_timer

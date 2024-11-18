@@ -4,13 +4,19 @@ extends Node3D
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer3D = $static
 @onready var voice: AudioStreamPlayer = $voice
-@onready var tv_text: Label = $Cam/tv/tv_text
+@onready var tv_text: Label = $"tv/2d_in_3d/layer/tv_text"
 @onready var rifle: Node3D = $Rifle
 @onready var white_rect: ColorRect = $white
+
+@onready var cam: Camera3D = $Head/Cam
+@onready var head: Node3D = $Head
+
 
 @export var MAX_TRUTHS_ALLOWED = 4
 @export var MAX_FAILED_LIES_ALLOWED = 3
 @export var QUESTIONS_RIGHT_TO_WIN = 35
+
+@export var MOUSE_SENS = 0.001
 
 var talk_delay = 0.0
 var set_talk_delay = 0.0
@@ -99,7 +105,7 @@ func update_words(clear = false):
 		set_talk_delay *= 1/voice.pitch_scale
 		tv_words.append(current_voice_line[0])
 		current_voice_line.remove_at(0)
-		var temp_string = "\n"
+		var temp_string = ""
 		for i in tv_words:
 			temp_string += i + " "
 		temp_string.trim_suffix(" ")
@@ -107,6 +113,10 @@ func update_words(clear = false):
 
 # function to use TTS
 func speak(text: String, quick_time_event = false):
+	
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 	update_words(true)
 	current_voice_line = text.split(" ")
 	await get_tree().create_timer(0.1).timeout 
@@ -171,7 +181,7 @@ func speak_incorrect():
 func start_question():
 	
 	
-
+	
 	if total_truthes >= MAX_TRUTHS_ALLOWED:
 		
 		await speak("We have enough information, you and I are done here.")
@@ -199,8 +209,7 @@ func start_question():
 		hud.quick_time_event()
 		
 		return
-	
-	
+
 	# inc to get a new question
 	question_num += 1
 	# if halfway done start asking same questions
@@ -263,11 +272,24 @@ func _ready() -> void:
 	correct.shuffle()
 	incorrect.shuffle()
 	
-func _unhandled_input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("quit"):
+		head.rotation.y = 0
+		cam.rotation.x = 0
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
 		total_correct = QUESTIONS_RIGHT_TO_WIN + 1
+	
+	if event is InputEventMouseMotion:
+		
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		
+			head.rotate_y(-event.relative.x * MOUSE_SENS)
+			
+			cam.rotate_x(-event.relative.y * MOUSE_SENS)
+			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-20),deg_to_rad(20))
+			
+			head.rotation.y = clamp(head.rotation.y,deg_to_rad(-20),deg_to_rad(20))
 		
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
