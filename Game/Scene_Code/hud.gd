@@ -18,7 +18,7 @@ var total_seconds = 0
 @export var progress_timer = 6
 var set_timer = progress_timer
 
-@export var quick_progress_timer = 0.7
+@export var quick_progress_timer = 1
 var set_quick_timer = quick_progress_timer
 
 var should_time = false

@@ -14,13 +14,15 @@ extends Node3D
 
 @export var MAX_TRUTHS_ALLOWED = 3
 @export var MAX_FAILED_LIES_ALLOWED = 3
-@export var QUESTIONS_RIGHT_TO_WIN = 35
+@export var QUESTIONS_RIGHT_TO_WIN = 25
 
 @export var MOUSE_SENS = 0.001
 
 var talk_delay = 0.0
 var set_talk_delay = 0.0
 
+
+var should_quit = false
 
 var static_playing = false
 var questions: Array
@@ -314,6 +316,8 @@ func _input(event: InputEvent) -> void:
 		# clear tv_text
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
+		should_quit = true
+		
 		
 	# if mouse
 	if event is InputEventMouseMotion:
@@ -335,7 +339,7 @@ func _input(event: InputEvent) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 	# on start when finished zooming out
-	if anim_name == "zoom_out" && total_correct < QUESTIONS_RIGHT_TO_WIN:
+	if anim_name == "zoom_out" && !should_quit:
 		hud.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		await speak("Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.")

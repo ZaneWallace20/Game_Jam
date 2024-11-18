@@ -10,9 +10,13 @@ extends Node3D
 @onready var title: Label = $title
 @onready var title_2: Label = $title2
 @onready var cam: Camera3D = $Cam
+@onready var strike: Label = $title/strike
 
 var should_go = false
 var instructions_open = false
+
+# used for getting random nums
+var rng = RandomNumberGenerator.new()
 
 func _unhandled_input(event: InputEvent) -> void:
 	
@@ -32,7 +36,14 @@ func _ready() -> void:
 		animation_player.play_backwards("zoom")
 		
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	
+	# 5% chance to show`
+	var should_show_strike = rng.randi_range(0,20) == 10
+	
+	
+	if should_show_strike:
+		strike.visible = true
+	
 func _on_start_pressed() -> void:
 	should_go = true
 	# when starting play the zoom animation

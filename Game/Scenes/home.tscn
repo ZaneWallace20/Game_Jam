@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=39 format=3 uid="uid://c1vc4k3qdc3ty"]
 
 [ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
 [ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/label.tres" id="2_4tp24"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="6_o4xix"]
 [ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/header.tres" id="8_0mcc2"]
 [ext_resource type="LabelSettings" uid="uid://d16dm4kn37tqk" path="res://Imports/sub_title.tres" id="10_xylnq"]
+[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="11_1et6h"]
 [ext_resource type="StyleBox" uid="uid://wj1c4teqyiwn" path="res://Imports/panel_menu.tres" id="13_46j0i"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/spotlight.tscn" id="13_ajft3"]
 [ext_resource type="LabelSettings" uid="uid://dewxjwu7vi2um" path="res://Imports/instructions_header.tres" id="14_1aryl"]
@@ -308,6 +309,11 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q4u2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_n4jer"]
+font = ExtResource("11_1et6h")
+font_size = 1500
+font_color = Color(0.54902, 0, 0, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wnqv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hi8f6"]
@@ -421,6 +427,26 @@ grow_horizontal = 2
 text = "REDACTED"
 label_settings = ExtResource("8_0mcc2")
 horizontal_alignment = 1
+
+[node name="strike" type="Label" parent="title"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -226.0
+offset_right = 40.0
+offset_bottom = 1357.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 0.333)
+text = "-"
+label_settings = SubResource("LabelSettings_n4jer")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="title2" type="Label" parent="."]
 anchors_preset = 7
