@@ -9,8 +9,56 @@ extends Control
 @onready var main_room := $".."
 var total_seconds = 0
 
+@onready var lie_label: Label = $color_background/lie_label
+@onready var correct_label: Label = $color_background2/correct_label
+@onready var truth_label: Label = $color_background3/truth_label
+
+@onready var progress_bar: ProgressBar = $buttons_background/ProgressBar
+
+@export var progress_timer = 6
+var set_timer = progress_timer
+
+@export var quick_progress_timer = 0.7
+var set_quick_timer = quick_progress_timer
+
+var should_time = false
+var should_time_quick = false
+
+func quick_time_event():
+		should_time_quick = true
+		progress_bar.value = 100
+		quick_progress_timer = set_quick_timer
+		button.disconnect("pressed",self.pressed)
+		animation_player.play("show_buttons",-1,2)
+		
+		# remove old buttons
+		for i in button_grid.get_children():
+			if i.name != "temp_button":
+				i.free()
+				
+		# make the default button clickable
+		button.disabled = false
+		
+		var yes_no =["YES","NO"]
+		
+		yes_no.shuffle()
+		
+		button.get_child(0).text = yes_no[0] + "!"
+		button.connect("pressed",self.pressed.bind(yes_no[0]))
+		var temp_button = button.duplicate()
+		
+		temp_button.get_child(0).text = yes_no[1]+"!"
+		temp_button.connect("pressed",self.pressed.bind(yes_no[1]))
+		button_grid.add_child(temp_button)
+		
+		button_grid.set_anchors_preset(Control.PRESET_CENTER)
+		
+
 # will be used to give lie/truth option
 func reset_grid():
+	should_time = true
+	progress_bar.value = 100
+	progress_timer = set_timer
 	
 	button.disconnect("pressed",self.pressed)
 	
@@ -70,6 +118,7 @@ func set_up_questions(data: Array):
 		temp_button.connect("pressed",self.pressed.bind(i))
 		temp_button.get_child(0).text = i
 		button_grid.add_child(temp_button)
+
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -80,16 +129,22 @@ func _ready() -> void:
 
 func pressed(data: String) -> void:
 	
-	
 	if data == "LIE":
-		main_room.ask_question()
+		main_room.get_question_options()
 		return
 	elif data == "TRUTH":
 		main_room.answerd_truth()
-		
+		should_time = false
+	elif data == "YES":
+		main_room.quick_time_out()
+		should_time_quick = false
+	elif  data == "NO":
+		main_room.answerd_no()
+		should_time_quick = false
 	else:
 		# send data back to the room
 		main_room.answered_question(data)
+		should_time = false
 		
 	# when pressed hide buttons
 	animation_player.play_backwards("show_buttons")
@@ -97,3 +152,32 @@ func pressed(data: String) -> void:
 	#disable all buttons to prevent bugs
 	for i in button_grid.get_children():
 		i.disabled = true
+
+
+func _process(delta: float) -> void:
+	if should_time:
+		
+		if progress_timer <= 0:
+			main_room.time_out()
+			animation_player.play_backwards("show_buttons")
+			should_time = false
+			#disable all buttons to prevent bugs
+			for i in button_grid.get_children():
+				i.disabled = true
+		progress_timer -= delta
+		progress_bar.value = 100 - ((set_timer-progress_timer)/set_timer) * 100
+
+		
+	if should_time_quick:
+		
+		if quick_progress_timer <= 0:
+			main_room.quick_time_out()
+			animation_player.play_backwards("show_buttons")
+			should_time_quick = false
+			#disable all buttons to prevent bugs
+			for i in button_grid.get_children():
+				i.disabled = true
+		
+		quick_progress_timer -= delta
+		progress_bar.value = 100 - ((set_quick_timer-quick_progress_timer)/set_quick_timer) * 100
+	
