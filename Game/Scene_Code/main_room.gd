@@ -174,14 +174,16 @@ func speak(text: String, quick_time_event = false):
 # speak correct voice line
 func speak_correct():
 	
-	await speak(correct[correct_num])
+	
 	
 	# itterate through correct, then suffle when done
 	
-	if correct_num == len(correct):
-		correct_num = 0
+	if correct_num == len(correct) - 1:
+		correct_num = -1
 		correct.shuffle()
 	correct_num += 1
+	
+	await speak(correct[correct_num])
 	
 	# add and update total_correct/text
 	total_correct += 1
@@ -189,15 +191,14 @@ func speak_correct():
 
 # speak incorrect voice line
 func speak_incorrect():
-
-	await speak(incorrect[incorrect_num])
-	
 	
 	# itterate through incorrect, then suffle when done
-	if incorrect_num == len(incorrect):
-		incorrect_num = 0
+	if incorrect_num == len(incorrect) - 1:
+		incorrect_num = -1
 		incorrect.shuffle()
 	incorrect_num += 1
+	
+	await speak(incorrect[incorrect_num])
 	
 	# add and update total_failed_lies/text
 	total_failed_lies += 1
@@ -431,8 +432,7 @@ func time_out():
 func quick_time_out():
 	
 	# you die D:
-	total_failed_lies = MAX_FAILED_LIES_ALLOWED + 1
-	await speak_incorrect()
+	total_truthes = MAX_TRUTHS_ALLOWED + 1
 	start_question()
 
 # end the game
