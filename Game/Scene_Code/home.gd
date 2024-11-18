@@ -11,12 +11,19 @@ extends Node3D
 
 var should_go = false
 
+
 func _unhandled_input(event: InputEvent) -> void:
+	
+	# end game
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
 
 func _ready() -> void:
+	
+	# check to see if not first run
 	if Global.next_scene != "":
+		
+		# zoom out from center
 		cam.fov = 5
 		start.disabled = true
 		animation_player_2.play_backwards("clear")
