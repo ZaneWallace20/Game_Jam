@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://by8s8bdcjxiij"]
+
+[ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
+[ext_resource type="PackedScene" uid="uid://drsbnbd3pd0fx" path="res://Models/Wall/WallTexture.gltf" id="2_3kgym"]
+[ext_resource type="PackedScene" uid="uid://g7c7o4w3vs35" path="res://Models/Wall2/WallRustedTexture.gltf" id="3_dicqg"]
+[ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/floor.tscn" id="4_2q4vv"]
+[ext_resource type="PackedScene" uid="uid://diln3sfcevjsm" path="res://Imports/environment.tscn" id="5_gldo1"]
+[ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/spotlight.tscn" id="6_3axsa"]
+
+[node name="Room" type="Node3D"]
+
+[node name="WallRustedTexture" parent="." instance=ExtResource("1_qplx4")]
+transform = Transform3D(0.00113536, 0.00424387, 0.99999, 0.000209041, 0.999991, -0.00424411, -0.999999, 0.00021385, 0.00113446, -1.49885, 0.00657521, -0.00170112)
+
+[node name="WallRustedTexture3" parent="." instance=ExtResource("1_qplx4")]
+transform = Transform3D(0.00113536, 0.00424387, 0.99999, 0.000209041, 0.999991, -0.00424411, -0.999999, 0.00021385, 0.00113446, -1.50226, 0.00594808, 2.9983)
+
+[node name="WallTexture" parent="." instance=ExtResource("2_3kgym")]
+transform = Transform3D(0.99999, 0.00424387, -0.0011354, -0.00424411, 0.999991, -0.000209041, 0.00113451, 0.00021385, 0.999999, -1.49885, 0.00657521, -0.00170112)
+
+[node name="WallTexture2" parent="." instance=ExtResource("2_3kgym")]
+transform = Transform3D(-0.00113545, 0.00424387, -0.99999, -0.000209041, 0.999991, 0.00424411, 0.999999, 0.00021385, -0.00113455, 1.49771, -0.00678425, 3.0017)
+
+[node name="WallRustedTexture2" parent="." instance=ExtResource("3_dicqg")]
+transform = Transform3D(0.99999, 0.00424387, -0.0011354, -0.00424411, 0.999991, -0.000209041, 0.00113451, 0.00021385, 0.999999, 1.50112, -0.00615713, 0.00170243)
+
+[node name="WallRustedTexture4" parent="." instance=ExtResource("3_dicqg")]
+transform = Transform3D(-0.00113545, 0.00424387, -0.99999, -0.000209041, 0.999991, 0.00424411, 0.999999, 0.00021385, -0.00113455, 1.50112, -0.00615713, 0.00170243)
+
+[node name="Floor2" parent="." instance=ExtResource("4_2q4vv")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 3, 0)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("5_gldo1")]
+
+[node name="Spotlight" parent="." instance=ExtResource("6_3axsa")]
