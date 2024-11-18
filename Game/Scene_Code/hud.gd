@@ -9,6 +9,11 @@ extends Control
 @onready var main_room := $".."
 var total_seconds = 0
 
+@onready var lie_label: Label = $color_background/lie_label
+@onready var truth_label: Label = $color_background2/truth_label
+@onready var correct_label: Label = $color_background3/correct_label
+
+
 # will be used to give lie/truth option
 func reset_grid():
 	

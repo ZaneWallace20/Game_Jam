@@ -250,11 +250,11 @@ autowrap_mode = 3
 layout_mode = 1
 offset_left = 15.0
 offset_top = 15.0
-offset_right = 565.0
+offset_right = 385.0
 offset_bottom = 180.0
 theme_override_styles/panel = ExtResource("2_nscj8")
 
-[node name="Label" type="Label" parent="color_background"]
+[node name="lie_label" type="Label" parent="color_background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -268,39 +268,72 @@ offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "To Lie or Not To Lie"
+text = "Total Caught Lies:
+0"
 label_settings = ExtResource("2_23xcy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="color_background2" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -570.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
 offset_top = 20.0
-offset_right = -20.0
+offset_right = 185.0
 offset_bottom = 185.0
-grow_horizontal = 0
+grow_horizontal = 2
 theme_override_styles/panel = ExtResource("2_nscj8")
 
-[node name="Label" type="Label" parent="color_background2"]
+[node name="correct_label" type="Label" parent="color_background2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
+offset_left = -157.0
 offset_top = -68.5
-offset_right = 57.0
+offset_right = 161.0
 offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Your team might be 
-here soon..."
+text = "Total Correct:
+0"
+label_settings = ExtResource("2_23xcy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="color_background3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -390.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 185.0
+grow_horizontal = 0
+theme_override_styles/panel = ExtResource("2_nscj8")
+
+[node name="truth_label" type="Label" parent="color_background3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -68.5
+offset_right = 161.0
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Total Truthes:
+0"
 label_settings = ExtResource("2_23xcy")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -4,7 +4,6 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var main_room: Node3D = $".."
 
-
 func fire():
 	await get_tree().create_timer(0.25).timeout
 	animation_player.play("Fire")

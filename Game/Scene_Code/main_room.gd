@@ -8,8 +8,8 @@ extends Node3D
 @onready var rifle: Node3D = $Rifle
 @onready var white_rect: ColorRect = $white
 
-@export var MAX_TRUTHS_ALLOWED = 5
-@export var MAX_FAILED_LIES_ALLOWED = 5
+@export var MAX_TRUTHS_ALLOWED = 4
+@export var MAX_FAILED_LIES_ALLOWED = 3
 @export var QUESTIONS_RIGHT_TO_WIN = 35
 
 var talk_delay = 0.0
@@ -78,7 +78,7 @@ func update_words(clear = false):
 		if slows.has(last):
 			set_talk_delay = 0.6
 			if last == ".":
-				set_talk_delay += 0.4
+				set_talk_delay += 0.7
 			if last == ";":
 				set_talk_delay -= 0.1
 		else:
@@ -138,8 +138,9 @@ func speak_correct():
 		correct_num = 0
 		correct.shuffle()
 
-	total_correct += 1
 
+	total_correct += 1
+	hud.correct_label.text = "Total Correct:\n" + str(total_correct)
 func speak_incorrect():
 
 	await speak(incorrect[incorrect_num])
@@ -150,7 +151,8 @@ func speak_incorrect():
 		incorrect_num = 0
 		incorrect.shuffle()
 	total_failed_lies += 1
-	print("WRONG")
+	
+	hud.lie_label.text = "Total Caught Lies:\n" + str(total_failed_lies)
 	
 
 func start_question():
@@ -260,11 +262,13 @@ func answerd_truth():
 
 	if questions[question_num]["user_data"] == "" || questions[question_num]["user_data"] == "TRUTH":
 		
-		
+		await speak_correct()
 		if questions[question_num]["user_data"] != "TRUTH":
 			total_truthes += 1
 			questions[question_num]["user_data"] = "TRUTH"
-		await speak_correct()
+			hud.truth_label.text = "Total Truthes:\n" + str(total_truthes)
+
+		
 	else:
 		await speak_incorrect()
 	
