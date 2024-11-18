@@ -100,19 +100,19 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../instructions:position")
+tracks/7/path = NodePath("../question:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1125, -850)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../question:modulate")
+tracks/8/path = NodePath("../instructions:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -124,14 +124,26 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../instructions:modulate")
+tracks/9/path = NodePath("../instructions:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(1125, -1010)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../title2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 1000)]
 }
 
 [sub_resource type="Animation" id="Animation_kdrxo"]
@@ -241,10 +253,22 @@ tracks/0/path = NodePath("../instructions:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(0, 0.233333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1125, -850), Vector2(1125, 115)]
+"values": [Vector2(1125, -1010), Vector2(1125, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../title2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(720, 1000), Vector2(600, 1000)]
 }
 
 [sub_resource type="Animation" id="Animation_4rgwi"]
@@ -331,7 +355,7 @@ libraries = {
 }
 
 [node name="Floor" parent="." instance=ExtResource("2_df263")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="Cam" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.5, 0)
@@ -420,16 +444,16 @@ vertical_alignment = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278649, -0.466353, -3.09234)
 
 [node name="instructions" type="Panel" parent="."]
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -795.0
-offset_top = -1390.0
-offset_right = -295.0
+offset_left = 165.0
+offset_top = -1550.0
+offset_right = 665.0
 offset_bottom = -540.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_46j0i")
 
@@ -461,11 +485,11 @@ text = "Your goal is to answer the interrogator's questions until he lets you le
 
 In the room, you will have two options per question, lie or tell the truth. 
 
-Lying is harder to remember, but you can do that as many times as you want. 
+Lying is harder to remember, but you can do that as many times as you want.  If you mess up a lie the interrogator will start to get mad with you; try not to do this.
 
-Telling the truth is much easier to remember, but you cannot give up too much information.
+Telling the truth is much easier to remember, but you cannot give up too much information. The max amount of truths changes per game, so be careful.
 
-When you answer a question, you must answer it the same way again when the interrogator asks it again, even if it is the truth.
+When you answer a question, you must answer it the same way when the interrogator asks it again, even if it is the truth.
 "
 label_settings = ExtResource("15_e86s4")
 autowrap_mode = 3

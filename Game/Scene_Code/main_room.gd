@@ -12,7 +12,7 @@ extends Node3D
 @onready var head: Node3D = $Head
 
 
-@export var MAX_TRUTHS_ALLOWED = 4
+@export var MAX_TRUTHS_ALLOWED = 3
 @export var MAX_FAILED_LIES_ALLOWED = 3
 @export var QUESTIONS_RIGHT_TO_WIN = 35
 
@@ -299,6 +299,8 @@ func _ready() -> void:
 	questions.shuffle()
 	correct.shuffle()
 	incorrect.shuffle()
+	
+	MAX_TRUTHS_ALLOWED += rng.randi_range(0,2)
 
 func _input(event: InputEvent) -> void:
 	
