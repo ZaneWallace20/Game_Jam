@@ -4,13 +4,15 @@ extends Node3D
 
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
+@onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
+
 @onready var start: Button = $Start
 @onready var title: Label = $title
 @onready var title_2: Label = $title2
 @onready var cam: Camera3D = $Cam
 
 var should_go = false
-
+var instructions_open = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	
@@ -57,3 +59,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		get_tree().change_scene_to_file("res://Scenes/loading.tscn")
 	else:
 		start.disabled = false
+
+# toggle instructions
+func _on_question_pressed() -> void:
+	if instructions_open:
+		animation_player_3.play_backwards("show_instructions")
+	else:
+		animation_player_3.play("show_instructions")
+	
+	instructions_open = !instructions_open
