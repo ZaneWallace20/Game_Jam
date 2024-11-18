@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfh2eunija7hh"
+path="res://.godot/imported/did you kill him.mp3-044ed10b7162673350a7a78ecd73cdae.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/did you kill him.mp3"
+dest_files=["res://.godot/imported/did you kill him.mp3-044ed10b7162673350a7a78ecd73cdae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

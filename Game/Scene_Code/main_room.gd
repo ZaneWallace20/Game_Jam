@@ -3,7 +3,7 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer3D = $static
-@onready var voice: AudioStreamPlayer3D = $voice
+@onready var voice: AudioStreamPlayer = $voice
 @onready var tv_text: Label = $Cam/tv/tv_text
 @onready var rifle: Node3D = $Rifle
 @onready var white_rect: ColorRect = $white
@@ -59,6 +59,13 @@ var incorrect = [
 # used to help prevent repeting voice lines
 var incorrect_num = 0
 
+var quick_time_text = [
+	"DID YOU KILL HIM?",
+	"IS YOUR BOSS IN DC?",
+	"DID YOU PLANT THE BOMB?",
+	"DID YOU HAVE A TEAM?",
+]
+
 # current queston
 var question_num = 0
 
@@ -97,24 +104,30 @@ func update_words(clear = false):
 			temp_string += i + " "
 		temp_string.trim_suffix(" ")
 		tv_text.text = temp_string
-	
-	
-
 
 # function to use TTS
-func speak(text: String):
+func speak(text: String, quick_time_event = false):
 	update_words(true)
 	current_voice_line = text.split(" ")
 	await get_tree().create_timer(0.1).timeout 
 	
 	# random pitch up and down, less robotic
 	voice.pitch_scale = rng.randf_range(0.98,1.02)
+	
+
 
 	# start playing static
 	static_player.play()
 	
 	voice.stream = File_Pros.get_voice_audio(text)
 	
+	if quick_time_event:
+	
+		voice.volume_db = 15
+	else:
+		voice.volume_db = 7
+		
+	print(voice.volume_db)
 	talk_delay = 0.2
 	set_talk_delay = talk_delay
 	
@@ -157,7 +170,8 @@ func speak_incorrect():
 
 func start_question():
 	
-	print(total_correct)
+	
+
 	if total_truthes >= MAX_TRUTHS_ALLOWED:
 		
 		await speak("We have enough information, you and I are done here.")
@@ -173,7 +187,20 @@ func start_question():
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
 		return
+	
+	
+	var should_quick = randi_range(0,10) == 5
+	
+	if should_quick:
+		quick_time_text.shuffle()
 		
+		await speak(quick_time_text[0],true)
+		
+		hud.quick_time_event()
+		
+		return
+	
+	
 	# inc to get a new question
 	question_num += 1
 	# if halfway done start asking same questions
@@ -189,7 +216,7 @@ func start_question():
 	
 	hud.reset_grid()
 
-func ask_question():
+func get_question_options():
 
 	# default amount of data to add
 	var loop_amount = 4
@@ -204,9 +231,7 @@ func ask_question():
 		
 		# set send data to be the correct answer
 		send_data = [questions[question_num]["user_data"]]
-		print(temp_ask)
 		temp_ask.pop_at(temp_ask.find(send_data[0]))
-		print(temp_ask)
 		# only need 3 more random choices
 		loop_amount = 3
 
@@ -238,7 +263,7 @@ func _ready() -> void:
 	correct.shuffle()
 	incorrect.shuffle()
 	
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("quit"):
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
@@ -272,8 +297,15 @@ func answerd_truth():
 	else:
 		await speak_incorrect()
 	
+	start_question()
+
+func answerd_no():
+	total_correct -= 1
+
+	await speak_correct()
 	
 	start_question()
+
 
 # called from hud when question answered
 func answered_question(data: String):
@@ -316,8 +348,15 @@ func _process(delta: float) -> void:
 func white_out():
 	Global.min_time = 0
 	white_rect.visible = true
-	
 
+func time_out():
+	await speak_incorrect()
+	start_question()
+func quick_time_out():
+	total_failed_lies = MAX_FAILED_LIES_ALLOWED + 1
+	await speak_incorrect()
+	start_question()
+	
 func quit():
 	Global.next_scene = "res://Scenes/home.tscn"
 	get_tree().change_scene_to_file("res://Scenes/loading.tscn")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7uyjpub1hne1"
+path="res://.godot/imported/is your boss in dc.mp3-8991eb1cb05b87811288561e5d1b17aa.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/is your boss in dc.mp3"
+dest_files=["res://.godot/imported/is your boss in dc.mp3-8991eb1cb05b87811288561e5d1b17aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
