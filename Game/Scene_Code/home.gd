@@ -29,7 +29,6 @@ func _ready() -> void:
 		animation_player_2.play_backwards("clear")
 		animation_player.play_backwards("zoom")
 		
-	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_start_pressed() -> void:
@@ -44,7 +43,6 @@ func _on_start_pressed() -> void:
 	# tell the loading file what to load
 	Global.next_scene = "res://Scenes/main_room.tscn"
 	Global.min_time = 0.5
-	
 	
 	# disable start button to prevent bugs
 	start.disabled = true

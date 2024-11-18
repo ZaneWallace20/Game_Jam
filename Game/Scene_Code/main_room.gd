@@ -250,7 +250,7 @@ func start_question():
 	# ask the question
 	await speak(questions[question_num]["question"])
 	
-	hud.reset_grid()
+	hud.reset_questions()
 
 func get_question_options():
 
@@ -298,26 +298,37 @@ func _ready() -> void:
 	questions.shuffle()
 	correct.shuffle()
 	incorrect.shuffle()
-	
+
 func _input(event: InputEvent) -> void:
+	
+	# check if esc pressed
 	if Input.is_action_just_pressed("quit"):
+		
+		# reset camera
 		head.rotation.y = 0
 		cam.rotation.x = 0
+		
+		# clear tv_text
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
-		total_correct = QUESTIONS_RIGHT_TO_WIN + 1
-	
+		
+	# if mouse
 	if event is InputEventMouseMotion:
 		
+		# if mouse is captured
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		
+			
+			
+			# move head
 			head.rotate_y(-event.relative.x * MOUSE_SENS)
 			
+			# move cam
 			cam.rotate_x(-event.relative.y * MOUSE_SENS)
-			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-20),deg_to_rad(20))
 			
+			# keep the total range of motion small
+			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-20),deg_to_rad(20))
 			head.rotation.y = clamp(head.rotation.y,deg_to_rad(-20),deg_to_rad(20))
-		
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 	# on start when finished zooming out
