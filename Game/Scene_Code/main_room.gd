@@ -38,6 +38,8 @@ var total_failed_lies = 0
 var total_truths = 0
 var total_correct = 0
 
+var quit_game = false
+
 # list of correct voice lines
 var correct = [
 	"Very well.",
@@ -109,7 +111,7 @@ func update_words(clear = false):
 			else:
 				set_talk_delay = 0.23
 		
-		# longer words need a bit of a boost
+		# longer lines need a bit of a boost
 		if len(current_voice_line) > 15:
 			set_talk_delay -= 0.1
 			
@@ -314,6 +316,7 @@ func _input(event: InputEvent) -> void:
 		# clear tv_text
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
+		quit_game = true
 		
 	# if mouse
 	if event is InputEventMouseMotion:
@@ -335,7 +338,7 @@ func _input(event: InputEvent) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 	# on start when finished zooming out
-	if anim_name == "zoom_out" && total_correct < QUESTIONS_RIGHT_TO_WIN:
+	if anim_name == "zoom_out" && !quit_game:
 		hud.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		await speak("Testing testing, it is time to start. We will be using this voice modifier for obvious reasons.")
