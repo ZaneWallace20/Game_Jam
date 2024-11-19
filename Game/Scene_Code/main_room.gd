@@ -40,6 +40,8 @@ var total_failed_lies = 0
 var total_truths = 0
 var total_correct = 0
 
+var quit_game = false
+
 # list of correct voice lines
 var correct = [
 	"Very well.",
@@ -111,7 +113,7 @@ func update_words(clear = false):
 			else:
 				set_talk_delay = 0.23
 		
-		# longer words need a bit of a boost
+		# longer lines need a bit of a boost
 		if len(current_voice_line) > 15:
 			set_talk_delay -= 0.1
 			
