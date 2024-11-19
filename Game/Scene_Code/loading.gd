@@ -29,11 +29,13 @@ func _ready():
 		animation_player.play("show_text")
 
 func _input(event: InputEvent) -> void:
-	should_go_on = true
-	print("GO ON")
+	if !event is InputEventMouseMotion:
+		should_go_on = true
+
 func _unhandled_input(event: InputEvent) -> void:
-	should_go_on = true
-	print("GO ON")
+	if !event is InputEventMouseMotion:
+		should_go_on = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# check if scene is loaded
@@ -41,6 +43,11 @@ func _process(delta):
 		
 		# check to see if min time has been met along with should_go_on
 		if timer >= Global.min_time && should_go_on:
+			
+			
+			if tutorial:
+				animation_player.play_backwards("show_text")
+				await get_tree().create_timer(animation_player.current_animation_length + 0.25).timeout
 			
 			# if so swap
 			var packed_scene = ResourceLoader.load_threaded_get(next_scene)
