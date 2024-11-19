@@ -352,7 +352,7 @@ offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Total Truthes:
+text = "Total Truths:
 0"
 label_settings = ExtResource("2_23xcy")
 horizontal_alignment = 1

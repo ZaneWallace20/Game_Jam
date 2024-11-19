@@ -37,7 +37,7 @@ var current_voice_line = []
 var MAX_LENGTH = 68
 
 var total_failed_lies = 0
-var total_truthes = 0
+var total_truths = 0
 var total_correct = 0
 
 # list of correct voice lines
@@ -210,7 +210,7 @@ func speak_incorrect():
 func start_question():
 
 	# check to see if win/lose
-	if total_truthes >= MAX_TRUTHS_ALLOWED:
+	if total_truths >= MAX_TRUTHS_ALLOWED:
 		await speak("We have enough information, you and I are done here.")
 		rifle.fire()
 		return
@@ -364,9 +364,9 @@ func answerd_truth():
 		if questions[question_num]["user_data"] != "TRUTH":
 			
 			# also update total truths/lable
-			total_truthes += 1
+			total_truths += 1
 			questions[question_num]["user_data"] = "TRUTH"
-			hud.truth_label.text = "Total Truthes:\n" + str(total_truthes)
+			hud.truth_label.text = "Total truths:\n" + str(total_truths)
 
 		
 	else:
@@ -438,7 +438,7 @@ func time_out():
 func quick_time_out():
 	
 	# you die D:
-	total_truthes = MAX_TRUTHS_ALLOWED + 1
+	total_truths = MAX_TRUTHS_ALLOWED + 1
 	start_question()
 
 # end the game
