@@ -18,9 +18,9 @@ extends Node3D
 
 @export var MOUSE_SENS = 0.001
 
+
 var talk_delay = 0.0
 var set_talk_delay = 0.0
-
 
 var should_quit = false
 
@@ -371,7 +371,7 @@ func answerd_truth():
 			# also update total truths/lable
 			total_truths += 1
 			questions[question_num]["user_data"] = "TRUTH"
-			hud.truth_label.text = "Total truths:\n" + str(total_truths)
+			hud.truth_label.text = "Total Truths:\n" + str(total_truths)
 
 		
 	else:
@@ -400,7 +400,6 @@ func answered_question(data: String):
 	# if empty assume correct
 	if questions[question_num]["user_data"] == "":
 		questions[question_num]["user_data"] = data
-		print("CORRECT")
 		
 		await speak_correct()
 
@@ -428,6 +427,8 @@ func _process(delta: float) -> void:
 		else:
 			update_words()
 			talk_delay = set_talk_delay
+		
+	
 		
 # used after being shot
 func white_out():

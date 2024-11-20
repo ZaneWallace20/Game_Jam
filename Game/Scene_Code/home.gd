@@ -45,6 +45,7 @@ func _ready() -> void:
 		strike.visible = true
 	
 func _on_start_pressed() -> void:
+	Global.how_died = ""
 	should_go = true
 	# when starting play the zoom animation
 	animation_player.play("zoom")
