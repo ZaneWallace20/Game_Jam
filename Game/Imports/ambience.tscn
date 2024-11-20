@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://cqm0uxkcw3ial" path="res://audio/subway_passing.mp3" id="2_ahgj7"]
 
 [node name="Ambience" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_woxfo")
 
 [node name="subway_audio" type="AudioStreamPlayer3D" parent="."]
