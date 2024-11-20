@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0fmrbgyi1bqx"]
 
 [ext_resource type="PackedScene" uid="uid://y2sfqjox7ynk" path="res://Models/Spotlight/SpotlightTexture.gltf" id="1_6lvtg"]
-[ext_resource type="Script" path="res://Imports/flickeringLight.gd" id="2_umgql"]
-[ext_resource type="Script" path="res://Imports/omni_light_3d.gd" id="3_c3nst"]
-[ext_resource type="NoiseTexture3D" uid="uid://euidgweuuetu" path="res://Imports/noisespotlight.tres" id="3_orojo"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/flickeringLight.gd" id="2_umgql"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/omni_light_3d.gd" id="3_c3nst"]
+[ext_resource type="NoiseTexture3D" uid="uid://euidgweuuetu" path="res://Imports/Scenes/noisespotlight.tres" id="3_orojo"]
 [ext_resource type="AudioStream" uid="uid://dupse43wavoo8" path="res://audio/electric_hum.mp3" id="4_nfy2q"]
 
 [node name="Spotlight" type="Node3D"]
