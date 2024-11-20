@@ -38,7 +38,7 @@ func _ready():
 				
 				# the most condescending thing ive written
 				label.text = """You got caught by changing your story too many times or being too slow. 
-						Try and remember which lie you told for each question."""
+						Try and remember your answer for each question."""
 			else:
 				# the most condescending thing ive written
 				label.text = """You got caught by telling the truth too much.
