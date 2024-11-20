@@ -15,10 +15,10 @@ var total_seconds = 0
 
 @onready var progress_bar: ProgressBar = $buttons_background/ProgressBar
 
-@export var progress_timer = 6
+@export var progress_timer = 10
 var set_timer = progress_timer
 
-@export var quick_progress_timer = 1
+@export var quick_progress_timer = 2
 var set_quick_timer = quick_progress_timer
 
 var should_time = false

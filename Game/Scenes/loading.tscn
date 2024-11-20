@@ -116,6 +116,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "The incident was more public than anticipated, and now they're on to me. I've been quiet for now but if I want to escape I'll need to talk. I'll answer their questions, but I can't say too much. I can lie, but it's dangerous. One slip one simple wrong detail, and I'll be here forever. I could tell the truth to help me remember, but if I give them too much they will punish me. They will try to intimidate me, mess up my story, and break me, so I must remember my choice no matter how long it takes."
 label_settings = ExtResource("2_m4juj")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [connection signal="finished" from="voice_over" to="." method="_on_voice_over_finished"]

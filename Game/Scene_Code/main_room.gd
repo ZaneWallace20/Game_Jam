@@ -72,9 +72,9 @@ var incorrect_num = 0
 # list of quick time voice lines
 var quick_time_text = [
 	"DID YOU KILL HIM?",
-	"IS YOUR BOSS IN DC?",
+	#"IS YOUR BOSS IN DC?",
 	"DID YOU PLANT THE BOMB?",
-	"DID YOU HAVE A TEAM?",
+	#"DID YOU HAVE A TEAM?",
 ]
 
 # current queston
@@ -214,16 +214,19 @@ func start_question():
 	# check to see if win/lose
 	if total_truths >= MAX_TRUTHS_ALLOWED:
 		await speak("We have enough information, you and I are done here.")
+		Global.how_died = "TRUTH"
 		rifle.fire()
 		return
 	if total_failed_lies >= MAX_FAILED_LIES_ALLOWED:
 		await speak("The truth is what we need, not you or your lies.")
+		Global.how_died = "LIES"
 		rifle.fire()
 		return
 	if total_correct >= QUESTIONS_RIGHT_TO_WIN:
 		await speak("It seems to me that you are not telling us the whole story, but alas we have laws in our civilized nation; you may go.")
 		await get_tree().create_timer(0.2).timeout
 		update_words(true)
+		should_quit = true 
 		animation_player.play_backwards("zoom_out")
 		return
 	
