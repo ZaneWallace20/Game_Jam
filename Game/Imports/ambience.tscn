@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://n3vod3x3mucw"]
+
+[ext_resource type="AudioStream" uid="uid://k208k6tyd3ww" path="res://audio/water_drop.mp3" id="1_gbnno"]
+[ext_resource type="Script" path="res://Imports/ambience.gd" id="1_woxfo"]
+
+[node name="Ambience" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_woxfo")
+
+[node name="water_drop_audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.645724, 0, -0.763571, 0, 1, 0, 0.763571, 0, 0.645724, -1.18495, 0.0234802, 0.743639)
+stream = ExtResource("1_gbnno")

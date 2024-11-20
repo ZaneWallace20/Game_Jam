@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=15 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
 [ext_resource type="PackedScene" uid="uid://diln3sfcevjsm" path="res://Imports/environment.tscn" id="2_4iuwh"]
+[ext_resource type="PackedScene" uid="uid://n3vod3x3mucw" path="res://Imports/ambience.tscn" id="2_14utn"]
 [ext_resource type="PackedScene" uid="uid://dane34c5ixkkf" path="res://Imports/rifle.tscn" id="2_raut4"]
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="3_1t4bp"]
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
@@ -50,6 +51,8 @@ viewport_path = NodePath("tv/2d_in_3d/layer")
 
 [node name="Main_Room" type="Node3D"]
 script = ExtResource("1_12hge")
+
+[node name="Ambience" parent="." instance=ExtResource("2_14utn")]
 
 [node name="Rifle" parent="." instance=ExtResource("2_raut4")]
 transform = Transform3D(0.645724, 0, 0.763571, 0, 1, 0, -0.763571, 0, 0.645724, 1.02695, -0.0234802, 0.365775)
