@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv1d13s44y3vl"]
+[gd_scene load_steps=8 format=3 uid="uid://dv1d13s44y3vl"]
 
 [ext_resource type="Script" path="res://Scene_Code/loading.gd" id="1_7euoc"]
 [ext_resource type="StyleBox" uid="uid://wj1c4teqyiwn" path="res://Imports/Panels/panel_menu.tres" id="2_c78ww"]
 [ext_resource type="LabelSettings" uid="uid://c63o6avnfvejn" path="res://Scenes/instructions_body.tres" id="2_m4juj"]
-[ext_resource type="AudioStream" uid="uid://dk10sam3310re" path="res://audio/intro.mp3" id="2_msrgi"]
 [ext_resource type="LabelSettings" uid="uid://dewxjwu7vi2um" path="res://Imports/Labels/instructions_header.tres" id="4_a0j41"]
 
 [sub_resource type="Animation" id="Animation_qyrxi"]
@@ -45,9 +44,6 @@ _data = {
 
 [node name="Loading" type="Node2D"]
 script = ExtResource("1_7euoc")
-
-[node name="voice_over" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_msrgi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect/ColorRect")
@@ -99,7 +95,8 @@ offset_left = -668.0
 offset_right = 668.0
 offset_bottom = 212.0
 grow_horizontal = 2
-text = "Press any key to skip."
+text = "INCOMING MESSAGE
+(Press any key to continue)"
 label_settings = ExtResource("4_a0j41")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -110,14 +107,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -38.5
-offset_bottom = 38.5
+offset_top = -65.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "The incident was more public than anticipated, and now they're on to me. I've been quiet for now but if I want to escape I'll need to talk. I'll answer their questions, but I can't say too much. I can lie, but it's dangerous. One slip one simple wrong detail, and I'll be here forever. I could tell the truth to help me remember, but if I give them too much they will punish me. They will try to intimidate me, mess up my story, and break me, so I must remember my choice no matter how long it takes."
+text = "The incident was more public than anticipated, and now they're on to us. We've been quiet for now but they will arrest you and if you want to escape you'll need to talk. Answer their questions, but don't say too much. You can lie, but it's dangerous. One slip, one simple wrong detail, and you'll be here forever. You can tell the truth to help me remember, but if you give them too much they will punish you. They will try to intimidate you, mess up your story, and break you, so you must remember your choice."
 label_settings = ExtResource("2_m4juj")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[connection signal="finished" from="voice_over" to="." method="_on_voice_over_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

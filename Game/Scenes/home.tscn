@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="6_o4xix"]
 [ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/Labels/header.tres" id="8_0mcc2"]
 [ext_resource type="LabelSettings" uid="uid://d16dm4kn37tqk" path="res://Imports/Labels/sub_title.tres" id="10_xylnq"]
-[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="11_1et6h"]
+[ext_resource type="FontFile" uid="uid://bovuq2hupq6lp" path="res://Fonts/OperationNapalm-nRBWO.ttf" id="11_ahjt6"]
 [ext_resource type="StyleBox" uid="uid://wj1c4teqyiwn" path="res://Imports/Panels/panel_menu.tres" id="13_46j0i"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="13_ajft3"]
 [ext_resource type="LabelSettings" uid="uid://dewxjwu7vi2um" path="res://Imports/Labels/instructions_header.tres" id="14_1aryl"]
@@ -311,7 +311,7 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q4u2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n4jer"]
-font = ExtResource("11_1et6h")
+font = ExtResource("11_ahjt6")
 font_size = 1500
 font_color = Color(0.54902, 0, 0, 1)
 
@@ -417,14 +417,10 @@ horizontal_alignment = 1
 vertical_alignment = 3
 
 [node name="title" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -940.0
-offset_top = 75.0
-offset_right = -140.0
-offset_bottom = 287.0
-grow_horizontal = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 866.0
+offset_bottom = 248.0
 text = "REDACTED"
 label_settings = ExtResource("8_0mcc2")
 horizontal_alignment = 1
@@ -437,13 +433,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -475.0
-offset_top = -226.0
-offset_right = 40.0
-offset_bottom = 1357.0
+offset_left = -579.0
+offset_top = -220.0
+offset_right = -3.0
+offset_bottom = 1489.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 0.333)
+scale = Vector2(2, 0.25)
 text = "-"
 label_settings = SubResource("LabelSettings_n4jer")
 horizontal_alignment = 1
@@ -457,8 +453,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -240.0
 offset_top = -80.0
-offset_right = 260.0
-offset_bottom = -20.0
+offset_right = 205.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -497,17 +493,21 @@ grow_horizontal = 2
 text = "How to Play"
 label_settings = ExtResource("14_1aryl")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="body" type="Label" parent="instructions"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -222.0
-offset_top = 69.0
-offset_right = 231.0
-offset_bottom = 826.0
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = -446.0
+offset_right = 256.0
+offset_bottom = 485.0
 grow_horizontal = 2
+grow_vertical = 2
 text = "Your goal is to answer the interrogator's questions until he lets you leave. In doing so, you must avoid giving away too much information. 
 
 In the room, you will have two options per question, lie or tell the truth. 
@@ -516,7 +516,7 @@ Lying is harder to remember, but you can do that as many times as you want.  If 
 
 Telling the truth is much easier to remember, but you cannot give up too much information. The max amount of truths changes per game, so be careful.
 
-When you answer a question, you must answer it the same way when the interrogator asks it again, even if it is the truth.
+When you answer a question, you must answer it the same way when the interrogator asks it again, even if it is the truth. Picking truth again for the same question will not increse the count.
 "
 label_settings = ExtResource("15_e86s4")
 autowrap_mode = 3
@@ -547,8 +547,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = -7.0
+offset_top = -1.5
+offset_bottom = -0.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "How to play"
