@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cnnab2efi3t2b"]
 
-[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="1_x3nwh"]
+[ext_resource type="FontFile" uid="uid://b3h7iyxill8oy" path="res://Fonts/StencilBash-5Xea.ttf" id="1_ixw5n"]
 
 [resource]
-font = ExtResource("1_x3nwh")
-font_size = 85
+font = ExtResource("1_ixw5n")
+font_size = 64
 font_color = Color(0.54902, 0, 0, 1)

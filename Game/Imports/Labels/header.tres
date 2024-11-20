@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ctvpxogltaffy"]
 
-[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="1_dkvf6"]
+[ext_resource type="FontFile" uid="uid://bovuq2hupq6lp" path="res://Fonts/OperationNapalm-nRBWO.ttf" id="1_8sxdt"]
 
 [resource]
-font = ExtResource("1_dkvf6")
+font = ExtResource("1_8sxdt")
 font_size = 200
 font_color = Color(0.54902, 0, 0, 1)

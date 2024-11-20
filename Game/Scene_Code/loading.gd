@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var voice_over: AudioStreamPlayer = $voice_over
 
 @onready var header: Label = $ColorRect/ColorRect/Panel/header
 @onready var label: Label = $ColorRect/ColorRect/Panel/Label
@@ -13,7 +12,7 @@ var tutorial = false
 var death = false
 var SHOW_TIME = 0.5
 var should_go_on = false
-
+var wait = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -24,14 +23,16 @@ func _ready():
 	ResourceLoader.load_threaded_request(Global.next_scene)
 	next_scene = Global.next_scene
 	
-	tutorial = Global.next_scene == "res://Scenes/main_room.tscn"
-	death = Global.how_died != ""
-	should_go_on = !tutorial && Global.how_died == ""
+
+	wait = Global.how_died != "" || Global.next_scene == "res://Scenes/main_room.tscn"
+	should_go_on = !wait
 	
+	
+
 	if !should_go_on:
 		await get_tree().create_timer(SHOW_TIME).timeout
 		animation_player.play("show_text")
-	
+		death = Global.how_died != ""
 		if death:
 			header.text = "YOU DIED\n(Press any key to continue)"
 			if Global.how_died == "LIES":
@@ -63,10 +64,10 @@ func _process(delta):
 		if timer >= Global.min_time && should_go_on:
 			
 			# fade out
-			if tutorial:
+			if wait:
 				
 				# prevent spaming animation
-				tutorial = false
+				wait = false
 				
 				# lock out til animation is done
 				should_go_on = false
@@ -76,20 +77,6 @@ func _process(delta):
 				
 				# go on
 				should_go_on = true
-			elif death:
-				
-				death = false
-				
-				# lock out til animation is done
-				should_go_on = false
-				animation_player.play_backwards("show_text")
-
-				await get_tree().create_timer(animation_player.current_animation_length + 0.25).timeout
-				
-				# go on
-				should_go_on = true
-			
-				
 			else:
 
 				# if so swap
@@ -107,12 +94,3 @@ func _process(delta):
 			
 	# add timer time for min time check
 	timer += delta
-	
-func _on_voice_over_finished() -> void:
-	should_go_on = true
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if !should_go_on && tutorial:
-		voice_over.play()
-		

@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://p0nca57h64lu"]
 
-[ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="1_xqagr"]
+[ext_resource type="FontFile" uid="uid://b3h7iyxill8oy" path="res://Fonts/StencilBash-5Xea.ttf" id="1_usj6k"]
 
 [resource]
-font = ExtResource("1_xqagr")
+font = ExtResource("1_usj6k")
 font_size = 45
 font_color = Color(0.54902, 0, 0, 1)
