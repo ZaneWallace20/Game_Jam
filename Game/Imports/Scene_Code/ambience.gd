@@ -28,5 +28,6 @@ func _process(delta: float) -> void:
 		if subway_timer <= 0:
 			subway_audio.play()
 			subway_timer = rng.randf_range(25,45)
-		else:
+		elif !subway_audio.playing:
 			subway_timer -= delta
+			

@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://mwp1yp21x23k"]
 
 [ext_resource type="Script" path="res://Scene_Code/hud.gd" id="1_a7ow0"]
-[ext_resource type="LabelSettings" uid="uid://p0nca57h64lu" path="res://Imports/hud_label.tres" id="2_23xcy"]
-[ext_resource type="StyleBox" uid="uid://dppmslabyii8x" path="res://Imports/panel.tres" id="2_nscj8"]
-[ext_resource type="LabelSettings" uid="uid://kxbg6jrxfnpu" path="res://Imports/hud_button_label.tres" id="3_f506y"]
+[ext_resource type="LabelSettings" uid="uid://p0nca57h64lu" path="res://Imports/Labels/hud_label.tres" id="2_23xcy"]
+[ext_resource type="StyleBox" uid="uid://dppmslabyii8x" path="res://Imports/Panels/panel.tres" id="2_nscj8"]
+[ext_resource type="LabelSettings" uid="uid://kxbg6jrxfnpu" path="res://Imports/Labels/hud_button_label.tres" id="3_f506y"]
 
 [sub_resource type="Animation" id="Animation_s2vj2"]
 length = 0.001

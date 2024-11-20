@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://n3vod3x3mucw"]
 
 [ext_resource type="AudioStream" uid="uid://k208k6tyd3ww" path="res://audio/water_drop.mp3" id="1_gbnno"]
-[ext_resource type="Script" path="res://Imports/ambience.gd" id="1_woxfo"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/ambience.gd" id="1_woxfo"]
 [ext_resource type="AudioStream" uid="uid://cqm0uxkcw3ial" path="res://audio/subway_passing.mp3" id="2_ahgj7"]
 
 [node name="Ambience" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_woxfo")
 
 [node name="subway_audio" type="AudioStreamPlayer3D" parent="."]

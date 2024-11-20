@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dane34c5ixkkf"]
 
-[ext_resource type="Script" path="res://Imports/rifle.gd" id="1_n01qq"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/rifle.gd" id="1_n01qq"]
 [ext_resource type="AudioStream" uid="uid://7kjltyxqy2cb" path="res://audio/lever.mp3" id="1_vlprc"]
 [ext_resource type="AudioStream" uid="uid://drhgstajtx21" path="res://audio/gunshot.mp3" id="2_2ce0v"]
 
