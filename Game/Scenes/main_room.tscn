@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=17 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
-[ext_resource type="PackedScene" uid="uid://diln3sfcevjsm" path="res://Imports/Scenes/environment.tscn" id="2_4iuwh"]
 [ext_resource type="PackedScene" uid="uid://n3vod3x3mucw" path="res://Imports/Scenes/ambience.tscn" id="2_14utn"]
 [ext_resource type="PackedScene" uid="uid://dane34c5ixkkf" path="res://Imports/Scenes/rifle.tscn" id="2_raut4"]
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="3_1t4bp"]
@@ -10,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_toc16"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="6_rfjov"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
+[ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/room.tscn" id="10_pwke8"]
+[ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
+[ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001
@@ -57,11 +59,8 @@ script = ExtResource("1_12hge")
 [node name="Rifle" parent="." instance=ExtResource("2_raut4")]
 transform = Transform3D(0.645724, 0, 0.763571, 0, 1, 0, -0.763571, 0, 0.645724, 1.02695, -0.0234802, 0.365775)
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("2_4iuwh")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Head/Cam")
@@ -73,6 +72,7 @@ libraries = {
 
 [node name="Floor" parent="." instance=ExtResource("4_toc16")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+visible = false
 
 [node name="Ceiling" parent="." instance=ExtResource("6_rfjov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
@@ -122,5 +122,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[node name="Room" parent="." instance=ExtResource("10_pwke8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -3)
+
+[node name="Spotlight" parent="." instance=ExtResource("11_l3tub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
+
+[node name="Floor2" parent="." instance=ExtResource("12_nqo3i")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.8, -1.5)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

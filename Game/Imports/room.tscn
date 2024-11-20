@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
 [ext_resource type="PackedScene" uid="uid://drsbnbd3pd0fx" path="res://Models/Wall/WallTexture.gltf" id="2_3kgym"]
 [ext_resource type="PackedScene" uid="uid://g7c7o4w3vs35" path="res://Models/Wall2/WallRustedTexture.gltf" id="3_dicqg"]
-[ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/floor.tscn" id="4_2q4vv"]
+[ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_2q4vv"]
 [ext_resource type="PackedScene" uid="uid://b8fhs0cwb4wgt" path="res://Models/Pipe/PipeTexture.gltf" id="6_fmyec"]
 [ext_resource type="PackedScene" uid="uid://do3xn8c4ivtmm" path="res://Models/SecurityCam/SecurityCamtexture.gltf" id="6_pj5ow"]
 [ext_resource type="PackedScene" uid="uid://dx1d4quvyjnd" path="res://Models/Speaker/SpeakerTexture.gltf" id="7_6kkj3"]
