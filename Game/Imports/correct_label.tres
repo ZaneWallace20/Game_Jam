@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dx865biicqgtw"]
+
+[ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="1_pj2br"]
+
+[resource]
+font = ExtResource("1_pj2br")
+font_size = 45
+font_color = Color(0.54902, 0, 0, 1)

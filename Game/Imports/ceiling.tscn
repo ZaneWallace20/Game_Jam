@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfkax65b1c7mg"]
+
+[ext_resource type="Texture2D" uid="uid://mo8jtiq07myj" path="res://Models/FloorModel/standardSurface1_baseColor.png" id="1_i0l6v"]
+[ext_resource type="Texture2D" uid="uid://brypq8gsuhmjh" path="res://Models/FloorModel/standardSurface1_occlusionRoughnessMetallic.png" id="2_2bwch"]
+[ext_resource type="Texture2D" uid="uid://ibtxiclsa557" path="res://Models/FloorModel/standardSurface1_normal.png" id="3_3dj75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnjy0"]
+resource_name = "standardSurface1"
+albedo_texture = ExtResource("1_i0l6v")
+metallic = 1.0
+metallic_texture = ExtResource("2_2bwch")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_2bwch")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_3dj75")
+ao_enabled = true
+ao_texture = ExtResource("2_2bwch")
+uv1_scale = Vector3(5, 5, 5)
+uv2_scale = Vector3(50, 50, 50)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_egj55"]
+_surfaces = [{
+"aabb": AABB(-150, 0, -150, 300, 1e-05, 300),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 1, 0, 0, 0, 1, 0, 3, 0, 2, 0),
+"name": "standardSurface1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uasua"]
+resource_name = "Floor_SM_Floor"
+_surfaces = [{
+"aabb": AABB(-150, 0, -150, 300, 1e-05, 300),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 1, 0, 0, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_jnjy0"),
+"name": "standardSurface1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_egj55")
+
+[node name="Ceiling" type="Node3D"]
+
+[node name="SM_Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.15, 1.31134e-08, 0, -1.31134e-08, -0.15, 0, 0, 0, 0.15, 0, 0, 0)
+mesh = SubResource("ArrayMesh_uasua")
+skeleton = NodePath("")
+
+[node name="SM_Floor3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.294875, 1.31134e-08, 0, -2.57788e-08, -0.15, 0, 0, 0, 0.121065, 0, -0.001, -15)
+mesh = SubResource("ArrayMesh_uasua")
+skeleton = NodePath("")

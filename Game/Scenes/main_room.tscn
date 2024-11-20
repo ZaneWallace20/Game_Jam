@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=14 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/tv.tscn" id="3_1t4bp"]
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/floor.tscn" id="4_toc16"]
-[ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="6_jqv76"]
+[ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/ceiling.tscn" id="6_rfjov"]
+[ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/tv_label.tres" id="7_g7oud"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001
@@ -44,10 +45,8 @@ _data = {
 "zoom_out": SubResource("Animation_jpqu4")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_03nxa"]
-font = ExtResource("6_jqv76")
-font_size = 35
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="ViewportTexture" id="ViewportTexture_gvh4f"]
+viewport_path = NodePath("tv/2d_in_3d/layer")
 
 [node name="Main_Room" type="Node3D"]
 script = ExtResource("1_12hge")
@@ -62,7 +61,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Cam")
+root_node = NodePath("../Head/Cam")
 libraries = {
 "": SubResource("AnimationLibrary_6tccb")
 }
@@ -70,31 +69,39 @@ libraries = {
 [node name="Hud" parent="." instance=ExtResource("1_xx0al")]
 
 [node name="Floor" parent="." instance=ExtResource("4_toc16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 
-[node name="Cam" type="Camera3D" parent="."]
+[node name="Ceiling" parent="." instance=ExtResource("6_rfjov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="tv" parent="." instance=ExtResource("3_1t4bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834, -1.5)
+top_level = true
+
+[node name="2d_in_3d" type="Node3D" parent="tv"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.834, 1.5)
+
+[node name="layer" type="SubViewport" parent="tv/2d_in_3d"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(550, 325)
+
+[node name="tv_text" type="Label" parent="tv/2d_in_3d/layer"]
+offset_right = 512.0
+offset_bottom = 512.0
+label_settings = ExtResource("7_g7oud")
+autowrap_mode = 3
+
+[node name="3d_tv_text" type="Sprite3D" parent="tv/2d_in_3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, -0.051, -1.216)
+pixel_size = 0.001
+texture = SubResource("ViewportTexture_gvh4f")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Cam" type="Camera3D" parent="Head"]
 current = true
 fov = 1.0
-
-[node name="tv" parent="Cam" instance=ExtResource("3_1t4bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834, -1.5)
-skeleton = NodePath("../..")
-
-[node name="tv_text" type="Label" parent="Cam/tv"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -100.0
-offset_right = 128.0
-offset_bottom = 121.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "
-"
-label_settings = SubResource("LabelSettings_03nxa")
-autowrap_mode = 3
 
 [node name="static" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.85754)

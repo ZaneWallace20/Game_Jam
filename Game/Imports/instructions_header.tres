@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dewxjwu7vi2um"]
+
+[ext_resource type="FontFile" uid="uid://lcj4w6hudmkn" path="res://Fonts/MisteryLiver-GOVpa.otf" id="1_53416"]
+
+[resource]
+font = ExtResource("1_53416")
+font_size = 60
+font_color = Color(0.54902, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0.54902, 0, 0, 1)

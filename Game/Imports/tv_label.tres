@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cskffsinht40e"]
+
+[ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="1_ak54p"]
+
+[resource]
+font = ExtResource("1_ak54p")
+font_size = 60
+font_color = Color(0, 0, 0, 1)

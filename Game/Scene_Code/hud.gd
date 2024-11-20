@@ -15,50 +15,21 @@ var total_seconds = 0
 
 @onready var progress_bar: ProgressBar = $buttons_background/ProgressBar
 
-@export var progress_timer = 6
+@export var progress_timer = 10
 var set_timer = progress_timer
 
-@export var quick_progress_timer = 0.7
+@export var quick_progress_timer = 2
 var set_quick_timer = quick_progress_timer
 
 var should_time = false
 var should_time_quick = false
 
-func quick_time_event():
-		should_time_quick = true
-		progress_bar.value = 100
-		quick_progress_timer = set_quick_timer
-		button.disconnect("pressed",self.pressed)
-		animation_player.play("show_buttons",-1,2)
-		
-		# remove old buttons
-		for i in button_grid.get_children():
-			if i.name != "temp_button":
-				i.free()
-				
-		# make the default button clickable
-		button.disabled = false
-		
-		var yes_no =["YES","NO"]
-		
-		yes_no.shuffle()
-		
-		button.get_child(0).text = yes_no[0] + "!"
-		button.connect("pressed",self.pressed.bind(yes_no[0]))
-		var temp_button = button.duplicate()
-		
-		temp_button.get_child(0).text = yes_no[1]+"!"
-		temp_button.connect("pressed",self.pressed.bind(yes_no[1]))
-		button_grid.add_child(temp_button)
-		
-		button_grid.set_anchors_preset(Control.PRESET_CENTER)
-		
 
-# will be used to give lie/truth option
-func reset_grid():
-	should_time = true
-	progress_bar.value = 100
-	progress_timer = set_timer
+
+func reset():
+	
+	if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	button.disconnect("pressed",self.pressed)
 	
@@ -72,6 +43,51 @@ func reset_grid():
 	
 	# make the default button clickable
 	button.disabled = false
+
+
+func quick_time_event():
+
+		# reset/start timer
+		should_time_quick = true
+		progress_bar.value = 100
+		quick_progress_timer = set_quick_timer
+		
+		reset()
+		
+		# play the animation, faster
+		animation_player.play("show_buttons",-1,2)
+		
+		# used to randomize options
+		var yes_no =["YES","NO"]
+		
+		yes_no.shuffle()
+		
+		# set buttons to either "YES" or "NO"
+		button.get_child(0).text = yes_no[0] + "!"
+		button.connect("pressed",self.pressed.bind(yes_no[0]))
+		var temp_button = button.duplicate()
+		
+		temp_button.get_child(0).text = yes_no[1]+"!"
+		temp_button.connect("pressed",self.pressed.bind(yes_no[1]))
+		button_grid.add_child(temp_button)
+		
+		button_grid.set_anchors_preset(Control.PRESET_CENTER)
+		
+
+# will be used to give lie/truth option
+func reset_questions():
+
+	
+	# reset/start timer
+	should_time = true
+	progress_bar.value = 100
+	progress_timer = set_timer
+	
+	
+	# show the buttons
+	animation_player.play("show_buttons")
+	
+	reset()
 	
 	button.get_child(0).text = "Try and Tell a Lie"
 	button.connect("pressed",self.pressed.bind("LIE"))
@@ -90,16 +106,7 @@ func set_up_questions(data: Array):
 	# show the buttons
 	animation_player.play("show_buttons")
 	
-	# remove old buttons
-	for i in button_grid.get_children():
-		if i.name != "temp_button":
-			i.free()
-			
-	# make the default button clickable
-	button.disabled = false
-	
-	# disconnect to prevent bugs
-	button.disconnect("pressed",self.pressed)
+	reset()
 	
 	# connect the button to the pressed func with the data[0] peramater
 	button.connect("pressed",self.pressed.bind(data[0]))
@@ -129,7 +136,10 @@ func _ready() -> void:
 
 func pressed(data: String) -> void:
 	
+	# check const options
 	if data == "LIE":
+		
+		# ask main_room to send question options
 		main_room.get_question_options()
 		return
 	elif data == "TRUTH":
@@ -155,29 +165,38 @@ func pressed(data: String) -> void:
 
 
 func _process(delta: float) -> void:
+	
+	# normal timer
 	if should_time:
 		
+		# if timeout
 		if progress_timer <= 0:
 			main_room.time_out()
 			animation_player.play_backwards("show_buttons")
 			should_time = false
+			
 			#disable all buttons to prevent bugs
 			for i in button_grid.get_children():
 				i.disabled = true
+				
+		# decrese/update timer
 		progress_timer -= delta
 		progress_bar.value = 100 - ((set_timer-progress_timer)/set_timer) * 100
 
-		
+	# quick timer
 	if should_time_quick:
 		
+		# if timeout
 		if quick_progress_timer <= 0:
 			main_room.quick_time_out()
 			animation_player.play_backwards("show_buttons")
 			should_time_quick = false
+			
 			#disable all buttons to prevent bugs
 			for i in button_grid.get_children():
 				i.disabled = true
-		
+
+		# decrese/update timer
 		quick_progress_timer -= delta
 		progress_bar.value = 100 - ((set_quick_timer-quick_progress_timer)/set_quick_timer) * 100
 	

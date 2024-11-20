@@ -23,6 +23,8 @@ func read(filePath):
 	return content
 
 func get_voice_audio(text: String):
+	
+	# all lowercase
 	text = text.substr(0,text.length()-1).to_lower() + ".mp3"
 	
 	var dir = "res://audio/Voice/"

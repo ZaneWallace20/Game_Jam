@@ -10,6 +10,8 @@ func fire():
 	await get_tree().create_timer(0.75).timeout
 	main_room.white_out()
 
+
+# you died quit the game
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Fire":
 		main_room.quit()
