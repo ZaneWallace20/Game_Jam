@@ -371,7 +371,7 @@ func answerd_truth():
 			# also update total truths/lable
 			total_truths += 1
 			questions[question_num]["user_data"] = "TRUTH"
-			hud.truth_label.text = "Total truths:\n" + str(total_truths)
+			hud.truth_label.text = "Total Truths:\n" + str(total_truths)
 
 		
 	else:
