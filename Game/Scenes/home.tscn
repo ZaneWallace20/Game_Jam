@@ -469,6 +469,7 @@ vertical_alignment = 1
 
 [node name="Spotlight" parent="." instance=ExtResource("13_ajft3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0278649, -0.466353, -3.09234)
+visible = false
 
 [node name="instructions" type="Panel" parent="."]
 anchors_preset = 8
