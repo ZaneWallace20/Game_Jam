@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=17 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/floor.tscn" id="4_toc16"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/ceiling.tscn" id="6_rfjov"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/tv_label.tres" id="7_g7oud"]
+[ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/room.tscn" id="11_wqr7i"]
+[ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/spotlight.tscn" id="12_l3xry"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001
@@ -122,5 +124,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[node name="Room" parent="." instance=ExtResource("11_wqr7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.267)
+
+[node name="Spotlight" parent="." instance=ExtResource("12_l3xry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.25)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

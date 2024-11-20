@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://t87hwl6pkac7"]
 
-[ext_resource type="PackedScene" uid="uid://0b6347ctvyma" path="res://Models/Rat/RatTexture.gltf" id="1_o324u"]
+[ext_resource type="PackedScene" uid="uid://jpgslkk7x42o" path="res://Models/Rat/RatTexture.gltf" id="1_o324u"]
 
 [node name="Rat" type="Node3D"]
 

@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqilo2m5w5qpe"
+uid="uid://85cbwpvn6qot"
 path.s3tc="res://.godot/imported/RatTexture_1.png-88098e8f920dc96ab12bd968a3996627.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e6c4841586d73dfe7580a1de1806f595"
+"md5": "12d77d5261d9c3a11afe727e7dffe32d"
 }
 
 [deps]
