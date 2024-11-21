@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=17 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="3_1t4bp"]
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_toc16"]
-[ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="6_rfjov"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
 [ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
@@ -86,9 +85,6 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 visible = false
 
-[node name="Ceiling" parent="." instance=ExtResource("6_rfjov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-
 [node name="tv" parent="." instance=ExtResource("3_1t4bp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834, -1.5)
 top_level = true
@@ -143,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
 
 [node name="Floor2" parent="." instance=ExtResource("12_nqo3i")]
-transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.8, -1.5)
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.7, -1.5)
 
 [node name="roomenvirnment" parent="." instance=ExtResource("13_xcd62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
