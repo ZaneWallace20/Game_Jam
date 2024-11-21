@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dlceswdm4rq15"
+path.s3tc="res://.godot/imported/WallRustedTexture_2.png-cf958f73f25bda51321c1b1352b93553.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "f47b655b928afaf75d74d04df7a58344"
+}
+
+[deps]
+
+source_file="res://Models/WallwithRust/WallRustedTexture_2.png"
+dest_files=["res://.godot/imported/WallRustedTexture_2.png-cf958f73f25bda51321c1b1352b93553.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Models/WallwithRust/WallRustedTexture_2.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
