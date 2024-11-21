@@ -25,7 +25,7 @@ var set_talk_delay = 0.0
 var should_quit = false
 
 var static_playing = false
-var questions: Array
+var questions: Dictionary
 
 var File_Pros = preload("res://Imports/file_pross.gd").new()
 
@@ -77,8 +77,32 @@ var quick_time_text = [
 	#"DID YOU HAVE A TEAM?",
 ]
 
+# question topics
+var topics = ["people","places","dates","items"]
+
+var topic_amount = {
+	"people":0,
+	"places":0,
+	"dates":0,
+	"items":0
+	}
 # current queston
 var question_num = 0
+
+var max_amount_per_topic = 0
+
+var current_topic = ""
+
+
+func get_user_data():
+	
+	return questions[current_topic]["questions"][question_num]["userData"]
+	
+func set_user_data(value):
+	print(questions[current_topic]["questions"][question_num]["question"])
+	print(value)
+	questions[current_topic]["questions"][question_num]["userData"] = value
+
 
 # used to clear update tv_text
 func update_words(clear = false):
@@ -178,8 +202,6 @@ func speak(text: String, quick_time_event = false):
 # speak correct voice line
 func speak_correct():
 	
-	
-	
 	# itterate through correct, then suffle when done
 	
 	if correct_num == len(correct) - 1:
@@ -246,19 +268,33 @@ func start_question():
 		
 		return
 
-	# inc to get a new question
-	question_num += 1
-	# if halfway done start asking same questions
-	if question_num >= len(questions)/ 2:
+	current_topic = topics.pick_random()
+
+	question_num = topic_amount[current_topic]
+
+
+	# if done start asking same questions
+	if topic_amount[current_topic] >= max_amount_per_topic:
 		
 		# prevents pattern
-		questions.shuffle()
+		questions[current_topic]["questions"].shuffle()
+		topic_amount[current_topic] = 0
 		question_num = 0
 
 	# ask the question
-	await speak(questions[question_num]["question"])
+	await speak(questions[current_topic]["questions"][question_num]["question"])
+
 	
 	hud.reset_questions()
+
+
+
+func difference(arr1, arr2):
+	var only_in_arr1 = []
+	for i in arr1:
+		if not (i in arr2):
+			only_in_arr1.append(i)
+	return only_in_arr1
 
 func get_question_options():
 
@@ -266,19 +302,26 @@ func get_question_options():
 	var loop_amount = 4
 	
 	# all the options avalible in this question (min 4)
-	var temp_ask = questions[question_num]["options"].duplicate(true)
+	var temp_ask = questions[current_topic]["answers"].duplicate(true)
 	
+
+
 	var send_data = []
-	
-	# if question has not been asked
-	if questions[question_num]["user_data"] != "" && questions[question_num]["user_data"] != "TRUTH":
+
+	# if question has been asked
+	if get_user_data() != "" && get_user_data() != "TRUTH":
 		
 		# set send data to be the correct answer
-		send_data = [questions[question_num]["user_data"]]
+		send_data = [get_user_data()]
 		temp_ask.pop_at(temp_ask.find(send_data[0]))
+		
 		# only need 3 more random choices
 		loop_amount = 3
-
+	else:
+		print("SLIFJOSIFJ")
+		var used = questions[current_topic]["usedAnswers"].duplicate(true)
+	
+		temp_ask = difference(temp_ask,used)
 		
 	# add on random choices
 	for i in range(loop_amount):
@@ -300,14 +343,20 @@ func _ready() -> void:
 	animation_player.play("zoom_out")
 	
 	# grab all questinos
-	questions = File_Pros.get_questions()["lies"]
+	questions = File_Pros.get_questions()
 	
 	# shufle to prevent a pattern
-	questions.shuffle()
+	for i in topics:
+		questions[i]["questions"].shuffle()
+	
 	correct.shuffle()
 	incorrect.shuffle()
 	
 	MAX_TRUTHS_ALLOWED += rng.randi_range(0,2)
+	
+	max_amount_per_topic = len(questions["people"]["questions"])
+	
+	
 
 func _input(event: InputEvent) -> void:
 	
@@ -361,21 +410,26 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func answerd_truth():
 
 	# first check to see if saying the truth is right
-	if questions[question_num]["user_data"] == "" || questions[question_num]["user_data"] == "TRUTH":
+	if get_user_data() == "" || get_user_data() == "TRUTH":
 		
 		await speak_correct()
 		
 		# if the user data is not "TRUTH" set to truth
-		if questions[question_num]["user_data"] != "TRUTH":
+		if get_user_data() != "TRUTH":
 			
 			# also update total truths/lable
 			total_truths += 1
-			questions[question_num]["user_data"] = "TRUTH"
+			set_user_data("TRUTH")
 			hud.truth_label.text = "Total Truths:\n" + str(total_truths)
 
 		
 	else:
+		
+		total_truths += 1
+		hud.truth_label.text = "Total Truths:\n" + str(total_truths)
 		await speak_incorrect()
+	
+	topic_amount[current_topic] += 1
 	
 	# new queston
 	start_question()
@@ -391,25 +445,26 @@ func answerd_no():
 	# new question
 	start_question()
 
-
 # called from hud when question answered on lie
 func answered_question(data: String):
 	
 	await get_tree().process_frame
 	
 	# if empty assume correct
-	if questions[question_num]["user_data"] == "":
-		questions[question_num]["user_data"] = data
-		
+	if get_user_data()  == "":
+		set_user_data(data)
+		questions[current_topic]["usedAnswers"].append(data)
 		await speak_correct()
 
 	# if correct
-	elif questions[question_num]["user_data"] == data:
+	elif get_user_data() == data:
 		await speak_correct()
 		
 	# if not corrrect
 	else:
 		await speak_incorrect()
+	
+	topic_amount[current_topic] += 1
 	
 	# new question
 	start_question()

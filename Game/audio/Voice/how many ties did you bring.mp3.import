@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://di31vpvk6i2bt"
+path="res://.godot/imported/how many ties did you bring.mp3-d26ebd1d700e41e1aa613b4dc7577ba3.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/how many ties did you bring.mp3"
+dest_files=["res://.godot/imported/how many ties did you bring.mp3-d26ebd1d700e41e1aa613b4dc7577ba3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

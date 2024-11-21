@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3uhtq2ajvdi2"
+path="res://.godot/imported/how many dollars were you planning on spending on souvenirs.mp3-57938581ce3ebc8dce9e4c85fb2022ba.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/how many dollars were you planning on spending on souvenirs.mp3"
+dest_files=["res://.godot/imported/how many dollars were you planning on spending on souvenirs.mp3-57938581ce3ebc8dce9e4c85fb2022ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

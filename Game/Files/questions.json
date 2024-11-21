@@ -1,381 +1,156 @@
 {
-  "lies": [
-	{
-	  "question": "Where were you born?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Moscow",
-		"Saint Petersburg",
-		"Sochi",
-		"Yekaterinburg",
-		"Kazan",
-		"Novosibirsk",
-		"Vladivostok"
-	  ]
+	"people": {
+		"answers": [
+			"I've seen him on T.V.",
+			"My old boss knew him.",
+			"I recognize the name.",
+			"I used to work with him.",
+			"Yeah I dislike him.",
+			"I have never heard of him.",
+			"We used to be friends years ago.",
+			"Yeah I hate him.",
+			"We went to school together.",
+			"I think we used to work at the same company.",
+			"He was my old boss."
+		],
+		"usedAnswers": [],
+		"questions": [
+			{
+				"question": "Do you know Igor Tolstoy?",
+				"userData": ""
+			},
+			{
+				"question": "Do you know Victor Tolstoy?",
+				"userData": ""
+			},
+			{
+				"question": "Do you know Nikolaev Petrov?",
+				"userData": ""
+			},
+			{
+				"question": "Do you know Nikolai Pavlov?",
+				"userData": ""
+			},
+			{
+				"question": "Do you know Boris Pavlov?",
+				"userData": ""
+			}
+		]
 	},
-	{
-	  "question": "What’s your most recent occupation?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Translator",
-		"Engineer",
-		"Journalist",
-		"Game developer",
-		"Pilot",
-		"Artist",
-		"Manager"
-	  ]
+	"places": {
+		"answers": [
+			"Trying to find a place to eat.",
+			"I don't remember.",
+			"I was looking for a friend.",
+			"Sight seeing.",
+			"I like to take walks there.",
+			"I was lost.",
+			"Taking a smoke.",
+			"Just getting some fresh air.",
+			"I was taking a shortcut.",
+			"I was never over there.",
+			"Walking to my meeting."
+		],
+		"usedAnswers": [],
+		"questions": [
+			{
+				"question": "What were you doing next to your hotel?",
+				"userData": ""
+			},
+			{
+				"question": "Why were you in the park?",
+				"userData": ""
+			},
+			{
+				"question": "What were you doing next to the subway?",
+				"userData": ""
+			},
+			{
+				"question": "Why were you outside the office building?",
+				"userData": ""
+			},
+			{
+				"question": "Why were you seen around the time and place of the explosion?",
+				"userData": ""
+			}
+		]
 	},
-	{
-	  "question": "Do you speak any other languages fluently besides Russian and English?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Hindi ",
-		"German",
-		"French",
-		"Spanish",
-		"Mandarin",
-		"Italian",
-		"Arabic",
-		"No"
-	  ]
+	"dates": {
+		"answers": [
+			"Trying to find a place to eat.",
+			"I don't remember.",
+			"I was looking for a friend.",
+			"Sight seeing.",
+			"I like to take walks at around that time.",
+			"I was lost.",
+			"Reading the paper.",
+			"Just getting some fresh air.",
+			"Asleep",
+			"Driving.",
+			"In a meeting."
+		],
+		"usedAnswers": [],
+		"questions": [
+			{
+				"question": "What were you doing on October 21st at around 7pm?",
+				"userData": ""
+			},
+			{
+				"question": "What were you doing on October 21st at around 7am?",
+				"userData": ""
+			},
+			{
+				"question": "What were you doing on October 24th at around 11am?",
+				"userData": ""
+			},
+			{
+				"question": "What were you doing on November 4th at around 11am?",
+				"userData": ""
+			},
+			{
+				"question": "What were you doing on November 4th at around 8am?",
+				"userData": ""
+			}
+		]
 	},
-	{
-	  "question": "Who is your employer?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Private tech company",
-		"Freelance contractor",
-		"Government",
-		"Airline",
-		"I work for myself.",
-		"Manufacturing plant",
-		"I am in between jobs."
-	  ]
-	},
-	{
-	  "question": "Where do you live?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"New York",
-		"Washington D.C",
-		"Moscow",
-		"Dallas",
-		"I move a lot for work.",
-		"Near the area.",
-		"10 minutes away from I-95."
-	  ]
-	},
-	{
-	  "question": "What is your blood type?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"A",
-		"B",
-		"AB",
-		"O",
-		"O-",
-		"A-",
-		"B-"
-	  ]
-	},
-	{
-	  "question": "What were you doing on October 21st at around 7pm?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Working on a project.",
-		"At my hotel.",
-		"Sightseeing",
-		"Visiting a friend.",
-		"Taking a walk.",
-		"Eating dinner.",
-		"Meeting a friend."
-	  ]
-	},
-	{
-	  "question": "Why were you near The Office of the Secretary of Defense?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I got lost",
-		"I had a meeting near by",
-		"I was passing through",
-		"I was touring the city",
-		"I was visiting a near by cemetary",
-		"I was passing the garden",
-		"I was headed to the airport"
-	  ]
-	},
-	{
-	  "question": "What is the name of the hotel you stayed at?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Hotel Metropol",
-		"Grand Plaza",
-		"Northern Lights Inn",
-		"Red Square Hotel",
-		"Eastern Star",
-		"Victoria Palace",
-		"Imperial Hotel"
-	  ]
-	},
-	{
-	  "question": "Do you know Igor Tolstoy?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"No, never met them",
-		"Only casually",
-		"They work in the same industry",
-		"I've seen him around",
-		"I've met him once",
-		"I don't think so"
-	  ]
-	},
-	{
-	  "question": "Why did you travel to the United States?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"For a business conference",
-		"Tourism",
-		"Visiting family",
-		"To live the american dream",
-		"For fun",
-		"To escape the torment of the russian government"
-	  ]
-	},
-	{
-	  "question": "What do you keep in your wallet?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Fake ID",
-		"Old receipts",
-		"Photograph",
-		"Foreign currency",
-		"Business cards",
-		"A lucky charm",
-		"Nothing"
-	  ]
-	},
-	{
-	  "question": "What did you order at the restaurant?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Borscht",
-		"Pelmeni",
-		"Chicken Kiev",
-		"Beef Stroganoff",
-		"Pirozhki",
-		"Blini",
-		"Caviar"
-	  ]
-	},
-	{
-	  "question": "Why were you carrying a briefcase?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"It was a gift",
-		"Part of my equipment for work",
-		"I found it",
-		"At secret meetings",
-		"To keep my documents safe",
-		"For the style",
-		"To bring it to a friend"
-	  ]
-	},
-	{
-	  "question": "Why did you hesitate to answer?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I was confused",
-		"I didn’t want to say anything incriminating",
-		"I needed a moment to think",
-		"Just had to process",
-		"I was translating in my head",
-		"I’m nervous; this is a lot of pressure",
-		"I don’t think it’s relevant to your investigation"
-	  ]
-	},
-	{
-	  "question": "What do you think of the Secretary of Defense?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I don’t know much about them.",
-		"They seem competent.",
-		"I have no opinion.",
-		"They seem incompetent.",
-		"They are unfit for the job.",
-		"They are fit for the job.",
-		"Who?"
-	  ]
-	},
-	{
-	  "question": "Why should we believe you?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I have nothing to hide.",
-		"I’ve told you everything.",
-		"I’m innocent.",
-		"I am just a bystander.",
-		"I swear on my children.",
-		"I have complied with you.",
-		"Because you have no proof."
-	  ]
-	},
-	{
-	  "question": "Why did you travel alone?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I prefer solitude.",
-		"Easier to focus on work.",
-		"I can not afford to bring anyone.",
-		"I didn’t want to draw attention to myself.",
-		"My work requires independence.",
-		"I needed time to clear my head and focus.",
-		"It was a last-minute trip, and I couldn’t coordinate with anyone."
-	  ]
-	},
-	{
-	  "question": "Do you own any weapons?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Yes back in my country.",
-		"Yes but they stay at my house.",
-		"Yes a shotgun.",
-		"Yes a handgun.",
-		"No.",
-		"Only a knife.",
-		"Violence isn't in my nature."
-	  ]
-	},
-	{
-	  "question": "What’s in your bag?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Just my laptop and some chargers.",
-		"A few personal items and toiletries.",
-		"Documents for work.",
-		"A change of clothes and my passport.",
-		"Some snacks for the day.",
-		"A book I’m reading.",
-		"Just the usual stuff."
-	  ]
-	},
-	{
-	  "question": "What was the weather like during your stay?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Snowy",
-		"Rainy",
-		"Clear and sunny",
-		"Foggy",
-		"Windy",
-		"Overcast",
-		"Stormy"
-	  ]
-	},
-	{
-	  "question": "What’s the last thing you purchased?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"A bottle of water.",
-		"A cigarette.",
-		"A matchbook.",
-		"A ticket for the subway.",
-		"Lunch.",
-		"A newspaper.",
-		"Some souvenirs for my family."
-	  ]
-	},
-	{
-	  "question": "Who have you been in contact with recently?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Just my boss and a couple of colleagues.",
-		"Family members checking in on me.",
-		"A friend I was planning to meet here.",
-		"Nobody; I’ve kept to myself.",
-		"A hotel concierge about local attractions.",
-		"A taxi driver who dropped me off.",
-		"Someone I met briefly at the airport."
-	  ]
-	},
-	{
-	  "question": "What is your name?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"Dmitri",
-		"Nikolai",
-		"Ivan",
-		"Boris",
-		"Victor",
-		"Sergey",
-		"Anatoly"
-	  ]
-	},
-	{
-	  "question": "Why were you carrying so much cash?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I prefer not to rely on cards when I travel.",
-		"It's common where I come from.",
-		"I was planning to exchange it for local currency.",
-		"I carry cash for emergencies.",
-		"I wasn’t sure if my card would work here.",
-		"It was given to me for a business transaction.",
-		"I was going to use it for tips and small purchases."
-	  ]
-	},
-		{
-	  "question": "Why are there gaps in your travel itinerary?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I forgot to record some details.",
-		"I wasn’t aware I needed to provide a full itinerary.",
-		"I made some last-minute changes.",
-		"I lost some of my travel documents.",
-		"I wanted to keep my plans flexible.",
-		"I didn’t think the gaps were significant.",
-		"I didn’t have anything planned during that time."
-	  ]
-	},
-		{
-	  "question": "Why didn’t you report the incident?",
-	  "is_mcq": true,
-	  "user_data": "",
-	  "options": [
-		"I didn’t realize it was important.",
-		"I was scared and didn’t know what to do.",
-		"I wasn’t sure who to trust.",
-		"I thought someone else would report it.",
-		"I needed time to process what happened.",
-		"I didn’t want to get involved.",
-		"I wasn’t aware there was an incident until later."
-	  ]
+	"items": {
+		"answers": [
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"10",
+			"11",
+			"12",
+			"13",
+			"14",
+			"15",
+			"16",
+			"17"
+		],
+		"usedAnswers": [],
+		"questions": [
+			{
+				"question": "How many cigarettes do you have on you?",
+				"userData": ""
+			},
+			{
+				"question": "How many cigarettes do you smoke a day?",
+				"userData": ""
+			},
+			{
+				"question": "How many meetings did you have on your stay?",
+				"userData": ""
+			},
+			{
+				"question": "How many ties did you bring?",
+				"userData": ""
+			},
+			{
+				"question": "How many dollars were you planning on spending on souvenirs?",
+				"userData": ""
+			}
+		]
 	}
-  ]
 }
