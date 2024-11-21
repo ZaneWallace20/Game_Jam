@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpflrvu0jjpmd"
+path="res://.godot/imported/what were you doing next to your hotel.mp3-300e9e17675e23f4ff70692380bfcc76.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/what were you doing next to your hotel.mp3"
+dest_files=["res://.godot/imported/what were you doing next to your hotel.mp3-300e9e17675e23f4ff70692380bfcc76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

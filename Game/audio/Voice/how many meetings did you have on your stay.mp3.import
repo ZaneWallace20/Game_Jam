@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8s1nd2t6s20r"
+path="res://.godot/imported/how many meetings did you have on your stay.mp3-17c3982e170686162066b84c4904e4c5.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/how many meetings did you have on your stay.mp3"
+dest_files=["res://.godot/imported/how many meetings did you have on your stay.mp3-17c3982e170686162066b84c4904e4c5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

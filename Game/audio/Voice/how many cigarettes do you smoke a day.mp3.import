@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfd16yrmmuqh7"
+path="res://.godot/imported/how many cigarettes do you smoke a day.mp3-9d0b2f96321b618c14049ec1ab689702.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/how many cigarettes do you smoke a day.mp3"
+dest_files=["res://.godot/imported/how many cigarettes do you smoke a day.mp3-9d0b2f96321b618c14049ec1ab689702.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

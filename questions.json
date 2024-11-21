@@ -1,0 +1,156 @@
+{
+    "people": {
+        "answers": [
+            "I've seen him on T.V.",
+            "My old boss knew him.",
+            "I recognize the name.",
+            "I used to work with him.",
+            "Yeah I dislike him.",
+            "I have never heard of him.",
+            "We used to be friends years ago.",
+            "Yeah I hate him.",
+            "We went to school together.",
+            "I think we used to work at the same company.",
+            "He was my old boss."
+        ],
+        "usedAnswers": [],
+        "questions": [
+            {
+                "question": "Do you know Igor Tolstoy?",
+                "userData": ""
+            },
+            {
+                "question": "Do you know Victor Tolstoy?",
+                "userData": ""
+            },
+            {
+                "question": "Do you know Nikolaev Petrov?",
+                "userData": ""
+            },
+            {
+                "question": "Do you know Nikolai Pavlov?",
+                "userData": ""
+            },
+            {
+                "question": "Do you know Boris Pavlov?",
+                "userData": ""
+            }
+        ]
+    },
+    "places": {
+        "answers": [
+            "Trying to find a place to eat.",
+            "I don't remember.",
+            "I was looking for a friend.",
+            "Sight seeing.",
+            "I like to take walks there.",
+            "I was lost.",
+            "Taking a smoke.",
+            "Just getting some fresh air.",
+            "I was taking a shortcut.",
+            "I was never over there.",
+            "Walking to my meeting."
+        ],
+        "usedAnswers": [],
+        "questions": [
+            {
+                "question": "What were you doing next to your hotel?",
+                "userData": ""
+            },
+            {
+                "question": "Why were you in the park?",
+                "userData": ""
+            },
+            {
+                "question": "What were you doing next to the subway?",
+                "userData": ""
+            },
+            {
+                "question": "Why were you outside the office building?",
+                "userData": ""
+            },
+            {
+                "question": "Why were you seen around the time and place of the explosion?",
+                "userData": ""
+            }
+        ]
+    },
+    "dates": {
+        "answers": [
+            "Trying to find a place to eat.",
+            "I don't remember.",
+            "I was looking for a friend.",
+            "Sight seeing.",
+            "I like to take walks at around that time.",
+            "I was lost.",
+            "Reading the paper.",
+            "Just getting some fresh air.",
+            "Asleep",
+            "Driving.",
+            "In a meeting."
+        ],
+        "usedAnswers": [],
+        "questions": [
+            {
+                "question": "What were you doing on October 21st at around 7pm?",
+                "userData": ""
+            },
+            {
+                "question": "What were you doing on October 21st at around 7am?",
+                "userData": ""
+            },
+            {
+                "question": "What were you doing on October 24th at around 11am?",
+                "userData": ""
+            },
+            {
+                "question": "What were you doing on November 4th at around 11am?",
+                "userData": ""
+            },
+            {
+                "question": "What were you doing on November 4th at around 8am?",
+                "userData": ""
+            }
+        ]
+    },
+    "items": {
+        "answers": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17"
+        ],
+        "usedAnswers": [],
+        "questions": [
+            {
+                "question": "How many cigarettes do you have on you?",
+                "userData": ""
+            },
+            {
+                "question": "How many cigarettes do you smoke a day?",
+                "userData": ""
+            },
+            {
+                "question": "How many meetings did you have on your stay?",
+                "userData": ""
+            },
+            {
+                "question": "How many ties did you bring?",
+                "userData": ""
+            },
+            {
+                "question": "How many dollars were you planning on spending on souvenirs?",
+                "userData": ""
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://biiw31ux730hn"
+path="res://.godot/imported/do you know boris pavlov.mp3-29fab018e72518ba43aa0776abfc535e.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/do you know boris pavlov.mp3"
+dest_files=["res://.godot/imported/do you know boris pavlov.mp3-29fab018e72518ba43aa0776abfc535e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

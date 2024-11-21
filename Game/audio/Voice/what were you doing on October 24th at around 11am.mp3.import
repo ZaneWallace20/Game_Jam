@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bt65n8xoeu0xx"
+path="res://.godot/imported/what were you doing on October 24th at around 11am.mp3-21f203d8813df1bb89beda3a9b84bb68.mp3str"
+
+[deps]
+
+source_file="res://audio/Voice/what were you doing on October 24th at around 11am.mp3"
+dest_files=["res://.godot/imported/what were you doing on October 24th at around 11am.mp3-21f203d8813df1bb89beda3a9b84bb68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
