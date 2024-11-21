@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=18 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
 [ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
+[ext_resource type="PackedScene" uid="uid://inbp4avnm8rn" path="res://Imports/roomenvirnment.tscn" id="13_xcd62"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001
@@ -59,8 +60,19 @@ script = ExtResource("1_12hge")
 [node name="Rifle" parent="." instance=ExtResource("2_raut4")]
 transform = Transform3D(0.645724, 0, 0.763571, 0, 1, 0, -0.763571, 0, 0.645724, 1.02695, -0.0234802, 0.365775)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+[node name="DirectionalLightFRONT" type="DirectionalLight3D" parent="."]
+light_color = Color(1, 0.878431, 0.815686, 1)
+light_energy = 0.01
+
+[node name="DirectionalLightLEFT" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0039928, 0, 0.000184536)
+light_color = Color(1, 0.878431, 0.815686, 1)
+light_energy = 0.02
+
+[node name="DirectionalLightRIGHT" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0039928, 0, 0.000184536)
+light_color = Color(1, 0.878431, 0.815686, 1)
+light_energy = 0.02
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Head/Cam")
@@ -101,6 +113,7 @@ pixel_size = 0.001
 texture = SubResource("ViewportTexture_gvh4f")
 
 [node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.35, 0.35)
 
 [node name="Cam" type="Camera3D" parent="Head"]
 current = true
@@ -131,5 +144,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
 
 [node name="Floor2" parent="." instance=ExtResource("12_nqo3i")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.8, -1.5)
+
+[node name="roomenvirnment" parent="." instance=ExtResource("13_xcd62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
