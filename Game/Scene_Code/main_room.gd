@@ -360,10 +360,6 @@ func _input(event: InputEvent) -> void:
 	# check if esc pressed
 	if Input.is_action_just_pressed("quit"):
 		
-		# reset camera
-		head.rotation.y = 0
-		cam.rotation.x = 0
-		
 		# clear tv_text
 		update_words(true)
 		animation_player.play_backwards("zoom_out")
