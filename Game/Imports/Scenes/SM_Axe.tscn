@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=4 uid="uid://cmbn3wxhvvheu"]
 
-[ext_resource type="Texture2D" uid="uid://bjtv8q68bgx0p" path="res://Models/Axe/standardSurface1_baseColor.png" id="1_ggj1e"]
-[ext_resource type="Texture2D" uid="uid://yb66jmv1fnwa" path="res://Models/Axe/standardSurface1_occlusionRoughnessMetallic.png" id="2_jbhnu"]
-[ext_resource type="Texture2D" uid="uid://putuwkc63obo" path="res://Models/Axe/standardSurface1_normal.png" id="3_pn85v"]
+[ext_resource type="Texture2D" uid="uid://bjtv8q68bgx0p" path="res://Models/Axe/standardSurface1_baseColor.png" id="1_5g0o2"]
+[ext_resource type="Texture2D" uid="uid://yb66jmv1fnwa" path="res://Models/Axe/standardSurface1_occlusionRoughnessMetallic.png" id="2_dr5wj"]
+[ext_resource type="Texture2D" uid="uid://putuwkc63obo" path="res://Models/Axe/standardSurface1_normal.png" id="3_se1yv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snd50"]
 resource_name = "standardSurface1"
-albedo_texture = ExtResource("1_ggj1e")
+albedo_texture = ExtResource("1_5g0o2")
 metallic = 1.0
-metallic_texture = ExtResource("2_jbhnu")
+metallic_texture = ExtResource("2_dr5wj")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_jbhnu")
+roughness_texture = ExtResource("2_dr5wj")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("3_pn85v")
+normal_texture = ExtResource("3_se1yv")
 ao_enabled = true
-ao_texture = ExtResource("2_jbhnu")
+ao_texture = ExtResource("2_dr5wj")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8umg5"]
 _surfaces = [{
@@ -53,7 +53,7 @@ shadow_mesh = SubResource("ArrayMesh_8umg5")
 
 [node name="SM_Axe3" type="Node3D"]
 
-[node name="SM_Axe2" type="MeshInstance3D" parent="."]
+[node name="Sm_Axe2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 1.598, -0.4, -3.901)
 mesh = SubResource("ArrayMesh_8e8l8")
 skeleton = NodePath("")

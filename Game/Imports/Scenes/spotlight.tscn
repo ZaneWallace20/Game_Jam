@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0fmrbgyi1bqx"]
 
 [ext_resource type="PackedScene" uid="uid://y2sfqjox7ynk" path="res://Models/Spotlight/SpotlightTexture.gltf" id="1_6lvtg"]
-[ext_resource type="Script" path="res://Imports/Scene_Code/flickeringLight.gd" id="2_umgql"]
-[ext_resource type="Script" path="res://Imports/Scene_Code/omni_light_3d.gd" id="3_c3nst"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/flickering_light.gd" id="2_umgql"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/light_bulb.gd" id="3_c3nst"]
 [ext_resource type="NoiseTexture3D" uid="uid://euidgweuuetu" path="res://Imports/Scenes/noisespotlight.tres" id="3_orojo"]
 [ext_resource type="AudioStream" uid="uid://dupse43wavoo8" path="res://audio/electric_hum.mp3" id="4_nfy2q"]
 
 [node name="Spotlight" type="Node3D"]
 
-[node name="SpotlightTexture" parent="." instance=ExtResource("1_6lvtg")]
+[node name="Spotlight_Texture" parent="." instance=ExtResource("1_6lvtg")]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpotlightTexture"]
+[node name="Spot_Light" type="SpotLight3D" parent="Spotlight_Texture"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.21196, 0)
 light_color = Color(1, 1, 0.917647, 1)
 light_indirect_energy = 16.0
@@ -24,13 +24,13 @@ spot_angle = 41.06
 script = ExtResource("2_umgql")
 noise = ExtResource("3_orojo")
 
-[node name="electric_sound" type="AudioStreamPlayer3D" parent="SpotlightTexture"]
+[node name="Electric_Sound" type="AudioStreamPlayer3D" parent="Spotlight_Texture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1305, 0)
 stream = ExtResource("4_nfy2q")
 volume_db = -50.0
 autoplay = true
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SpotlightTexture"]
+[node name="Light_Bulb" type="OmniLight3D" parent="Spotlight_Texture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15857, 0)
 light_color = Color(1, 1, 0.917647, 1)
 light_energy = 2.5

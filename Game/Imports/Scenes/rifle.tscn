@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dane34c5ixkkf"]
+[gd_scene load_steps=12 format=3 uid="uid://dane34c5ixkkf"]
 
 [ext_resource type="Script" path="res://Imports/Scene_Code/rifle.gd" id="1_n01qq"]
 [ext_resource type="AudioStream" uid="uid://7kjltyxqy2cb" path="res://audio/lever.mp3" id="1_vlprc"]
@@ -36,9 +36,6 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_6gktj")
 size = Vector2(0.25, 0.25)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_l54no"]
-size = Vector3(0.2, 0.2, 1)
-
 [sub_resource type="Animation" id="Animation_6wwsr"]
 resource_name = "Fire"
 length = 1.5
@@ -46,7 +43,7 @@ step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody3D/Gun/DirectionalLight3D:visible")
+tracks/0/path = NodePath("Muzzle_Light:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +55,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RigidBody3D/Gun/Rack:playing")
+tracks/1/path = NodePath("Rack:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -70,7 +67,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RigidBody3D/Gun/DirectionalLight3D:light_energy")
+tracks/2/path = NodePath("Muzzle_Light:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -82,7 +79,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = false
-tracks/3/path = NodePath("GPUParticles3D:emitting")
+tracks/3/path = NodePath("Muzzle_Particles:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -94,7 +91,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RigidBody3D/Gun/GunShot:playing")
+tracks/4/path = NodePath("Gun_Shot_Audio:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -109,7 +106,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody3D/Gun/DirectionalLight3D:visible")
+tracks/0/path = NodePath("Muzzle_Light:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -121,7 +118,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RigidBody3D/Gun/Rack:playing")
+tracks/1/path = NodePath("Rack:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -133,7 +130,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RigidBody3D/Gun/DirectionalLight3D:light_energy")
+tracks/2/path = NodePath("Muzzle_Light:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -145,7 +142,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GPUParticles3D:emitting")
+tracks/3/path = NodePath("Muzzle_Particles:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -157,7 +154,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RigidBody3D/Gun/GunShot:playing")
+tracks/4/path = NodePath("Gun_Shot_Audio:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -176,7 +173,7 @@ _data = {
 [node name="Rifle" type="Node3D"]
 script = ExtResource("1_n01qq")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="Muzzle_Particles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0577511)
 layers = 2
 emitting = false
@@ -188,22 +185,10 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_u40rg")
 draw_pass_1 = SubResource("QuadMesh_fagu5")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-collision_layer = 8388608
-collision_mask = 8388608
-freeze = true
-
-[node name="Marker3D" type="Marker3D" parent="RigidBody3D"]
+[node name="Front_Marker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.596677)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_l54no")
-
-[node name="Gun" type="MeshInstance3D" parent="RigidBody3D"]
-layers = 524288
-skeleton = NodePath("../..")
-
-[node name="DirectionalLight3D" type="OmniLight3D" parent="RigidBody3D/Gun"]
+[node name="Muzzle_Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.865826)
 visible = false
 layers = 2
@@ -211,27 +196,19 @@ light_color = Color(0.99033, 0.343882, 0.201113, 1)
 light_energy = 500.0
 omni_range = 4096.0
 
-[node name="DirectionalLight3D2" type="OmniLight3D" parent="RigidBody3D/Gun"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.865826)
-visible = false
-layers = 2
-light_color = Color(0.99033, 0.343882, 0.201113, 1)
-light_energy = 1000.0
-omni_range = 4096.0
-
-[node name="GunShot" type="AudioStreamPlayer3D" parent="RigidBody3D/Gun"]
+[node name="Gun_Shot_Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.195014)
 stream = ExtResource("2_2ce0v")
 
-[node name="Rack" type="AudioStreamPlayer3D" parent="RigidBody3D/Gun"]
+[node name="Rack" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.195014)
 visible = false
 stream = ExtResource("1_vlprc")
 volume_db = -10.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Fire_Player" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_u7uu0")
 }
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Fire_Player" to="." method="_on_fire_player_animation_finished"]

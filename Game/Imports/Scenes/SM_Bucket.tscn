@@ -53,9 +53,9 @@ shadow_mesh = SubResource("ArrayMesh_dp4ne")
 
 [node name="SM_Bucket3" type="Node3D"]
 
-[node name="SM_Bucket" type="Node3D" parent="."]
+[node name="Sm_Bucket" type="Node3D" parent="."]
 transform = Transform3D(0.213788, 0, 0, 0, 0.213788, 0, 0, 0, 0.213788, 0, 0, 0)
 
-[node name="SM_Bucket2" type="MeshInstance3D" parent="SM_Bucket"]
+[node name="Sm_Bucket" type="MeshInstance3D" parent="Sm_Bucket"]
 mesh = SubResource("ArrayMesh_ajq0j")
 skeleton = NodePath("")

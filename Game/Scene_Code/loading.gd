@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var text_player: AnimationPlayer = $Text_Player
 
-@onready var header: Label = $ColorRect/ColorRect/Panel/header
+@onready var header: Label = $ColorRect/ColorRect/Panel/Header
 @onready var label: Label = $ColorRect/ColorRect/Panel/Label
 
 var next_scene = ""
@@ -31,7 +31,7 @@ func _ready():
 
 	if !should_go_on:
 		await get_tree().create_timer(SHOW_TIME).timeout
-		animation_player.play("show_text")
+		text_player.play("show_text")
 		death = Global.how_died != ""
 		if death:
 			header.text = "YOU DIED\n(Press any key to continue)"
@@ -71,9 +71,9 @@ func _process(delta):
 				
 				# lock out til animation is done
 				should_go_on = false
-				animation_player.play_backwards("show_text")
+				text_player.play_backwards("show_text")
 
-				await get_tree().create_timer(animation_player.current_animation_length + 0.25).timeout
+				await get_tree().create_timer(text_player.current_animation_length + 0.25).timeout
 				
 				# go on
 				should_go_on = true

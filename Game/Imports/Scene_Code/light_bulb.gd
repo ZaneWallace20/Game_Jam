@@ -2,8 +2,7 @@ extends OmniLight3D
 
 @export var noise: NoiseTexture3D
 
-@onready var electric_sound: AudioStreamPlayer3D = $"../electric_sound"
-
+@onready var electric_sound: AudioStreamPlayer3D = $"../Electric_Sound"
 
 var time_passed := 0.0
 
@@ -21,11 +20,5 @@ func _process(delta: float) -> void:
 	
 	light_energy = sampled_noise * 10
 	
-	
-	
 	electric_sound.pitch_scale = clamp(sampled_noise * 10, 0.95, 1.0) - .2
 	electric_sound.volume_db = lerp(-40, -15, sampled_noise) 
-	
-
-	
-	

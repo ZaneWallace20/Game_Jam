@@ -8,62 +8,62 @@
 [ext_resource type="PackedScene" uid="uid://dx1d4quvyjnd" path="res://Models/Speaker/SpeakerTexture.gltf" id="7_6kkj3"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="7_dqy0p"]
 [ext_resource type="PackedScene" uid="uid://b61w2u2pu2j4f" path="res://Models/CagedLight/CagedLightTexture.gltf" id="8_w5ier"]
-[ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/SM_Axe.tscn" id="9_bqvij"]
-[ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/SM_Bucket.tscn" id="10_a02hw"]
+[ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/sm_axe.tscn" id="9_bqvij"]
+[ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/sm_bucket.tscn" id="10_a02hw"]
 [ext_resource type="PackedScene" uid="uid://ohmch00q7bvt" path="res://Models/Doorway/Doorway.gltf" id="11_ey1jt"]
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 
-[node name="WallRustedTexture" parent="." instance=ExtResource("1_qplx4")]
+[node name="Wall_Rusted_Texture" parent="." instance=ExtResource("1_qplx4")]
 transform = Transform3D(0.00113536, 0.00424387, 0.99999, 0.000209041, 0.999991, -0.00424411, -0.999999, 0.00021385, 0.00113446, -1.49885, 0.00657521, -0.00170112)
 
-[node name="WallRustedTexture3" parent="." instance=ExtResource("1_qplx4")]
+[node name="Wall_Rusted_Texture2" parent="." instance=ExtResource("3_dicqg")]
+transform = Transform3D(0.99999, 0.00424387, -0.0011354, -0.00424411, 0.999991, -0.000209041, 0.00113451, 0.00021385, 0.999999, 1.50112, -0.00615716, 0.00170243)
+
+[node name="Wall_Rusted_Texture3" parent="." instance=ExtResource("1_qplx4")]
 transform = Transform3D(0.00113536, 0.00424387, 0.99999, 0.000209041, 0.999991, -0.00424411, -0.999999, 0.00021385, 0.00113446, -1.50226, 0.00594808, 2.9983)
 
-[node name="WallTexture" parent="." instance=ExtResource("2_3kgym")]
+[node name="Wall_Rusted_Texture4" parent="." instance=ExtResource("3_dicqg")]
+transform = Transform3D(-0.00113545, 0.00424387, -0.99999, -0.000209041, 0.999991, 0.00424411, 0.999999, 0.00021385, -0.00113455, 1.50112, -0.00615716, 0.00170243)
+
+[node name="Wall_Texture" parent="." instance=ExtResource("2_3kgym")]
 transform = Transform3D(0.99999, 0.00424387, -0.0011354, -0.00424411, 0.999991, -0.000209041, 0.00113451, 0.00021385, 0.999999, -1.49885, 0.00657521, -0.00170112)
 
-[node name="WallTexture2" parent="." instance=ExtResource("2_3kgym")]
+[node name="Wall_Texture2" parent="." instance=ExtResource("2_3kgym")]
 transform = Transform3D(-0.00113545, 0.00424387, -0.99999, -0.000209041, 0.999991, 0.00424411, 0.999999, 0.00021385, -0.00113455, 1.49771, -0.00678425, 3.0017)
 
-[node name="WallRustedTexture2" parent="." instance=ExtResource("3_dicqg")]
-transform = Transform3D(0.99999, 0.00424387, -0.0011354, -0.00424411, 0.999991, -0.000209041, 0.00113451, 0.00021385, 0.999999, 1.50112, -0.00615713, 0.00170243)
-
-[node name="WallRustedTexture4" parent="." instance=ExtResource("3_dicqg")]
-transform = Transform3D(-0.00113545, 0.00424387, -0.99999, -0.000209041, 0.999991, 0.00424411, 0.999999, 0.00021385, -0.00113455, 1.50112, -0.00615713, 0.00170243)
-
-[node name="PipeTexture" parent="." instance=ExtResource("6_fmyec")]
+[node name="Pipe_Texture" parent="." instance=ExtResource("6_fmyec")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87013, 0, 3.31103)
 
-[node name="PipeTexture2" parent="." instance=ExtResource("6_fmyec")]
+[node name="Pipe_Texture2" parent="." instance=ExtResource("6_fmyec")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87013, 0, 1.25762)
 
-[node name="PipeTexture3" parent="." instance=ExtResource("6_fmyec")]
+[node name="Pipe_Texture3" parent="." instance=ExtResource("6_fmyec")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87013, 0, -0.794129)
 
-[node name="SecurityCamtexture" parent="." instance=ExtResource("6_pj5ow")]
+[node name="Security_Cam_Texture" parent="." instance=ExtResource("6_pj5ow")]
 transform = Transform3D(0.256547, 0.0452361, -0.965473, -0.173648, 0.984807, 0, 0.950805, 0.167652, 0.260505, -1.07549, 1.87545, -0.883017)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SecurityCamtexture"]
+[node name="Bulb" type="OmniLight3D" parent="Security_Cam_Texture"]
 transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 9.31323e-08, 0, -9.68575e-08, 1, 0.154025, 1.02122, 0.0250854)
 light_color = Color(0.608335, 0, 0.113326, 1)
 light_energy = 0.25
 omni_range = 0.150092
 
-[node name="SpeakerTexture" parent="." instance=ExtResource("7_6kkj3")]
+[node name="Speaker_Texture" parent="." instance=ExtResource("7_6kkj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46857, -0.0445451, 0.0607982)
 
-[node name="SpeakerTexture2" parent="." instance=ExtResource("7_6kkj3")]
+[node name="Speaker_Texture2" parent="." instance=ExtResource("7_6kkj3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.48308, -0.281362, -0.0146382)
 
 [node name="Ceiling" parent="." instance=ExtResource("7_dqy0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="CagedLightTexture" parent="." instance=ExtResource("8_w5ier")]
+[node name="Caged_Light_Texture" parent="." instance=ExtResource("8_w5ier")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -2.87, 1, 0.75)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CagedLightTexture"]
+[node name="Bulb" type="OmniLight3D" parent="Caged_Light_Texture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00603861, 0.23953, 0.00406593)
 light_color = Color(1, 0.984314, 0.941176, 1)
 light_energy = 0.25
@@ -71,10 +71,10 @@ light_size = 0.345
 light_specular = 0.0
 shadow_enabled = true
 
-[node name="CagedLightTexture2" parent="." instance=ExtResource("8_w5ier")]
+[node name="Caged_Light_Texture2" parent="." instance=ExtResource("8_w5ier")]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 2.89, 1, 0.724)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CagedLightTexture2"]
+[node name="Bulb" type="OmniLight3D" parent="Caged_Light_Texture2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00603861, 0.23953, -0.00425869)
 light_color = Color(1, 0.984314, 0.941176, 1)
 light_energy = 0.25
@@ -82,10 +82,10 @@ light_size = 0.345
 light_specular = 0.0
 shadow_enabled = true
 
-[node name="SM_Axe3" parent="." instance=ExtResource("9_bqvij")]
+[node name="Sm_Axe3" parent="." instance=ExtResource("9_bqvij")]
 transform = Transform3D(1.18433, 0.193263, -1.81195e-07, 0.19314, -1.18358, 0.042905, 0.00690978, -0.0423449, -1.19923, -2.942, 0.652365, 2.488)
 
-[node name="SM_Bucket3" parent="." instance=ExtResource("10_a02hw")]
+[node name="Sm_Bucket3" parent="." instance=ExtResource("10_a02hw")]
 transform = Transform3D(0.788247, 0, 0.615359, 0, 1, 0, -0.615359, 0, 0.788247, -2.7772, 0.225333, 1.55394)
 
 [node name="Doorway" parent="." instance=ExtResource("11_ey1jt")]

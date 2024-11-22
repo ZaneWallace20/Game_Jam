@@ -1,19 +1,19 @@
 extends Node3D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var zoom_player: AnimationPlayer = $Zoom_Player
+@onready var shake_player: AnimationPlayer = $Shake_Player
 
 @onready var hud: Control = $Hud
-@onready var static_player: AudioStreamPlayer3D = $static
-@onready var voice: AudioStreamPlayer = $voice
-@onready var tv_text: Label = $"tv/2d_in_3d/layer/tv_text"
+@onready var static_player: AudioStreamPlayer3D = $Static
+@onready var voice: AudioStreamPlayer = $Voice
+@onready var tv_text: Label = $"Tv/2d_In_3d/Window/Tv_Text"
 @onready var rifle: Node3D = $Rifle
-@onready var white_rect: ColorRect = $white
+@onready var white_rect: ColorRect = $White
 @onready var spotlight: Node3D = $Spotlight
 
-@onready var cam: Camera3D = $shake_node/Head/Cam
-@onready var head: Node3D = $shake_node/Head
-
+@onready var cam: Camera3D = $Shake_Node/Head/Cam
+@onready var head: Node3D = $Shake_Node/Head
+@onready var shake_node: Node3D = $Shake_Node
 
 @export var MAX_TRUTHS_ALLOWED = 3
 @export var MAX_FAILED_LIES_ALLOWED = 3
@@ -46,7 +46,7 @@ var total_correct = 0
 var quit_game = false
 
 var should_shake = false
-@onready var shake_node: Node3D = $shake_node
+
 
 var shake_speed = .25
 
@@ -255,7 +255,7 @@ func start_question():
 		await get_tree().create_timer(0.2).timeout
 		update_words(true)
 		should_quit = true 
-		animation_player.play_backwards("zoom_out")
+		zoom_player.play_backwards("zoom_out")
 		return
 	
 	# if game is not over 10% chance for quick time event
@@ -347,7 +347,7 @@ func get_question_options():
 func _ready() -> void:
 	
 	# start by zooming out
-	animation_player.play("zoom_out")
+	zoom_player.play("zoom_out")
 	
 	# grab all questinos
 	questions = File_Pros.get_questions()
@@ -373,7 +373,7 @@ func _input(event: InputEvent) -> void:
 		
 		# clear tv_text
 		update_words(true)
-		animation_player.play_backwards("zoom_out")
+		zoom_player.play_backwards("zoom_out")
 		should_quit = true
 		
 		
@@ -394,7 +394,7 @@ func _input(event: InputEvent) -> void:
 			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-20),deg_to_rad(20))
 			head.rotation.y = clamp(head.rotation.y,deg_to_rad(-20),deg_to_rad(20))
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_zoom_player_animation_finished(anim_name: StringName) -> void:
 	
 	# on start when finished zooming out
 	if anim_name == "zoom_out" && !should_quit:
@@ -488,18 +488,18 @@ func _process(delta: float) -> void:
 			update_words()
 			talk_delay = set_talk_delay
 	if should_shake:
-		animation_player_2.play("screen_shake",-1,shake_speed)
+		shake_player.play("screen_shake",-1,shake_speed)
 		shake_speed += 0.5 * delta
 	else:
 		if shake_speed == .25:
 			if abs(shake_node.rotation.z) < deg_to_rad(0.2):
-				animation_player_2.stop()
+				shake_player.stop()
 				shake_node.rotation.z = 0
 				spotlight.rotation = Vector3.ZERO
 
 		else:
 			shake_speed -= 0.5 * delta
-			animation_player_2.play("screen_shake",-1,shake_speed)
+			shake_player.play("screen_shake",-1,shake_speed)
 	shake_speed = clamp(shake_speed,.25,1)
 			
 			

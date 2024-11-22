@@ -26,22 +26,22 @@ density = 1.5
 albedo = Color(0.154876, 0.154876, 0.154876, 1)
 edge_fade = 3.605
 
-[node name="WorldEnvironment" type="WorldEnvironment"]
+[node name="Home_Environment" type="WorldEnvironment"]
 environment = SubResource("Environment_vt2mp")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Light" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_energy = 0.05
 light_volumetric_fog_energy = 3.0
 shadow_enabled = true
 directional_shadow_mode = 1
 
-[node name="fog2" type="FogVolume" parent="."]
+[node name="Fog2" type="FogVolume" parent="."]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 20, 0, 11)
 size = Vector3(70, 50, 20)
 material = SubResource("FogMaterial_iub7h")
 
-[node name="fog3" type="FogVolume" parent="."]
+[node name="Fog" type="FogVolume" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -20, 0, 11)
 size = Vector3(70, 50, 20)
 material = SubResource("FogMaterial_iub7h")

@@ -1,16 +1,15 @@
 extends Node3D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var zoom_player: AnimationPlayer = $Zoom_Player
 
-@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var clear_player: AnimationPlayer = $Clear_Player
 
-@onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
+@onready var instructions_player: AnimationPlayer = $Instructions_Player
 
 @onready var start: Button = $Start
-@onready var title: Label = $title
-@onready var title_2: Label = $title2
+
 @onready var cam: Camera3D = $Cam
-@onready var strike: Label = $title/strike
+@onready var strike: Label = $Title/Strike
 
 var should_go = false
 var instructions_open = false
@@ -32,8 +31,8 @@ func _ready() -> void:
 		# zoom out from center
 		cam.fov = 5
 		start.disabled = true
-		animation_player_2.play_backwards("clear")
-		animation_player.play_backwards("zoom")
+		clear_player.play_backwards("clear")
+		zoom_player.play_backwards("zoom")
 		
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
@@ -46,11 +45,11 @@ func _on_start_pressed() -> void:
 	Global.how_died = ""
 	should_go = true
 	# when starting play the zoom animation
-	animation_player.play("zoom")
+	zoom_player.play("zoom")
 	
 	# when starting play the clear animation
 	# this removes the start button
-	animation_player_2.play("clear")
+	clear_player.play("clear")
 	
 	# tell the loading file what to load
 	Global.next_scene = "res://Scenes/main_room.tscn"
@@ -62,7 +61,7 @@ func _on_start_pressed() -> void:
 	#disable mouse
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_zoom_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "zoom" && should_go:
 		
 		# after zoom is done, switch to loading screen
@@ -73,8 +72,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 # toggle instructions
 func _on_question_pressed() -> void:
 	if instructions_open:
-		animation_player_3.play_backwards("show_instructions")
+		instructions_player.play_backwards("show_instructions")
 	else:
-		animation_player_3.play("show_instructions")
+		instructions_player.play("show_instructions")
 	
 	instructions_open = !instructions_open

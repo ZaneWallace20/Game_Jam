@@ -31,17 +31,17 @@ section_length = 0.001
 [node name="Ambience" type="Node3D"]
 script = ExtResource("1_woxfo")
 
-[node name="subway_audio" type="AudioStreamPlayer3D" parent="."]
+[node name="Subway_Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5.06335)
 stream = ExtResource("2_ahgj7")
 volume_db = -20.0
 max_db = -1.0
 
-[node name="water_drop_audio" type="AudioStreamPlayer3D" parent="."]
+[node name="Water_Drop_Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.645724, 0, -0.763571, 0, 1, 0, 0.763571, 0, 0.645724, -1.18495, 0.0234802, 0.743639)
 stream = ExtResource("1_gbnno")
 
-[node name="dirt_particles" type="GPUParticles3D" parent="."]
+[node name="Dirt_Particles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 cast_shadow = 0
 emitting = false
@@ -53,4 +53,4 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_faeqw")
 draw_pass_1 = SubResource("TubeTrailMesh_3g88b")
 
-[connection signal="finished" from="subway_audio" to="." method="_on_subway_audio_finished"]
+[connection signal="finished" from="Subway_Audio" to="." method="_on_subway_audio_finished"]

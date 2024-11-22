@@ -1,8 +1,8 @@
 extends Node3D
 
-@onready var water_drop_audio: AudioStreamPlayer3D = $water_drop_audio
-@onready var subway_audio: AudioStreamPlayer3D = $subway_audio
-@onready var dirt_particles: GPUParticles3D = $dirt_particles
+@onready var water_drop_audio: AudioStreamPlayer3D = $Water_Drop_Audio
+@onready var subway_audio: AudioStreamPlayer3D = $Subway_Audio
+@onready var dirt_particles: GPUParticles3D = $Dirt_Particles
 @onready var main_room: Node3D = $".."
 
 @export var emission_delay = 3
@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 				emission_delay = set_emission_delay
 				did_emit = true
 				dirt_particles.emitting = true
-				print("emit")
 				main_room.screen_shake()
 				is_shaking = true
 				

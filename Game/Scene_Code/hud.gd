@@ -1,19 +1,19 @@
 extends Control
 @onready var hud: Control = $"."
-@onready var button_grid: GridContainer = $buttons_background/button_grid
-@onready var button: Button = $buttons_background/button_grid/temp_button
+@onready var button_grid: GridContainer = $Buttons_Background/Button_Grid
+@onready var button: Button = $Buttons_Background/Button_Grid/Temp_Button
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var buttons_background: Panel = $buttons_background
+@onready var show_player: AnimationPlayer = $Show_Player
+@onready var buttons_background: Panel = $Buttons_Background
 
 @onready var main_room := $".."
 var total_seconds = 0
 
-@onready var lie_label: Label = $color_background/lie_label
-@onready var correct_label: Label = $color_background2/correct_label
-@onready var truth_label: Label = $color_background3/truth_label
+@onready var lie_label: Label = $Color_Background/Lie_Label
+@onready var correct_label: Label = $Color_Background2/Correct_Label
+@onready var truth_label: Label = $Color_Background3/Truth_Label
 
-@onready var progress_bar: ProgressBar = $buttons_background/ProgressBar
+@onready var progress_bar: ProgressBar = $Buttons_Background/Progress_Bar
 
 @export var progress_timer = 10
 var set_timer = progress_timer
@@ -34,11 +34,11 @@ func reset():
 	button.disconnect("pressed",self.pressed)
 	
 	# show the buttons
-	animation_player.play("show_buttons")
+	show_player.play("show_buttons")
 	
 	# remove old buttons
 	for i in button_grid.get_children():
-		if i.name != "temp_button":
+		if i.name != "Temp_Button":
 			i.free()
 	
 	# make the default button clickable
@@ -55,7 +55,7 @@ func quick_time_event():
 		reset()
 		
 		# play the animation, faster
-		animation_player.play("show_buttons",-1,2)
+		show_player.play("show_buttons",-1,2)
 		
 		# used to randomize options
 		var yes_no =["YES","NO"]
@@ -85,7 +85,7 @@ func reset_questions():
 	
 	
 	# show the buttons
-	animation_player.play("show_buttons")
+	show_player.play("show_buttons")
 	
 	reset()
 	
@@ -104,7 +104,7 @@ func reset_questions():
 func set_up_questions(data: Array):
 	
 	# show the buttons
-	animation_player.play("show_buttons")
+	show_player.play("show_buttons")
 	
 	reset()
 	
@@ -157,7 +157,7 @@ func pressed(data: String) -> void:
 		should_time = false
 		
 	# when pressed hide buttons
-	animation_player.play_backwards("show_buttons")
+	show_player.play_backwards("show_buttons")
 	
 	#disable all buttons to prevent bugs
 	for i in button_grid.get_children():
@@ -172,7 +172,7 @@ func _process(delta: float) -> void:
 		# if timeout
 		if progress_timer <= 0:
 			main_room.time_out()
-			animation_player.play_backwards("show_buttons")
+			show_player.play_backwards("show_buttons")
 			should_time = false
 			
 			#disable all buttons to prevent bugs
@@ -189,7 +189,7 @@ func _process(delta: float) -> void:
 		# if timeout
 		if quick_progress_timer <= 0:
 			main_room.quick_time_out()
-			animation_player.play_backwards("show_buttons")
+			show_player.play_backwards("show_buttons")
 			should_time_quick = false
 			
 			#disable all buttons to prevent bugs
