@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=18 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ydxovidfej5m" path="res://Imports/Scenes/holdingchair.tscn" id="9_q15on"]
 [ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/Scenes/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
+[ext_resource type="PackedScene" uid="uid://8ub5055ku70b" path="res://Models/Wire/Wire.gltf" id="12_kd4w4"]
 [ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
 
 [sub_resource type="Environment" id="Environment_pa83b"]
@@ -182,5 +183,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
 
 [node name="Floor" parent="." instance=ExtResource("12_nqo3i")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.7, -1.5)
+
+[node name="Wire" parent="." instance=ExtResource("12_kd4w4")]
+transform = Transform3D(0.951508, 0, 0.307622, 0, 1, 0, -0.307622, 0, 0.951508, 0.174029, -0.78, -1.39703)
+
+[node name="Wire2" parent="Wire" instance=ExtResource("12_kd4w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0392802, 0, 0.00648093)
+
+[node name="Wire3" parent="Wire" instance=ExtResource("12_kd4w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207074, 0.01327, 0.00341654)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
