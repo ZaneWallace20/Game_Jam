@@ -57,8 +57,3 @@ shadow_mesh = SubResource("ArrayMesh_egj55")
 transform = Transform3D(-0.15, 1.31134e-08, 0, -1.31134e-08, -0.15, 0, 0, 0, 0.15, 0, 0, 0)
 mesh = SubResource("ArrayMesh_uasua")
 skeleton = NodePath("")
-
-[node name="SM_Floor3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.294875, 1.31134e-08, 0, -2.57788e-08, -0.15, 0, 0, 0, 0.121065, 0, -0.001, -15)
-mesh = SubResource("ArrayMesh_uasua")
-skeleton = NodePath("")
