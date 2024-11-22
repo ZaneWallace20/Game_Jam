@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=19 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_toc16"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="6_rfjov"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
-[ext_resource type="PackedScene" path="res://Imports/room.tscn" id="10_pwke8"]
+[ext_resource type="PackedScene" uid="uid://ydxovidfej5m" path="res://Imports/Scenes/holdingchair.tscn" id="9_q15on"]
+[ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/Scenes/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
 [ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
-[ext_resource type="PackedScene" uid="uid://ckchtvq80py5e" path="res://Imports/roomenvirnment.tscn" id="13_xcd62"]
+[ext_resource type="PackedScene" uid="uid://ckchtvq80py5e" path="res://Imports/Scenes/roomenvirnment.tscn" id="13_xcd62"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001
@@ -112,10 +113,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, -0.051, -1.216)
 pixel_size = 0.001
 texture = SubResource("ViewportTexture_gvh4f")
 
+[node name="Holdingchair" parent="." instance=ExtResource("9_q15on")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.05333e-08, -0.800294, -0.234873)
+
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.35, 0.35)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.54, 0.437)
 
 [node name="Cam" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
 current = true
 fov = 1.0
 

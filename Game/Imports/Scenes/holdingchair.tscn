@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d16iayk5qs46b"]
+[gd_scene load_steps=3 format=3 uid="uid://ydxovidfej5m"]
 
 [ext_resource type="PackedScene" uid="uid://dwacocrkhgv3e" path="res://Models/HoldingChair/HoldingChair.gltf" id="1_xpd6f"]
 [ext_resource type="PackedScene" uid="uid://7flqakd42xwe" path="res://Models/HumanSitting/HumanSitting.gltf" id="2_hjf4s"]
