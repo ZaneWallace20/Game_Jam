@@ -147,10 +147,10 @@ pixel_size = 0.001
 texture = SubResource("ViewportTexture_gvh4f")
 
 [node name="Holdingchair" parent="." instance=ExtResource("9_q15on")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.05333e-08, -0.800294, -0.234873)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.693178, -0.113)
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.54, 0.437)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.636952, 0.567709)
 
 [node name="Cam" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
