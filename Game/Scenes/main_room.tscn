@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="3_1t4bp"]
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_toc16"]
+[ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="6_rfjov"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
 [ext_resource type="PackedScene" path="res://Imports/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
