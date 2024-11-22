@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dx1d4quvyjnd" path="res://Models/Speaker/SpeakerTexture.gltf" id="7_6kkj3"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="7_dqy0p"]
 [ext_resource type="PackedScene" uid="uid://b61w2u2pu2j4f" path="res://Models/CagedLight/CagedLightTexture.gltf" id="8_w5ier"]
-[ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/SM_Axe.tscn" id="9_bqvij"]
-[ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/SM_Bucket.tscn" id="10_a02hw"]
+[ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/SM_Axe.tscn" id="9_bqvij"]
+[ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/SM_Bucket.tscn" id="10_a02hw"]
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
