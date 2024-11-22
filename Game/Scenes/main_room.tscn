@@ -85,6 +85,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 visible = false
 
+[node name="Ceiling" parent="." instance=ExtResource("6_rfjov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
 [node name="tv" parent="." instance=ExtResource("3_1t4bp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834, -1.5)
 top_level = true
@@ -108,14 +111,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, -0.051, -1.216)
 pixel_size = 0.001
 texture = SubResource("ViewportTexture_gvh4f")
 
-[node name="Holdingchair" parent="." instance=ExtResource("8_0rx16")]
-transform = Transform3D(-1, -1.51808e-08, 8.60946e-08, -1.51808e-08, 1, 2.38419e-07, -8.60947e-08, 2.38419e-07, -1, 0, -0.668429, 0.111294)
-
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.634, 0.809)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.35, 0.35)
 
 [node name="Cam" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0, 0, 0)
 current = true
 fov = 1.0
 
@@ -143,7 +142,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
 
 [node name="Floor2" parent="." instance=ExtResource("12_nqo3i")]
-transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.7, -1.5)
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, -0.8, -1.5)
 
 [node name="roomenvirnment" parent="." instance=ExtResource("13_xcd62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
