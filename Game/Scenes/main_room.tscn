@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="3_1t4bp"]
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
-[ext_resource type="PackedScene" uid="uid://ydxovidfej5m" path="res://Imports/Scenes/holdingchair.tscn" id="9_q15on"]
+[ext_resource type="PackedScene" uid="uid://ydxovidfej5m" path="res://Imports/Scenes/holding_chair.tscn" id="9_q15on"]
 [ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/Scenes/room.tscn" id="10_pwke8"]
-[ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
+[ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spot_light.tscn" id="11_l3tub"]
 [ext_resource type="PackedScene" uid="uid://8ub5055ku70b" path="res://Models/Wire/Wire.gltf" id="12_kd4w4"]
 [ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
 
