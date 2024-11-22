@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=42 format=3 uid="uid://c1vc4k3qdc3ty"]
 
 [ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
 [ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/Labels/label.tres" id="2_4tp24"]
@@ -327,12 +327,28 @@ font_color = Color(0.54902, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkw3j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaivb"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 28
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ptvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tidkk"]
+bg_color = Color(0.392157, 0.392157, 0.392157, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13bbn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6nsi"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thgq1"]
+bg_color = Color(0.392157, 0.392157, 0.392157, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -434,9 +450,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -579.0
-offset_top = -220.0
+offset_top = -214.0
 offset_right = -3.0
-offset_bottom = 1489.0
+offset_bottom = 1495.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 0.25)
@@ -503,9 +519,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -235.0
-offset_top = -446.0
+offset_top = -432.0
 offset_right = 256.0
-offset_bottom = 485.0
+offset_bottom = 499.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Your goal is to answer the interrogator's questions until he lets you leave. In doing so, you must avoid giving away too much information. 
@@ -536,18 +552,20 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_cmhew")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dca7c")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_phmt7")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rkw3j")
-theme_override_styles/hover = ExtResource("2_5dbl6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yaivb")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6ptvk")
-theme_override_styles/pressed = ExtResource("3_m6taf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tidkk")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_13bbn")
-theme_override_styles/normal = SubResource("StyleBoxFlat_q6nsi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_thgq1")
 
 [node name="Label" type="Label" parent="question"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
 offset_top = -1.5
+offset_right = -2.0
 offset_bottom = -0.5
 grow_horizontal = 2
 grow_vertical = 2

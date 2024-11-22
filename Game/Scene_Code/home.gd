@@ -39,10 +39,8 @@ func _ready() -> void:
 	
 	# 5% chance to show`
 	var should_show_strike = rng.randi_range(0,20) == 10
-	
-	
-	if should_show_strike:
-		strike.visible = true
+
+	strike.visible = should_show_strike
 	
 func _on_start_pressed() -> void:
 	Global.how_died = ""

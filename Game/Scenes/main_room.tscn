@@ -8,11 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://bdetlki2crx04" path="res://audio/static.mp3" id="4_5j5bt"]
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="4_toc16"]
 [ext_resource type="LabelSettings" uid="uid://cskffsinht40e" path="res://Imports/Labels/tv_label.tres" id="7_g7oud"]
-[ext_resource type="PackedScene" uid="uid://ydxovidfej5m" path="res://Imports/holdingchair.tscn" id="8_0rx16"]
-[ext_resource type="PackedScene" uid="uid://by8s8bdcjxiij" path="res://Imports/room.tscn" id="10_pwke8"]
+[ext_resource type="PackedScene" path="res://Imports/room.tscn" id="10_pwke8"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="11_l3tub"]
 [ext_resource type="PackedScene" uid="uid://i5t62xwhfue4" path="res://Models/Floor2/Floor2.gltf" id="12_nqo3i"]
-[ext_resource type="PackedScene" uid="uid://inbp4avnm8rn" path="res://Imports/roomenvirnment.tscn" id="13_xcd62"]
+[ext_resource type="PackedScene" uid="uid://ckchtvq80py5e" path="res://Imports/roomenvirnment.tscn" id="13_xcd62"]
 
 [sub_resource type="Animation" id="Animation_drna6"]
 length = 0.001

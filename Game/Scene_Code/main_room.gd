@@ -34,7 +34,7 @@ var rng = RandomNumberGenerator.new()
 
 var tv_words = []
 var current_voice_line = []
-var MAX_LENGTH = 68
+var MAX_LENGTH = 65
 
 var total_failed_lies = 0
 var total_truths = 0
@@ -99,8 +99,6 @@ func get_user_data():
 	return questions[current_topic]["questions"][question_num]["userData"]
 	
 func set_user_data(value):
-	print(questions[current_topic]["questions"][question_num]["question"])
-	print(value)
 	questions[current_topic]["questions"][question_num]["userData"] = value
 
 
@@ -234,7 +232,7 @@ func speak_incorrect():
 func start_question():
 
 	# check to see if win/lose
-	if total_truths >= MAX_TRUTHS_ALLOWED:
+	if total_truths > MAX_TRUTHS_ALLOWED:
 		await speak("We have enough information, you and I are done here.")
 		Global.how_died = "TRUTH"
 		rifle.fire()
@@ -317,8 +315,9 @@ func get_question_options():
 		
 		# only need 3 more random choices
 		loop_amount = 3
+		print(get_user_data())
 	else:
-		print("SLIFJOSIFJ")
+		
 		var used = questions[current_topic]["usedAnswers"].duplicate(true)
 	
 		temp_ask = difference(temp_ask,used)
