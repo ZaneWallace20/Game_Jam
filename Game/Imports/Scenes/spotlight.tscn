@@ -38,5 +38,3 @@ light_volumetric_fog_energy = 0.0
 omni_range = 0.222328
 script = ExtResource("3_c3nst")
 noise = ExtResource("3_orojo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotlightTexture"]

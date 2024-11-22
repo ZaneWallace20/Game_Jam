@@ -1,15 +1,18 @@
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer3D = $static
 @onready var voice: AudioStreamPlayer = $voice
 @onready var tv_text: Label = $"tv/2d_in_3d/layer/tv_text"
 @onready var rifle: Node3D = $Rifle
 @onready var white_rect: ColorRect = $white
+@onready var spotlight: Node3D = $Spotlight
 
-@onready var cam: Camera3D = $Head/Cam
-@onready var head: Node3D = $Head
+@onready var cam: Camera3D = $shake_node/Head/Cam
+@onready var head: Node3D = $shake_node/Head
 
 
 @export var MAX_TRUTHS_ALLOWED = 3
@@ -41,6 +44,11 @@ var total_truths = 0
 var total_correct = 0
 
 var quit_game = false
+
+var should_shake = false
+@onready var shake_node: Node3D = $shake_node
+
+var shake_speed = .25
 
 # list of correct voice lines
 var correct = [
@@ -479,8 +487,26 @@ func _process(delta: float) -> void:
 		else:
 			update_words()
 			talk_delay = set_talk_delay
+	if should_shake:
+		animation_player_2.play("screen_shake",-1,shake_speed)
+		shake_speed += 0.5 * delta
+	else:
+		if shake_speed == .25:
+			if abs(shake_node.rotation.z) < deg_to_rad(0.2):
+				animation_player_2.stop()
+				shake_node.rotation.z = 0
+				spotlight.rotation = Vector3.ZERO
+
+		else:
+			shake_speed -= 0.5 * delta
+			animation_player_2.play("screen_shake",-1,shake_speed)
+	shake_speed = clamp(shake_speed,.25,1)
+			
+			
 		
+func screen_shake(start = true):
 	
+	should_shake = start
 
 # used after being shot
 func white_out():
