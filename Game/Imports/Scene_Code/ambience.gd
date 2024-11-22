@@ -15,7 +15,7 @@ var set_emission_delay = emission_delay
 var rng = RandomNumberGenerator.new()
 
 var water_timer = rng.randf_range(2,5)
-var subway_timer = rng.randf_range(2,4)
+var subway_timer = rng.randf_range(25,45)
 
 var did_emit = false
 var is_shaking = false
