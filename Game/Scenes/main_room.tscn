@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=20 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -102,6 +102,69 @@ _data = {
 "zoom_out": SubResource("Animation_jpqu4")
 }
 
+[sub_resource type="Animation" id="Animation_6sasl"]
+resource_name = "screen_shake"
+length = 0.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shake_node:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0.00872665), Vector3(-0.00872665, 0, -0.00872665), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tnxp7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shake_node:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3skm"]
+_data = {
+"RESET": SubResource("Animation_tnxp7"),
+"screen_shake": SubResource("Animation_6sasl")
+}
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_gvh4f"]
 viewport_path = NodePath("tv/2d_in_3d/layer")
 
@@ -117,9 +180,14 @@ environment = SubResource("Environment_pa83b")
 transform = Transform3D(0.645724, 0, 0.763571, 0, 1, 0, -0.763571, 0, 0.645724, 1.02695, -0.0234802, 0.365775)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Head/Cam")
+root_node = NodePath("../shake_node/Head/Cam")
 libraries = {
 "": SubResource("AnimationLibrary_6tccb")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j3skm")
 }
 
 [node name="Hud" parent="." instance=ExtResource("1_xx0al")]
@@ -150,13 +218,17 @@ texture = SubResource("ViewportTexture_gvh4f")
 [node name="Holdingchair" parent="." instance=ExtResource("9_q15on")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.693178, -0.113)
 
-[node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.636952, 0.567709)
+[node name="shake_node" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.636952, 0.567709)
 
-[node name="Cam" type="Camera3D" parent="Head"]
+[node name="Head" type="Node3D" parent="shake_node"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
+
+[node name="Cam" type="Camera3D" parent="shake_node/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, -0.01, 0, 0)
 current = true
 fov = 1.0
+near = 0.1
 
 [node name="static" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.85754)
@@ -176,7 +248,7 @@ grow_vertical = 2
 color = Color(0.929412, 0.929412, 0.929412, 1)
 
 [node name="Room" parent="." instance=ExtResource("10_pwke8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375708, -0.697489, -3.44112)
 
 [node name="Spotlight" parent="." instance=ExtResource("11_l3tub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)

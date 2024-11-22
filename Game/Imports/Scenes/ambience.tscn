@@ -52,3 +52,5 @@ randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_faeqw")
 draw_pass_1 = SubResource("TubeTrailMesh_3g88b")
+
+[connection signal="finished" from="subway_audio" to="." method="_on_subway_audio_finished"]
