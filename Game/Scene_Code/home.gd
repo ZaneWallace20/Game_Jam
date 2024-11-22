@@ -1,16 +1,14 @@
 extends Node3D
 
+# --- Nodes ---
 @onready var zoom_player: AnimationPlayer = $Zoom_Player
-
 @onready var clear_player: AnimationPlayer = $Clear_Player
-
 @onready var instructions_player: AnimationPlayer = $Instructions_Player
-
 @onready var start: Button = $Start
-
 @onready var cam: Camera3D = $Cam
 @onready var strike: Label = $Title/Strike
 
+# --- Game State ---
 var should_go = false
 var instructions_open = false
 

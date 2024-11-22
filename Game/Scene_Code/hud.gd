@@ -1,28 +1,25 @@
 extends Control
-@onready var hud: Control = $"."
+
+# --- Nodes ---
+@onready var hud: Control = $"."  
 @onready var button_grid: GridContainer = $Buttons_Background/Button_Grid
 @onready var button: Button = $Buttons_Background/Button_Grid/Temp_Button
-
 @onready var show_player: AnimationPlayer = $Show_Player
 @onready var buttons_background: Panel = $Buttons_Background
-
-@onready var main_room := $".."
-var total_seconds = 0
-
+@onready var main_room = $".."  
 @onready var lie_label: Label = $Color_Background/Lie_Label
 @onready var correct_label: Label = $Color_Background2/Correct_Label
 @onready var truth_label: Label = $Color_Background3/Truth_Label
-
 @onready var progress_bar: ProgressBar = $Buttons_Background/Progress_Bar
 
-@export var progress_timer = 10
+# --- Timer Settings ---
+@export var progress_timer = 10  
+@export var quick_progress_timer = 2  
 var set_timer = progress_timer
-
-@export var quick_progress_timer = 2
 var set_quick_timer = quick_progress_timer
+var should_time = false  
+var should_time_quick = false  
 
-var should_time = false
-var should_time_quick = false
 
 
 

@@ -1,8 +1,15 @@
 extends Node3D
 
+# --- Constants ---
+@export var MAX_TRUTHS_ALLOWED = 3
+@export var MAX_FAILED_LIES_ALLOWED = 3
+@export var QUESTIONS_RIGHT_TO_WIN = 25
+@export var MOUSE_SENS = 0.001
+var MAX_LENGTH = 65
+
+# --- Nodes ---
 @onready var zoom_player: AnimationPlayer = $Zoom_Player
 @onready var shake_player: AnimationPlayer = $Shake_Player
-
 @onready var hud: Control = $Hud
 @onready var static_player: AudioStreamPlayer3D = $Static
 @onready var voice: AudioStreamPlayer = $Voice
@@ -10,96 +17,76 @@ extends Node3D
 @onready var rifle: Node3D = $Rifle
 @onready var white_rect: ColorRect = $White
 @onready var spotlight: Node3D = $Spotlight
-
 @onready var cam: Camera3D = $Shake_Node/Head/Cam
 @onready var head: Node3D = $Shake_Node/Head
 @onready var shake_node: Node3D = $Shake_Node
 
-@export var MAX_TRUTHS_ALLOWED = 3
-@export var MAX_FAILED_LIES_ALLOWED = 3
-@export var QUESTIONS_RIGHT_TO_WIN = 25
+# --- Game State ---
+var should_quit = false
+var quit_game = false
+var should_shake = false
+var static_playing = false
 
-@export var MOUSE_SENS = 0.001
-
-
+# --- Timing ---
 var talk_delay = 0.0
 var set_talk_delay = 0.0
+var shake_speed = 0.25
 
-var should_quit = false
-
-var static_playing = false
+# --- Question State ---
 var questions: Dictionary
+var question_num = 0
+var current_topic = ""
+var topics = ["people", "places", "dates", "items"]
+var topic_amount = {
+	"people": 0,
+	"places": 0,
+	"dates": 0,
+	"items": 0
+}
+var max_amount_per_topic = 0
 
-var File_Pros = preload("res://Imports/file_pross.gd").new()
-
-# used for getting random nums
-var rng = RandomNumberGenerator.new()
-
-var tv_words = []
-var current_voice_line = []
-var MAX_LENGTH = 65
-
+# --- Progress ---
 var total_failed_lies = 0
 var total_truths = 0
 var total_correct = 0
 
-var quit_game = false
-
-var should_shake = false
-
-
-var shake_speed = .25
-
-# list of correct voice lines
+# --- Dialogue ---
 var correct = [
 	"Very well.",
-	"Ok, moving on.", 
+	"Ok, moving on.",
 	"Noted.",
 	"I see.",
 	"This cooperation will help you."
-	
-	]
-
-# used to help prevent repeting voice lines
-var correct_num = 0
-
-# list of incorrect voice lines
+]
 var incorrect = [
 	"Lying gets you nowhere.",
-	"I fail to understand.", 
-	"Lying will only make me want to kill you more.", 
+	"I fail to understand.",
+	"Lying will only make me want to kill you more.",
 	"Do you want to die here?",
 	"Do you think you are helping your country with this lie?",
 	"What do you have to gain with lying?",
 	"Don't test our patience."
-	]
-
-# used to help prevent repeting voice lines
-var incorrect_num = 0
-
-# list of quick time voice lines
+]
 var quick_time_text = [
 	"DID YOU KILL HIM?",
 	#"IS YOUR BOSS IN DC?",
 	"DID YOU PLANT THE BOMB?",
-	#"DID YOU HAVE A TEAM?",
+	#"DID YOU HAVE A TEAM?"
 ]
+var tv_words = []
+# --- Voice Line Control ---
 
-# question topics
-var topics = ["people","places","dates","items"]
+# To avoid repeating voice lines
+var correct_num = 0  
+var incorrect_num = 0
+var current_voice_line = []
 
-var topic_amount = {
-	"people":0,
-	"places":0,
-	"dates":0,
-	"items":0
-	}
-# current queston
-var question_num = 0
+# --- RNG ---
+var rng = RandomNumberGenerator.new()
 
-var max_amount_per_topic = 0
+# --- File Handling ---
+var File_Pros = preload("res://Imports/file_pross.gd").new()
 
-var current_topic = ""
 
 
 func get_user_data():
@@ -209,7 +196,6 @@ func speak(text: String, quick_time_event = false):
 func speak_correct():
 	
 	# itterate through correct, then suffle when done
-	
 	if correct_num == len(correct) - 1:
 		correct_num = -1
 		correct.shuffle()
@@ -487,7 +473,11 @@ func _process(delta: float) -> void:
 		else:
 			update_words()
 			talk_delay = set_talk_delay
+			
+	# used to shake/stop shake
 	if should_shake:
+		
+		# increse shake speed until it hits a max
 		shake_player.play("screen_shake",-1,shake_speed)
 		shake_speed += 0.5 * delta
 	else:
@@ -498,14 +488,16 @@ func _process(delta: float) -> void:
 				spotlight.rotation = Vector3.ZERO
 
 		else:
+			# slow done the shake speed
 			shake_speed -= 0.5 * delta
 			shake_player.play("screen_shake",-1,shake_speed)
+			
+	# clamp the shake speed between 25% and 100%
 	shake_speed = clamp(shake_speed,.25,1)
 			
 			
-		
+# called from Ambience
 func screen_shake(start = true):
-	
 	should_shake = start
 
 # used after being shot

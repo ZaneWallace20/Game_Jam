@@ -1,18 +1,22 @@
 extends Node2D
 
+# --- Nodes ---
 @onready var text_player: AnimationPlayer = $Text_Player
-
 @onready var header: Label = $ColorRect/ColorRect/Panel/Header
 @onready var label: Label = $ColorRect/ColorRect/Panel/Label
 
+# --- Constants --
+@export var SHOW_TIME = 0.5
+
+# -- Display States --
 var next_scene = ""
 var update = 0
 var timer = 0
 var tutorial = false
 var death = false
-var SHOW_TIME = 0.5
 var should_go_on = false
 var wait = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
