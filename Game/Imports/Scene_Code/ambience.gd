@@ -4,13 +4,16 @@ extends Node3D
 @onready var subway_audio: AudioStreamPlayer3D = $subway_audio
 @onready var dirt_particles: GPUParticles3D = $dirt_particles
 
-@export var emission_delay = 4
+@export var emission_delay = 3
+
+
+
 var set_emission_delay = emission_delay
 # used for getting random nums
 var rng = RandomNumberGenerator.new()
 
 var water_timer = rng.randf_range(2,5)
-var subway_timer = rng.randf_range(25,45)
+var subway_timer = rng.randf_range(2,4)
 
 var did_emit = false
 

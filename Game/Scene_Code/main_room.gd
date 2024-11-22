@@ -302,8 +302,6 @@ func get_question_options():
 	# all the options avalible in this question (min 4)
 	var temp_ask = questions[current_topic]["answers"].duplicate(true)
 	
-
-
 	var send_data = []
 
 	# if question has been asked

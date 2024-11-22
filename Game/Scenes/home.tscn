@@ -15,7 +15,7 @@
 [ext_resource type="StyleBox" uid="uid://wj1c4teqyiwn" path="res://Imports/Panels/panel_menu.tres" id="13_46j0i"]
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="13_ajft3"]
 [ext_resource type="LabelSettings" uid="uid://dewxjwu7vi2um" path="res://Imports/Labels/instructions_header.tres" id="14_1aryl"]
-[ext_resource type="LabelSettings" uid="uid://c63o6avnfvejn" path="res://Scenes/instructions_body.tres" id="15_e86s4"]
+[ext_resource type="LabelSettings" uid="uid://c63o6avnfvejn" path="res://Imports/Labels/instructions_body.tres" id="15_e86s4"]
 [ext_resource type="LabelSettings" uid="uid://cnnab2efi3t2b" path="res://Imports/Labels/question_label.tres" id="17_rnubm"]
 
 [sub_resource type="Animation" id="Animation_8tsno"]
