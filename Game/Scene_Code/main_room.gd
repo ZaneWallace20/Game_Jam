@@ -286,7 +286,7 @@ func start_question():
 	hud.reset_questions()
 
 
-
+# arr1 - arr2
 func difference(arr1, arr2):
 	var only_in_arr1 = []
 	for i in arr1:
@@ -313,11 +313,13 @@ func get_question_options():
 		
 		# only need 3 more random choices
 		loop_amount = 3
-		print(get_user_data())
+
 	else:
 		
+		# all used answers for current topic
 		var used = questions[current_topic]["usedAnswers"].duplicate(true)
 	
+		# remove them from the answer pool
 		temp_ask = difference(temp_ask,used)
 		
 	# add on random choices
@@ -351,6 +353,7 @@ func _ready() -> void:
 	
 	MAX_TRUTHS_ALLOWED += rng.randi_range(0,2)
 	
+	# get amount of questions per topic
 	max_amount_per_topic = len(questions["people"]["questions"])
 	
 	
@@ -418,6 +421,7 @@ func answerd_truth():
 		
 	else:
 		
+		# if wrong increse truths anyways as you told him something
 		total_truths += 1
 		hud.truth_label.text = "Total Truths:\n" + str(total_truths)
 		await speak_incorrect()
@@ -477,7 +481,7 @@ func _process(delta: float) -> void:
 			talk_delay = set_talk_delay
 		
 	
-		
+
 # used after being shot
 func white_out():
 	Global.min_time = 0
