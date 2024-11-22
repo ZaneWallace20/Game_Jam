@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://by8s8bdcjxiij"]
+[gd_scene load_steps=12 format=3 uid="uid://by8s8bdcjxiij"]
 
 [ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
 [ext_resource type="PackedScene" uid="uid://drsbnbd3pd0fx" path="res://Models/Wall/WallTexture.gltf" id="2_3kgym"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b61w2u2pu2j4f" path="res://Models/CagedLight/CagedLightTexture.gltf" id="8_w5ier"]
 [ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/SM_Axe.tscn" id="9_bqvij"]
 [ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/SM_Bucket.tscn" id="10_a02hw"]
+[ext_resource type="PackedScene" uid="uid://ohmch00q7bvt" path="res://Models/Doorway/Doorway.gltf" id="11_ey1jt"]
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
@@ -86,3 +87,6 @@ transform = Transform3D(1.18433, 0.193263, -1.81195e-07, 0.19314, -1.18358, 0.04
 
 [node name="SM_Bucket3" parent="." instance=ExtResource("10_a02hw")]
 transform = Transform3D(0.788247, 0, 0.615359, 0, 1, 0, -0.615359, 0, 0.788247, -2.7772, 0.225333, 1.55394)
+
+[node name="Doorway" parent="." instance=ExtResource("11_ey1jt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0.739331)
