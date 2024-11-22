@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0fmrbgyi1bqx"]
+
+[ext_resource type="PackedScene" uid="uid://y2sfqjox7ynk" path="res://Models/Spotlight/SpotlightTexture.gltf" id="1_65vf5"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/flickering_light.gd" id="2_a3pdn"]
+[ext_resource type="NoiseTexture3D" uid="uid://euidgweuuetu" path="res://Imports/Scenes/noise_spotlight.tres" id="3_6avqe"]
+[ext_resource type="AudioStream" uid="uid://dupse43wavoo8" path="res://audio/electric_hum.mp3" id="4_230qc"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/light_bulb.gd" id="5_0ewur"]
+
+[node name="Spotlight" type="Node3D"]
+
+[node name="Spotlight_Texture" parent="." instance=ExtResource("1_65vf5")]
+
+[node name="Spotlight" type="SpotLight3D" parent="Spotlight_Texture"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.21196, 0)
+light_color = Color(1, 1, 0.917647, 1)
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_opacity = 0.8
+shadow_blur = 0.8
+spot_angle = 40.0
+script = ExtResource("2_a3pdn")
+noise = ExtResource("3_6avqe")
+
+[node name="Electric_Sound" type="AudioStreamPlayer3D" parent="Spotlight_Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1305, 0)
+stream = ExtResource("4_230qc")
+volume_db = -50.0
+autoplay = true
+
+[node name="Light_Bulb" type="OmniLight3D" parent="Spotlight_Texture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15857, 0)
+light_color = Color(1, 1, 0.917647, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 0.0
+omni_range = 0.222328
+script = ExtResource("5_0ewur")
+noise = ExtResource("3_6avqe")
