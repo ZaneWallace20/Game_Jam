@@ -7,6 +7,7 @@ extends Node3D
 @onready var start: Button = $Start
 @onready var cam: Camera3D = $Cam
 @onready var strike: Label = $Title/Strike
+@onready var difficulty_label: Label = $Difficulty_Header/Difficulty/Difficulty_Label
 
 # --- Game State ---
 var should_go = false
@@ -39,6 +40,8 @@ func _ready() -> void:
 
 	strike.visible = should_show_strike
 	
+	# reset to current difficulty
+	difficulty_label.text = Global.difficulty
 func _on_start_pressed() -> void:
 	Global.how_died = ""
 	should_go = true
@@ -75,3 +78,13 @@ func _on_question_pressed() -> void:
 		instructions_player.play("show_instructions")
 	
 	instructions_open = !instructions_open
+
+# adjust difficulty
+func _on_difficulty_pressed() -> void:
+	if Global.difficulty == "Easy":
+		Global.difficulty = "Medium"
+	elif Global.difficulty == "Medium":
+		Global.difficulty = "Hard"
+	else:
+		Global.difficulty = "Easy"
+	difficulty_label.text = Global.difficulty

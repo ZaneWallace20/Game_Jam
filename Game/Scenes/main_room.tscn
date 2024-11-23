@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl7bpuon2fxix"]
+[gd_scene load_steps=22 format=3 uid="uid://bl7bpuon2fxix"]
 
 [ext_resource type="Script" path="res://Scene_Code/main_room.gd" id="1_12hge"]
 [ext_resource type="PackedScene" uid="uid://mwp1yp21x23k" path="res://Scenes/hud.tscn" id="1_xx0al"]
@@ -128,6 +128,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shake_Node/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shake_Node/Head/Cam:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
 
 [sub_resource type="Animation" id="Animation_6sasl"]
 resource_name = "screen_shake"
@@ -159,9 +183,39 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-0.00872665, 0, 0.0174533), Vector3(0.00872665, 0, -0.0174533), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1qe5d"]
+resource_name = "Startle"
+length = 0.1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shake_Node/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shake_Node/Head/Cam:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [75.0, 80.0, 75.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j3skm"]
 _data = {
 "RESET": SubResource("Animation_tnxp7"),
+"Startle": SubResource("Animation_1qe5d"),
 "screen_shake": SubResource("Animation_6sasl")
 }
 
@@ -186,6 +240,11 @@ libraries = {
 }
 
 [node name="Shake_Player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j3skm")
+}
+
+[node name="Startle_Player" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_j3skm")
 }
@@ -227,7 +286,6 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 
 [node name="Cam" type="Camera3D" parent="Shake_Node/Head"]
 transform = Transform3D(1, 0, 0, 0, 0.984807, 0.173648, 0, -0.173648, 0.984807, 0, 0, 0)
 current = true
-fov = 1.0
 near = 0.1
 
 [node name="Static" type="AudioStreamPlayer3D" parent="."]

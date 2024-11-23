@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c1vc4k3qdc3ty"]
+[gd_scene load_steps=54 format=3 uid="uid://c1vc4k3qdc3ty"]
 
 [ext_resource type="Script" path="res://Scene_Code/home.gd" id="1_5ekg3"]
 [ext_resource type="LabelSettings" uid="uid://bao3bq1fqmgxm" path="res://Imports/Labels/label.tres" id="2_4tp24"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c22jfi7iig0hk" path="res://Imports/Scenes/floor.tscn" id="2_df263"]
 [ext_resource type="PackedScene" uid="uid://diln3sfcevjsm" path="res://Imports/Scenes/home_environment.tscn" id="2_pj0c2"]
 [ext_resource type="StyleBox" uid="uid://cq127r5h2pe31" path="res://Imports/Buttons/menu_button_pressed.tres" id="3_m6taf"]
-[ext_resource type="StyleBox" uid="uid://do3hm5ksprg07" path="res://Imports/Buttons/menu_button.tres" id="4_25usv"]
 [ext_resource type="FontFile" uid="uid://bj8hvginrnvrk" path="res://Fonts/SuperRugged-4nBy9.ttf" id="5_8ik76"]
 [ext_resource type="PackedScene" uid="uid://cjcty7p4rm4e" path="res://Imports/Scenes/tv.tscn" id="6_o4xix"]
 [ext_resource type="LabelSettings" uid="uid://ctvpxogltaffy" path="res://Imports/Labels/header.tres" id="8_0mcc2"]
@@ -16,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://d0fmrbgyi1bqx" path="res://Imports/Scenes/spotlight.tscn" id="13_ajft3"]
 [ext_resource type="LabelSettings" uid="uid://dewxjwu7vi2um" path="res://Imports/Labels/instructions_header.tres" id="14_1aryl"]
 [ext_resource type="LabelSettings" uid="uid://c63o6avnfvejn" path="res://Imports/Labels/instructions_body.tres" id="15_e86s4"]
+[ext_resource type="StyleBox" uid="uid://mrrl3eeyhr08" path="res://Imports/Buttons/home_normal.tres" id="15_hdpho"]
 [ext_resource type="LabelSettings" uid="uid://cnnab2efi3t2b" path="res://Imports/Labels/question_label.tres" id="17_rnubm"]
+[ext_resource type="FontFile" uid="uid://b3h7iyxill8oy" path="res://Fonts/StencilBash-5Xea.ttf" id="18_lhf7a"]
 
 [sub_resource type="Animation" id="Animation_8tsno"]
 length = 0.001
@@ -147,6 +148,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(720, 1000)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Difficulty_Header:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_kdrxo"]
 resource_name = "clear"
@@ -244,6 +257,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Difficulty_Header:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6ocbt"]
 resource_name = "show_instructions"
@@ -306,9 +331,13 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyht0"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21oiq"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge3ye"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q4u2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mky7w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n4jer"]
 font = ExtResource("11_ahjt6")
@@ -347,12 +376,33 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13bbn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thgq1"]
-bg_color = Color(0.392157, 0.392157, 0.392157, 0)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="LabelSettings" id="LabelSettings_r8tct"]
+font = ExtResource("18_lhf7a")
+font_size = 60
+font_color = Color(0.54902, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efvyq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77r20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_modmj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqhay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srws5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woivb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t81cb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc6um"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5l3pn"]
+font = ExtResource("18_lhf7a")
+font_size = 50
+font_color = Color(0.54902, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0.54902, 0, 0, 1)
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_5ekg3")
@@ -408,11 +458,11 @@ theme_override_styles/disabled = ExtResource("3_m6taf")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_65iri")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t806v")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cyht0")
-theme_override_styles/hover = ExtResource("2_5dbl6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_21oiq")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ge3ye")
 theme_override_styles/pressed = ExtResource("3_m6taf")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2q4u2")
-theme_override_styles/normal = ExtResource("4_25usv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mky7w")
 
 [node name="Label" type="Label" parent="Start"]
 modulate = Color(2, 2, 2, 1)
@@ -530,10 +580,9 @@ In the room, you will have two options per question, lie or tell the truth.
 
 Lying is harder to remember, but you can do that as many times as you want.  If you mess up a lie the interrogator will start to get mad with you; try not to do this.
 
-Telling the truth is much easier to remember, but you cannot give up too much information. The max amount of truths changes per game (3 min.), so be careful.
+Telling the truth is much easier to remember, but you cannot give up too much information. The maximum amount of truths changes per game (3 min.), so be careful.
 
-When you answer a question, you must answer it the same way when the interrogator asks it again, even if it is the truth. Picking truth again for the same question will not increse the count.
-"
+When you answer a question, you must answer it the same way when the interrogator asks it again, even if it is the truth. Picking truth again for the same question will not increase the count."
 label_settings = ExtResource("15_e86s4")
 autowrap_mode = 3
 
@@ -541,9 +590,9 @@ autowrap_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -270.0
+offset_left = -240.0
 offset_top = 20.0
-offset_right = -70.0
+offset_right = -20.0
 offset_bottom = 220.0
 grow_horizontal = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1wnqv")
@@ -556,7 +605,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yaivb")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6ptvk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tidkk")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_13bbn")
-theme_override_styles/normal = SubResource("StyleBoxFlat_thgq1")
+theme_override_styles/normal = ExtResource("15_hdpho")
 
 [node name="Label" type="Label" parent="Question"]
 layout_mode = 1
@@ -575,6 +624,59 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Difficulty_Header" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 750.0
+offset_right = 260.0
+offset_bottom = 1073.0
+text = "Difficulty"
+label_settings = SubResource("LabelSettings_r8tct")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="Button" parent="Difficulty_Header"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_efvyq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_77r20")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_modmj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cqhay")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_srws5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_woivb")
+theme_override_styles/hover = ExtResource("2_5dbl6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t81cb")
+theme_override_styles/pressed = ExtResource("3_m6taf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yc6um")
+theme_override_styles/normal = ExtResource("15_hdpho")
+
+[node name="Difficulty_Label" type="Label" parent="Difficulty_Header/Difficulty"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -25.0
+offset_right = 80.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Medium"
+label_settings = SubResource("LabelSettings_5l3pn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="animation_finished" from="Zoom_Player" to="." method="_on_zoom_player_animation_finished"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Question" to="." method="_on_question_pressed"]
+[connection signal="pressed" from="Difficulty_Header/Difficulty" to="." method="_on_difficulty_pressed"]
