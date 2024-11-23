@@ -265,7 +265,7 @@ func start_question():
 		
 		return
 
-	current_topic = topics[-1]
+	current_topic = topics.pick_random()
 
 	question_num = topic_amount[current_topic]
 
