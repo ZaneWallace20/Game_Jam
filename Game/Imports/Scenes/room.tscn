@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://by8s8bdcjxiij"]
+[gd_scene load_steps=16 format=3 uid="uid://by8s8bdcjxiij"]
 
 [ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
 [ext_resource type="PackedScene" uid="uid://drsbnbd3pd0fx" path="res://Models/Wall/WallTexture.gltf" id="2_3kgym"]
 [ext_resource type="PackedScene" uid="uid://g7c7o4w3vs35" path="res://Models/Wall2/WallRustedTexture.gltf" id="3_dicqg"]
 [ext_resource type="PackedScene" uid="uid://b8fhs0cwb4wgt" path="res://Models/Pipe/PipeTexture.gltf" id="6_fmyec"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/blink_player.gd" id="6_o3tp3"]
 [ext_resource type="PackedScene" uid="uid://do3xn8c4ivtmm" path="res://Models/SecurityCam/SecurityCamtexture.gltf" id="6_pj5ow"]
 [ext_resource type="PackedScene" uid="uid://dx1d4quvyjnd" path="res://Models/Speaker/SpeakerTexture.gltf" id="7_6kkj3"]
 [ext_resource type="PackedScene" uid="uid://cfkax65b1c7mg" path="res://Imports/Scenes/ceiling.tscn" id="7_dqy0p"]
@@ -11,6 +12,43 @@
 [ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/sm_axe.tscn" id="9_bqvij"]
 [ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/sm_bucket.tscn" id="10_a02hw"]
 [ext_resource type="PackedScene" uid="uid://ohmch00q7bvt" path="res://Models/Doorway/Doorway.gltf" id="11_ey1jt"]
+
+[sub_resource type="Animation" id="Animation_6y7c4"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bulb:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.25, 0.0, 0.25]
+}
+
+[sub_resource type="Animation" id="Animation_v123u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bulb:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqekd"]
+_data = {
+"RESET": SubResource("Animation_v123u"),
+"blink": SubResource("Animation_6y7c4")
+}
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
@@ -50,6 +88,12 @@ transform = Transform3D(1, -1.49012e-08, 0, 0, 1, 9.31323e-08, 0, -9.68575e-08, 
 light_color = Color(0.608335, 0, 0.113326, 1)
 light_energy = 0.25
 omni_range = 0.150092
+
+[node name="Blink_Player" type="AnimationPlayer" parent="Security_Cam_Texture"]
+libraries = {
+"": SubResource("AnimationLibrary_fqekd")
+}
+script = ExtResource("6_o3tp3")
 
 [node name="Speaker_Texture" parent="." instance=ExtResource("7_6kkj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46857, -0.0445451, 0.0607982)

@@ -3,9 +3,12 @@ extends Node3D
 # --- Constants ---
 @export var MAX_TRUTHS_ALLOWED = 3
 @export var MAX_FAILED_LIES_ALLOWED = 3
-@export var QUESTIONS_RIGHT_TO_WIN = 25
 @export var MOUSE_SENS = 0.001
 var MAX_LENGTH = 65
+
+# not true constants, will be set on "ready()"
+var QUESTIONS_RIGHT_TO_WIN = 0
+var FRQ_NUMBER = 0
 
 # --- Nodes ---
 @onready var zoom_player: AnimationPlayer = $Zoom_Player
@@ -20,6 +23,7 @@ var MAX_LENGTH = 65
 @onready var cam: Camera3D = $Shake_Node/Head/Cam
 @onready var head: Node3D = $Shake_Node/Head
 @onready var shake_node: Node3D = $Shake_Node
+@onready var startle_player: AnimationPlayer = $Startle_Player
 
 # --- Game State ---
 var should_quit = false
@@ -175,6 +179,7 @@ func speak(text: String, quick_time_event = false):
 	
 	# if quick time event be louder
 	if quick_time_event:
+		startle_player.play("Startle")
 		voice.volume_db = 18
 	else:
 		voice.volume_db = 7
@@ -290,6 +295,21 @@ func difference(arr1, arr2):
 
 func get_question_options():
 
+	# check to see if free response should be given
+	if current_topic == "items" && get_user_data() != "":
+		
+		# if passed first check
+		
+		# easy 10%
+		# med 50%
+		# hard 90%
+		var should_free = rng.randi_range(0,10) <= FRQ_NUMBER
+		
+		# ask hud to make a frq
+		if should_free:
+			hud.set_up_questions_free()
+			return
+			
 	# default amount of data to add
 	var loop_amount = 4
 	
@@ -351,6 +371,16 @@ func _ready() -> void:
 	max_amount_per_topic = len(questions["people"]["questions"])
 	
 	
+	if Global.difficulty == "Easy":
+		QUESTIONS_RIGHT_TO_WIN = 20
+		FRQ_NUMBER = 1
+	elif Global.difficulty == "Medium":
+		QUESTIONS_RIGHT_TO_WIN = 25
+		FRQ_NUMBER = 5
+	else:
+		QUESTIONS_RIGHT_TO_WIN = 30
+		FRQ_NUMBER = 9
+
 
 func _input(event: InputEvent) -> void:
 	

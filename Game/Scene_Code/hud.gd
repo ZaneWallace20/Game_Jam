@@ -11,23 +11,24 @@ extends Control
 @onready var correct_label: Label = $Color_Background2/Correct_Label
 @onready var truth_label: Label = $Color_Background3/Truth_Label
 @onready var progress_bar: ProgressBar = $Buttons_Background/Progress_Bar
+@onready var number_input: LineEdit = $Buttons_Background/Button_Grid/Number_Input
 
 # --- Timer Settings ---
 @export var progress_timer = 10  
-@export var quick_progress_timer = 2  
+@export var quick_progress_timer = 1
 var set_timer = progress_timer
 var set_quick_timer = quick_progress_timer
 var should_time = false  
 var should_time_quick = false  
 
 
-
-
 func reset():
+	
 	
 	if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+	number_input.visible = false
+	number_input.text = ""
 	button.disconnect("pressed",self.pressed)
 	
 	# show the buttons
@@ -35,7 +36,7 @@ func reset():
 	
 	# remove old buttons
 	for i in button_grid.get_children():
-		if i.name != "Temp_Button":
+		if i.name != "Temp_Button" and i.name != "Number_Input":
 			i.free()
 	
 	# make the default button clickable
@@ -43,7 +44,6 @@ func reset():
 
 
 func quick_time_event():
-
 		# reset/start timer
 		should_time_quick = true
 		progress_bar.value = 100
@@ -74,12 +74,10 @@ func quick_time_event():
 # will be used to give lie/truth option
 func reset_questions():
 
-	
 	# reset/start timer
 	should_time = true
 	progress_bar.value = 100
 	progress_timer = set_timer
-	
 	
 	# show the buttons
 	show_player.play("show_buttons")
@@ -99,7 +97,7 @@ func reset_questions():
 
 # grab data from main_room and set it to the buttons
 func set_up_questions(data: Array):
-	
+
 	# show the buttons
 	show_player.play("show_buttons")
 	
@@ -123,6 +121,17 @@ func set_up_questions(data: Array):
 		temp_button.get_child(0).text = i
 		button_grid.add_child(temp_button)
 
+# frq on numbers only
+func set_up_questions_free():
+		show_player.play("show_buttons")
+	
+		reset()
+		button.get_child(0).text = "Submit"
+		button.connect("pressed",self.pressed.bind("Input"))
+		number_input.visible = true
+		
+		
+	
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -135,12 +144,19 @@ func pressed(data: String) -> void:
 	
 	# check const options
 	if data == "LIE":
-		
 		# ask main_room to send question options
 		main_room.get_question_options()
 		return
 	elif data == "TRUTH":
 		main_room.answerd_truth()
+		should_time = false
+	# frq response
+	elif data == "Input":
+		
+		var return_data = number_input.text
+		return_data = return_data.trim_prefix(" ")
+		return_data.trim_suffix(" ")
+		main_room.answered_question(return_data)
 		should_time = false
 	elif data == "YES":
 		main_room.quick_time_out()
@@ -158,7 +174,8 @@ func pressed(data: String) -> void:
 	
 	#disable all buttons to prevent bugs
 	for i in button_grid.get_children():
-		i.disabled = true
+		if i is Button:
+			i.disabled = true
 
 
 func _process(delta: float) -> void:
