@@ -88,3 +88,7 @@ func _on_difficulty_pressed() -> void:
 	else:
 		Global.difficulty = "Easy"
 	difficulty_label.text = Global.difficulty
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
