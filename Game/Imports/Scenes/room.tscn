@@ -1,7 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://by8s8bdcjxiij"]
+[gd_scene load_steps=22 format=3 uid="uid://by8s8bdcjxiij"]
 
+[ext_resource type="PackedScene" uid="uid://t87hwl6pkac7" path="res://Imports/Scenes/rat.tscn" id="1_04oj8"]
 [ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
 [ext_resource type="PackedScene" uid="uid://drsbnbd3pd0fx" path="res://Models/Wall/WallTexture.gltf" id="2_3kgym"]
+[ext_resource type="Script" path="res://Imports/Scene_Code/rat_player.gd" id="2_o75o1"]
+[ext_resource type="AudioStream" uid="uid://b1y03i3gar60r" path="res://audio/rat_squeak.mp3" id="3_2f5rr"]
 [ext_resource type="PackedScene" uid="uid://g7c7o4w3vs35" path="res://Models/Wall2/WallRustedTexture.gltf" id="3_dicqg"]
 [ext_resource type="PackedScene" uid="uid://b8fhs0cwb4wgt" path="res://Models/Pipe/PipeTexture.gltf" id="6_fmyec"]
 [ext_resource type="Script" path="res://Imports/Scene_Code/blink_player.gd" id="6_o3tp3"]
@@ -13,20 +16,89 @@
 [ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/sm_bucket.tscn" id="10_a02hw"]
 [ext_resource type="PackedScene" uid="uid://ohmch00q7bvt" path="res://Models/Doorway/Doorway.gltf" id="11_ey1jt"]
 
-[sub_resource type="Animation" id="Animation_6y7c4"]
-resource_name = "blink"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_k6rw6"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bulb:light_energy")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.25, 0.0, 0.25]
+"values": [Vector3(2, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.214097, -0.742833, -0.0958285)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Squeaks:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2cjw4"]
+resource_name = "move"
+length = 6.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.16667, 3.86667, 4.96667, 6.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.14714, 0, 0.5), Vector3(2, 0, 1), Vector3(1.15434, 0, -0.192256), Vector3(-0.782639, 0, 0.371174), Vector3(-1.54195, 0, 1.24356), Vector3(-3.26645, 0, 2.01877)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.866667, 1.06667, 2.16667, 3, 4.93333, 6.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.214676, -0.575959, -0.0959931), Vector3(-0.214676, -0.698132, -0.0959931), Vector3(-0.214676, -2.00713, -0.0959931), Vector3(-0.214097, -1.49228, -0.0958285), Vector3(-0.214097, -0.523393, -0.0958285), Vector3(-0.214097, -0.333815, -0.0958285), Vector3(-0.214097, -1.41004, -0.0958285)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Squeaks:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 5.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6d1ma"]
+_data = {
+"RESET": SubResource("Animation_k6rw6"),
+"move": SubResource("Animation_2cjw4")
 }
 
 [sub_resource type="Animation" id="Animation_v123u"]
@@ -44,6 +116,22 @@ tracks/0/keys = {
 "values": [0.25]
 }
 
+[sub_resource type="Animation" id="Animation_6y7c4"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bulb:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.25, 0.0, 0.25]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fqekd"]
 _data = {
 "RESET": SubResource("Animation_v123u"),
@@ -52,6 +140,19 @@ _data = {
 
 [node name="Room" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+
+[node name="Rat" parent="." instance=ExtResource("1_04oj8")]
+transform = Transform3D(0.719426, 0.213522, -0.660934, -0.0934974, 0.972685, 0.212465, 0.688248, -0.0910572, 0.719739, 2, 0, -1)
+
+[node name="Rat_Player" type="AnimationPlayer" parent="Rat"]
+libraries = {
+"": SubResource("AnimationLibrary_6d1ma")
+}
+script = ExtResource("2_o75o1")
+
+[node name="Squeaks" type="AudioStreamPlayer3D" parent="Rat"]
+stream = ExtResource("3_2f5rr")
+volume_db = -17.0
 
 [node name="Wall_Rusted_Texture" parent="." instance=ExtResource("1_qplx4")]
 transform = Transform3D(0.00113536, 0.00424387, 0.99999, 0.000209041, 0.999991, -0.00424411, -0.999999, 0.00021385, 0.00113446, -1.49885, 0.00657521, -0.00170112)
@@ -134,3 +235,6 @@ transform = Transform3D(0.788247, 0, 0.615359, 0, 1, 0, -0.615359, 0, 0.788247, 
 
 [node name="Doorway" parent="." instance=ExtResource("11_ey1jt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0.739331)
+
+[connection signal="animation_finished" from="Rat/Rat_Player" to="Rat/Rat_Player" method="_on_animation_finished"]
+[connection signal="finished" from="Rat/Squeaks" to="Rat/Rat_Player" method="_on_squeaks_finished"]
