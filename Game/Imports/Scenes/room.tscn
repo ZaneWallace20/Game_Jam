@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://by8s8bdcjxiij"]
+[gd_scene load_steps=22 format=3 uid="uid://by8s8bdcjxiij"]
 
 [ext_resource type="PackedScene" uid="uid://t87hwl6pkac7" path="res://Imports/Scenes/rat.tscn" id="1_04oj8"]
 [ext_resource type="PackedScene" uid="uid://x81xtcc2nnwq" path="res://Models/WallwithRust/WallRustedTexture.gltf" id="1_qplx4"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cmbn3wxhvvheu" path="res://Imports/Scenes/sm_axe.tscn" id="9_bqvij"]
 [ext_resource type="PackedScene" uid="uid://44m0gjre34cf" path="res://Imports/Scenes/sm_bucket.tscn" id="10_a02hw"]
 [ext_resource type="PackedScene" uid="uid://ohmch00q7bvt" path="res://Models/Doorway/Doorway.gltf" id="11_ey1jt"]
-[ext_resource type="PackedScene" uid="uid://opdyupjda2mj" path="res://Models/Window/Window.gltf" id="16_j5mfx"]
 
 [sub_resource type="Animation" id="Animation_k6rw6"]
 length = 0.001
@@ -236,9 +235,6 @@ transform = Transform3D(0.788247, 0, 0.615359, 0, 1, 0, -0.615359, 0, 0.788247, 
 
 [node name="Doorway" parent="." instance=ExtResource("11_ey1jt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0.739331)
-
-[node name="Window" parent="." instance=ExtResource("16_j5mfx")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, -0.5, -1.617)
 
 [connection signal="animation_finished" from="Rat/Rat_Player" to="Rat/Rat_Player" method="_on_animation_finished"]
 [connection signal="finished" from="Rat/Squeaks" to="Rat/Rat_Player" method="_on_squeaks_finished"]
