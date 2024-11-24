@@ -191,7 +191,8 @@ func _process(delta: float) -> void:
 			
 			#disable all buttons to prevent bugs
 			for i in button_grid.get_children():
-				i.disabled = true
+				if i is Button:
+					i.disabled = true
 				
 		# decrese/update timer
 		progress_timer -= delta
@@ -208,7 +209,8 @@ func _process(delta: float) -> void:
 			
 			#disable all buttons to prevent bugs
 			for i in button_grid.get_children():
-				i.disabled = true
+				if i is Button:
+					i.disabled = true
 
 		# decrese/update timer
 		quick_progress_timer -= delta
