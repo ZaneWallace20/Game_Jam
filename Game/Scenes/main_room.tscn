@@ -306,7 +306,7 @@ grow_vertical = 2
 color = Color(0.929412, 0.929412, 0.929412, 1)
 
 [node name="Room" parent="." instance=ExtResource("10_pwke8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375708, -0.697489, -3.44112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.697, -3.441)
 
 [node name="Spotlight" parent="." instance=ExtResource("11_l3tub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.25)
